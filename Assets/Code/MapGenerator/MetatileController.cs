@@ -1,3 +1,5 @@
+using Unity.VisualScripting;
+using UnityEditor.Tilemaps;
 using UnityEngine;
 
 public class MetatileController : MonoBehaviour
@@ -7,12 +9,12 @@ public class MetatileController : MonoBehaviour
     [SerializeField] private TileController _AB;
     [SerializeField] private TileController _BB;
 
-    public void SetTileDatas(TileData AA, TileData BA, TileData AB, TileData BB)
+    public void SetTileDatas(MetatileData metatileData)
     {
-        _AA.SetTileData(AA);
-        _BA.SetTileData(BA);
-        _AB.SetTileData(AB);
-        _BB.SetTileData(BB);
+        _AA.SetTileData(metatileData.AA);
+        _BA.SetTileData(metatileData.BA);
+        _AB.SetTileData(metatileData.AB);
+        _BB.SetTileData(metatileData.BB);
     }
     public void SetTilesets(Tileset tileset)
     {
@@ -21,9 +23,29 @@ public class MetatileController : MonoBehaviour
         _AB.SetTileset(tileset);
         _BB.SetTileset(tileset);
     }
-    public void SetTilesetsAndTileDatas(Tileset tileset, TileData AA, TileData BA, TileData AB, TileData BB)
+    public void SetPalettes(Palette palette)
     {
-        SetTileDatas(AA, BA, AB, BB);
+        _AA.SetPalette(palette);
+        _BA.SetPalette(palette);
+        _AB.SetPalette(palette);
+        _BB.SetPalette(palette);
+    }
+    public void UpdateTileRenderers()
+    {
+        _AA.UpdateRenderer();
+        _BA.UpdateRenderer();
+        _AB.UpdateRenderer();
+        _BB.UpdateRenderer();
+    }
+    public void SetTilesetsAndTileDatas(Tileset tileset, MetatileData metatileData)
+    {
+        SetTileDatas(metatileData);
         SetTilesets(tileset);
+        SetPalettes(metatileData.palette);
+    }
+    public void UpdateTiles(Tileset tileset, MetatileMapData metatileMapData, MetatileSpriteData metatileSpriteData)
+    {
+        SetTilesetsAndTileDatas(tileset, new(metatileMapData, metatileSpriteData));
+        UpdateTileRenderers();
     }
 }

@@ -3,64 +3,67 @@ using UnityEngine;
 
 public class MapGenerator : MonoBehaviour
 {
-    [SerializeField] private Vector2Int _mapSize;
+    [SerializeField] private MapData _mapData;
     [SerializeField] private GameObject _prefab;
     [SerializeField] private Tileset _tileset;
+    [SerializeField] private MetatileMemory _metatileMemory;
 
     private List<MetatileController> _metatiles;
 
-    private TileData CreateRandomTileData()
-    {
-        return new TileData{
-            spriteID = Random.Range(0, _tileset.Max)
-        };
-    }
-
-    private MetatileController InstantiateTile(Vector2 position)
+    //private TileData CreateRandomTileData()
+    //{
+    //    return new TileData{
+    //        spriteID = Random.Range(0, _tileset.Max)
+    //    };
+    //}
+    private MetatileController InstantiateTile(Vector2 position, MetatileMapData metatileMapData, MetatileSpriteData metatileSpriteData)
     {
         var obj = Instantiate(_prefab, transform);
-        obj.transform.position = new Vector3(position.x, position.y, 0) * 2;
+        obj.transform.localPosition = new Vector3(position.x, position.y, 0) * 2;
         var metatileController = obj.GetComponent<MetatileController>();
 
         if (metatileController != null)
         {
-            metatileController.SetTilesetsAndTileDatas(_tileset, CreateRandomTileData(), CreateRandomTileData(), CreateRandomTileData(), CreateRandomTileData());
+            metatileController.UpdateTiles(_tileset, metatileMapData, metatileSpriteData);
         }
         return metatileController;
     }
-
     private void InstantiateTiles()
     {
-        _metatiles = new(new MetatileController[_mapSize.x * _mapSize.y]);
-        Vector2 mapSize = _mapSize;
-        for (var y = 0; y < _mapSize.y; y++)
+        var mapSize = _mapData.Size;
+        _metatiles = new(new MetatileController[_mapData.MaxTileCount]);
+        for (var y = 0; y < mapSize.y; y++)
         {
-            for (var x = 0; x < _mapSize.x; x++)
+            for (var x = 0; x < mapSize.x; x++)
             {
-                var index = x + y * _mapSize.x;
-                Vector2 position = new Vector2(x, y) - mapSize / 2 + new Vector2(0.5f, 0.5f);
-                _metatiles[index] = InstantiateTile(position);
+                var index = x + y * mapSize.x;
+                Vector2 position = new Vector2(x, y) - (Vector2)mapSize / 2 + new Vector2(0.5f, 0.5f);
+                var metatileMapData = _mapData.MetatileDatas[index];
+                _metatiles[index] = InstantiateTile(position, metatileMapData, _metatileMemory.GetData(metatileMapData.metatileIndex));
             }
         }
     }
-
-    private void SwapTiles()
+    private void SetMetatileDatas()
     {
-        foreach (var tile in _metatiles)
+        for (var i = 0; i < _mapData.MaxTileCount; i++)
         {
-            tile.SetTilesets(_tileset);
+            _metatiles[i].SetTileDatas(new(_mapData.MetatileDatas[i],_metatileMemory.GetData(_mapData.MetatileDatas[i].metatileIndex)));
+            _metatiles[i].SetPalettes(_mapData.MetatileDatas[i].palette);
+            _metatiles[i].UpdateTileRenderers();
         }
     }
-
-    [ContextMenu("Generate Map")]
-    public void GenerateMap()
+    public void LoadMapData(MapData mapData)
     {
-        if (_metatiles == null) {
-            InstantiateTiles();
-        } 
-        else
+        _mapData = mapData;
+        if (_metatiles == null)
         {
-            SwapTiles();
+            InstantiateTiles();
         }
+        SetMetatileDatas();
+    }
+    [ContextMenu("Load MapData")]
+    private void EditorLoadMapData()
+    {
+        LoadMapData(_mapData);
     }
 }
