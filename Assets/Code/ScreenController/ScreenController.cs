@@ -6,8 +6,8 @@ public class ScreenController : MonoBehaviour
     [SerializeField] private MapGenerator _mainMapGenerator;
     [SerializeField] private MapGenerator _subMapGenerator;
     [SerializeField] private GameObject _camera;
-    [SerializeField] private float _lerpTime;
-    [SerializeField] private float _delay;
+    [SerializeField, Min(0)] private float _lerpTime;
+    [SerializeField, Min(0)] private float _delay;
 
     private Coroutine _coroutine;
 #if UNITY_EDITOR
@@ -34,7 +34,7 @@ public class ScreenController : MonoBehaviour
     {
         _subMapGenerator.gameObject.SetActive(true);
         _subMapGenerator.LoadMapData(nextMapData);
-        _subMapGenerator.transform.position = (Vector3)target;
+        _subMapGenerator.transform.localPosition = (Vector3)target;
         float currentTime = 0;
         Vector3 initialPosition = _camera.transform.position;
         Vector3 targetPosition = new Vector3(target.x, target.y, initialPosition.z);
@@ -58,22 +58,22 @@ public class ScreenController : MonoBehaviour
     public void MoveScreenLeft(MapData nextMapData)
     {
         if (_coroutine != null) return;
-        _coroutine = StartCoroutine(MoveCamera(Vector2.left * nextMapData.Size.x * 2, nextMapData));
+        _coroutine = StartCoroutine(MoveCamera(2 * nextMapData.Size.x * Vector2.left, nextMapData));
     }
     public void MoveScreenRight(MapData nextMapData)
     {
         if (_coroutine != null) return;
-        _coroutine = StartCoroutine(MoveCamera(Vector2.right * nextMapData.Size.x * 2, nextMapData));
+        _coroutine = StartCoroutine(MoveCamera(2 * nextMapData.Size.x * Vector2.right, nextMapData));
     }
     public void MoveScreenUp(MapData nextMapData)
     {
         if (_coroutine != null) return;
-        _coroutine = StartCoroutine(MoveCamera(Vector2.up * nextMapData.Size.y * 2, nextMapData));
+        _coroutine = StartCoroutine(MoveCamera(2 * nextMapData.Size.y * Vector2.up, nextMapData));
     }
     public void MoveScreenDown(MapData nextMapData)
     {
         if (_coroutine != null) return;
-        _coroutine = StartCoroutine(MoveCamera(Vector2.down * nextMapData.Size.y * 2, nextMapData));
+        _coroutine = StartCoroutine(MoveCamera(2 * nextMapData.Size.y * Vector2.down, nextMapData));
     }
 
     [ContextMenu("Move Map")]

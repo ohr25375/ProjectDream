@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class TileController : MonoBehaviour
 {
-    [SerializeField] private SpriteRenderer _renderer;
+    [SerializeField] private SpriteController _spriteController;
 
     private Tileset _tileset;
     private TileData _tileData;
@@ -13,24 +13,24 @@ public class TileController : MonoBehaviour
     public void SetTileset(Tileset tileset) => _tileset = tileset;
     public void UpdateRenderer()
     {
-        _renderer.sprite = _tileset.GetSprite(_tileData.spriteData.spriteID);
-        _renderer.flipX = _tileData.spriteData.isFlippedX;
-        _renderer.flipY = _tileData.spriteData.isFlippedY;
-        _renderer.sortingOrder = _tileData.collisionData.isInFront ? 100 : -100;
+        _spriteController.SetSprite(_tileset.GetSprite(_tileData.spriteData.spriteID));
+        _spriteController.SetFlipX(_tileData.spriteData.isFlippedX);
+        _spriteController.SetFlipY(_tileData.spriteData.isFlippedY);
+        _spriteController.SetSortingOrder(_tileData.collisionData.isInFront ? 100 : -100);
         MaterialPropertyBlock mpb = new();
         mpb.SetFloat("_Palette", (float)_palette);
         mpb.SetFloat("_IsBackground", _isBackground ? 1 : 0);
-        _renderer.SetPropertyBlock(mpb);
+        _spriteController.SetPropertyBlock(mpb);
     }
     public void SetHorizontalFlip(bool isFlipped)
     {
         _tileData.spriteData.isFlippedX = isFlipped;
-        _renderer.flipX = isFlipped;
+        _spriteController.SetFlipX(isFlipped);
     }
     public void SetVerticalFlip(bool isFlipped)
     {
         _tileData.spriteData.isFlippedY = isFlipped;
-        _renderer.flipY = isFlipped;
+        _spriteController.SetFlipY(isFlipped);
     }
     public void UpdateTile(Tileset tileset, TileData tileData)
     {

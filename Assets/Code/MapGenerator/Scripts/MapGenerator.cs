@@ -19,10 +19,9 @@ public class MapGenerator : MonoBehaviour
     private MetatileController InstantiateTile(Vector2 position, MetatileMapData metatileMapData, MetatileSpriteData metatileSpriteData)
     {
         var obj = Instantiate(_prefab, transform);
-        obj.transform.localPosition = new Vector3(position.x, position.y, 0) * 2;
-        var metatileController = obj.GetComponent<MetatileController>();
-
-        if (metatileController != null)
+        obj.transform.localPosition = (Vector3)position * 2;
+        
+        if (obj.TryGetComponent<MetatileController>(out var metatileController))
         {
             metatileController.UpdateTiles(_tileset, metatileMapData, metatileSpriteData);
         }

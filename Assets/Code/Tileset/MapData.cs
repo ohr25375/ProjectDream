@@ -46,6 +46,11 @@ public class MapData : ScriptableObject
     }
 
 #if UNITY_EDITOR
+    [Header("Editor Variables")]
+    [SerializeField] private MetatileMemory e_metatileMemory;
+    public MetatileMemory EditorMemory => e_metatileMemory;
+    [SerializeField] private Tileset e_tileset;
+    public Tileset EditorTileset => e_tileset;
     [ContextMenu("Validate")]
     public void OnValidate()
     {

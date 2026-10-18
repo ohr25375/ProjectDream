@@ -14,147 +14,92 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MetatileMemory
   metatiles:
   - name: NULL
-    AA:
-      spriteID: 0
-      isFlippedX: 0
-      isFlippedY: 0
-      isCollidable: 0
-      isInFront: 0
-      isAirCollidable: 0
-    BA:
-      spriteID: 0
-      isFlippedX: 0
-      isFlippedY: 0
-      isCollidable: 0
-      isInFront: 0
-      isAirCollidable: 0
-    AB:
-      spriteID: 0
-      isFlippedX: 0
-      isFlippedY: 0
-      isCollidable: 0
-      isInFront: 0
-      isAirCollidable: 0
-    BB:
-      spriteID: 0
-      isFlippedX: 0
-      isFlippedY: 0
-      isCollidable: 0
-      isInFront: 0
-      isAirCollidable: 0
+    data:
+      AA:
+        spriteID: 0
+        isFlippedX: 0
+        isFlippedY: 0
+      BA:
+        spriteID: 0
+        isFlippedX: 0
+        isFlippedY: 0
+      AB:
+        spriteID: 0
+        isFlippedX: 0
+        isFlippedY: 0
+      BB:
+        spriteID: 0
+        isFlippedX: 0
+        isFlippedY: 0
   - name: Block
-    AA:
-      spriteID: 2
-      isFlippedX: 0
-      isFlippedY: 0
-      isCollidable: 1
-      isInFront: 0
-      isAirCollidable: 0
-    BA:
-      spriteID: 3
-      isFlippedX: 0
-      isFlippedY: 0
-      isCollidable: 1
-      isInFront: 0
-      isAirCollidable: 0
-    AB:
-      spriteID: 18
-      isFlippedX: 0
-      isFlippedY: 0
-      isCollidable: 1
-      isInFront: 0
-      isAirCollidable: 0
-    BB:
-      spriteID: 19
-      isFlippedX: 0
-      isFlippedY: 0
-      isCollidable: 1
-      isInFront: 0
-      isAirCollidable: 0
+    data:
+      AA:
+        spriteID: 2
+        isFlippedX: 0
+        isFlippedY: 0
+      BA:
+        spriteID: 3
+        isFlippedX: 0
+        isFlippedY: 0
+      AB:
+        spriteID: 18
+        isFlippedX: 0
+        isFlippedY: 0
+      BB:
+        spriteID: 19
+        isFlippedX: 0
+        isFlippedY: 0
   - name: Floor
-    AA:
-      spriteID: 4
-      isFlippedX: 0
-      isFlippedY: 0
-      isCollidable: 0
-      isInFront: 0
-      isAirCollidable: 0
-    BA:
-      spriteID: 5
-      isFlippedX: 0
-      isFlippedY: 0
-      isCollidable: 0
-      isInFront: 0
-      isAirCollidable: 0
-    AB:
-      spriteID: 20
-      isFlippedX: 0
-      isFlippedY: 0
-      isCollidable: 0
-      isInFront: 0
-      isAirCollidable: 0
-    BB:
-      spriteID: 21
-      isFlippedX: 0
-      isFlippedY: 0
-      isCollidable: 0
-      isInFront: 0
-      isAirCollidable: 0
+    data:
+      AA:
+        spriteID: 4
+        isFlippedX: 0
+        isFlippedY: 0
+      BA:
+        spriteID: 5
+        isFlippedX: 0
+        isFlippedY: 0
+      AB:
+        spriteID: 20
+        isFlippedX: 0
+        isFlippedY: 0
+      BB:
+        spriteID: 21
+        isFlippedX: 0
+        isFlippedY: 0
   - name: Boulder
-    AA:
-      spriteID: 6
-      isFlippedX: 0
-      isFlippedY: 0
-      isCollidable: 1
-      isInFront: 0
-      isAirCollidable: 0
-    BA:
-      spriteID: 7
-      isFlippedX: 0
-      isFlippedY: 0
-      isCollidable: 1
-      isInFront: 0
-      isAirCollidable: 0
-    AB:
-      spriteID: 22
-      isFlippedX: 0
-      isFlippedY: 0
-      isCollidable: 1
-      isInFront: 0
-      isAirCollidable: 0
-    BB:
-      spriteID: 23
-      isFlippedX: 0
-      isFlippedY: 0
-      isCollidable: 1
-      isInFront: 0
-      isAirCollidable: 0
+    data:
+      AA:
+        spriteID: 6
+        isFlippedX: 0
+        isFlippedY: 0
+      BA:
+        spriteID: 7
+        isFlippedX: 0
+        isFlippedY: 0
+      AB:
+        spriteID: 22
+        isFlippedX: 0
+        isFlippedY: 0
+      BB:
+        spriteID: 23
+        isFlippedX: 0
+        isFlippedY: 0
   - name: Bush
-    AA:
-      spriteID: 8
-      isFlippedX: 0
-      isFlippedY: 0
-      isCollidable: 1
-      isInFront: 0
-      isAirCollidable: 0
-    BA:
-      spriteID: 9
-      isFlippedX: 0
-      isFlippedY: 0
-      isCollidable: 1
-      isInFront: 0
-      isAirCollidable: 0
-    AB:
-      spriteID: 24
-      isFlippedX: 0
-      isFlippedY: 0
-      isCollidable: 1
-      isInFront: 0
-      isAirCollidable: 0
-    BB:
-      spriteID: 25
-      isFlippedX: 0
-      isFlippedY: 0
-      isCollidable: 1
-      isInFront: 0
-      isAirCollidable: 0
+    data:
+      AA:
+        spriteID: 8
+        isFlippedX: 0
+        isFlippedY: 0
+      BA:
+        spriteID: 9
+        isFlippedX: 0
+        isFlippedY: 0
+      AB:
+        spriteID: 24
+        isFlippedX: 0
+        isFlippedY: 0
+      BB:
+        spriteID: 25
+        isFlippedX: 0
+        isFlippedY: 0

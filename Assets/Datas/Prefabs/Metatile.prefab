@@ -48,10 +48,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8d80f88a96c61b4d8d105270bcad784, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MetatileController
-  _AA: {fileID: 5764311931443929419}
-  _BA: {fileID: 7474436221006260780}
-  _AB: {fileID: 4628917120217463492}
-  _BB: {fileID: 2408525284029649694}
+  _tileControllers:
+    AA: {fileID: 5764311931443929419}
+    BA: {fileID: 7474436221006260780}
+    AB: {fileID: 4628917120217463492}
+    BB: {fileID: 2408525284029649694}
 --- !u!1001 &32454871242490305
 PrefabInstance:
   m_ObjectHideFlags: 0

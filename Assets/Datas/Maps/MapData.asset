@@ -12,485 +12,3351 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33c79167712464c459f6e6ae14072f88, type: 3}
   m_Name: MapData
   m_EditorClassIdentifier: Assembly-CSharp::MapData
-  size: {x: 16, y: 15}
+  size: {x: 16, y: 11}
   metatileDatas:
   - metatileIndex: 1
     palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
   - metatileIndex: 2
     palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
   - metatileIndex: 3
     palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
   - metatileIndex: 1
     palette: 1
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
   - metatileIndex: 2
     palette: 1
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
   - metatileIndex: 3
     palette: 1
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
   - metatileIndex: 1
     palette: 2
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
   - metatileIndex: 2
     palette: 2
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
   - metatileIndex: 3
     palette: 2
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
   - metatileIndex: 1
     palette: 3
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
   - metatileIndex: 2
     palette: 3
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
   - metatileIndex: 3
     palette: 3
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
   - metatileIndex: 4
     palette: 3
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
-  - metatileIndex: 0
-    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BA:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      AB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+      BB:
+        isCollidable: 0
+        isInFront: 0
+        isAirCollidable: 0
+  e_metatileMemory: {fileID: 11400000, guid: 0e3845f3a990549419fef2be1d621685, type: 2}
+  e_tileset: {fileID: 11400000, guid: e827703367f28b74d9d2dbb9b9fcb8b2, type: 2}

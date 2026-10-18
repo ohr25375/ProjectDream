@@ -2,35 +2,27 @@
 public struct MetatileSpriteData
 {
     public string name;
-    public TileSpriteData AA;
-    public TileSpriteData BA;
-    public TileSpriteData AB;
-    public TileSpriteData BB;
+    public IndexableMetatileStruct<TileSpriteData> data;
 }
 [System.Serializable]
 public struct MetatileMapData
 {
     public int metatileIndex;
     public Palette palette;
-    public TileCollisionData AA;
-    public TileCollisionData BA;
-    public TileCollisionData AB;
-    public TileCollisionData BB;
+    public IndexableMetatileStruct<TileCollisionData> data;
 }
 
 public struct MetatileData
 {
     public Palette palette;
-    public TileData AA;
-    public TileData BA;
-    public TileData AB;
-    public TileData BB;
+    public IndexableMetatileStruct<TileData> data;
     public MetatileData(MetatileMapData mapData, MetatileSpriteData spriteData)
     {
         palette = mapData.palette;
-        AA = new TileData(){ spriteData = spriteData.AA, collisionData = mapData.AA };
-        BA = new TileData(){ spriteData = spriteData.BA, collisionData = mapData.BA };
-        AB = new TileData(){ spriteData = spriteData.AB, collisionData = mapData.AB };
-        BB = new TileData(){ spriteData = spriteData.BB, collisionData = mapData.BB };
+        data = new();
+        for (var i = 0; i < 4; i++)
+        {
+            data[i] = new TileData(){ spriteData = spriteData.data[i], collisionData = mapData.data[i] };
+        }
     }
 }
