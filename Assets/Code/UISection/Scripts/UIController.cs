@@ -19,7 +19,7 @@ public class UIController : MonoBehaviour
                 obj.transform.localPosition = new Vector2(x, y) - (_size - Vector2.one) / 2;
                 var index = x + y * _size.x;
                 var spriteController = obj.GetComponent<SpriteController>();
-                spriteController.SetSprite(_tileset.GetSprite(0));
+                spriteController.SetSprite(_tileset.GetSprite(1));
                 MaterialPropertyBlock mpb = new();
                 mpb.SetFloat("_Palette", 1);
                 mpb.SetFloat("_IsBackground", 1);

@@ -5,7 +5,6 @@ using UnityEngine;
 public class Tileset : ScriptableObject
 {
     [SerializeField] private List<Sprite> _tileset;
-
     public int Max => _tileset.Count;
     public Sprite GetSprite(int index)
     {

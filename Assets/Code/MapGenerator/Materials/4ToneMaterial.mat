@@ -82,22 +82,22 @@ Material:
     - _Color2: {r: 0.33333328, g: 0.33333328, b: 0.33333328, a: 1}
     - _Color3: {r: 0.6666666, g: 0.6666666, b: 0.6666666, a: 1}
     - _Color4: {r: 1, g: 1, b: 1, a: 1}
-    - _PaletteA_Color1: {r: 0, g: 0, b: 0, a: 1}
+    - _PaletteA_Color1: {r: 1, g: 0.77517986, b: 0.41037738, a: 1}
     - _PaletteA_Color1_1: {r: 0, g: 0, b: 0, a: 1}
-    - _PaletteA_Color2: {r: 0.33, g: 0.33, b: 0.33, a: 1}
-    - _PaletteA_Color3: {r: 0.66, g: 0.66, b: 0.66, a: 1}
+    - _PaletteA_Color2: {r: 0, g: 0, b: 0, a: 1}
+    - _PaletteA_Color3: {r: 0.6, g: 0.6, b: 0.6, a: 1}
     - _PaletteA_Color4: {r: 1, g: 1, b: 1, a: 1}
-    - _PaletteB_Color1: {r: 0, g: 0, b: 0, a: 1}
-    - _PaletteB_Color2: {r: 0.33, g: 0.33, b: 0.33, a: 1}
-    - _PaletteB_Color3: {r: 0.66, g: 0.66, b: 0.66, a: 1}
+    - _PaletteB_Color1: {r: 0, g: 0, b: 0, a: 0}
+    - _PaletteB_Color2: {r: 0.3, g: 0.3, b: 0.3, a: 1}
+    - _PaletteB_Color3: {r: 0.6, g: 0.6, b: 0.6, a: 1}
     - _PaletteB_Color4: {r: 1, g: 1, b: 1, a: 1}
     - _PaletteC_Color1: {r: 0, g: 0, b: 0, a: 1}
-    - _PaletteC_Color2: {r: 0.33, g: 0.33, b: 0.33, a: 1}
-    - _PaletteC_Color3: {r: 0.66, g: 0.66, b: 0.66, a: 1}
+    - _PaletteC_Color2: {r: 0.3, g: 0.3, b: 0.3, a: 1}
+    - _PaletteC_Color3: {r: 0.6, g: 0.6, b: 0.6, a: 1}
     - _PaletteC_Color4: {r: 1, g: 1, b: 1, a: 1}
     - _PaletteD_Color1: {r: 0, g: 0, b: 0, a: 1}
-    - _PaletteD_Color2: {r: 0.33, g: 0.33, b: 0.33, a: 1}
-    - _PaletteD_Color3: {r: 0.66, g: 0.66, b: 0.66, a: 1}
+    - _PaletteD_Color2: {r: 0.3, g: 0.3, b: 0.3, a: 1}
+    - _PaletteD_Color3: {r: 0.6, g: 0.6, b: 0.6, a: 1}
     - _PaletteD_Color4: {r: 1, g: 1, b: 1, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
