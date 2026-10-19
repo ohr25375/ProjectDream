@@ -20,6 +20,7 @@ public class HeartUI : MonoBehaviour
 
     void UpdateHeart(int currentHP, int maxHP)
     {
+
         for (int i = 0; i < hearts.Length; i++)
         {
             int hp = currentHP - i * 2;

@@ -21,15 +21,20 @@ public class StaminaControl : MonoBehaviour
     protected virtual void Awake()
     {
         CurrentHP = maxHP;
+
+        OnHPChanged ??= new UnityEvent<int, int>();
+        OnDead ??= new UnityEvent();
     }
-   
+
     public virtual void Damage(int damage)
     {
         if (isInvincible) return;
 
         CurrentHP -= damage;
-         
-        if (CurrentHP < 0) CurrentHP = 0;
+
+        if (CurrentHP < 0)
+            CurrentHP = 0;
+
 
         OnHPChanged?.Invoke(CurrentHP, maxHP);
 
@@ -76,15 +81,17 @@ public class StaminaControl : MonoBehaviour
 
     protected virtual void Die()
     {
+        Debug.Log("死亡");
         OnDead?.Invoke();
     }
 
     IEnumerator Invincible()
     {
         isInvincible = true;
-
+        Debug.Log("無敵開始");
         yield return new WaitForSeconds(invincibleTime);
 
         isInvincible = false;
+        Debug.Log("無敵終了");
     }
 }
