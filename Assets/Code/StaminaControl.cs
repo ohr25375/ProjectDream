@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -14,10 +15,10 @@ public class StaminaControl : MonoBehaviour
     [SerializeField] protected float invincibleTime = 1f;
 
     protected bool isInvincible;
+    public bool IsGodMode {  get; protected set; }
 
     public UnityEvent<int, int> OnHPChanged;
     public UnityEvent OnDead;
-
     protected virtual void Awake()
     {
         CurrentHP = maxHP;
@@ -28,12 +29,11 @@ public class StaminaControl : MonoBehaviour
 
     public virtual void Damage(int damage)
     {
-        if (isInvincible) return;
+        if (IsGodMode||isInvincible) return;
 
         CurrentHP -= damage;
 
-        if (CurrentHP < 0)
-            CurrentHP = 0;
+        if (CurrentHP < 0) CurrentHP = 0;
 
 
         OnHPChanged?.Invoke(CurrentHP, maxHP);
@@ -52,8 +52,7 @@ public class StaminaControl : MonoBehaviour
     {
         CurrentHP += amount;
 
-        if (CurrentHP > maxHP)
-            CurrentHP = maxHP;
+        if (CurrentHP > maxHP) CurrentHP = maxHP;
 
         OnHPChanged?.Invoke(CurrentHP, maxHP);
     }
@@ -93,5 +92,14 @@ public class StaminaControl : MonoBehaviour
 
         isInvincible = false;
         Debug.Log("無敵終了");
+    }
+    public void SetGodMode(bool value)
+    {
+        IsGodMode = value;
+
+        if (value)
+            Debug.Log("無敵ON");
+        else
+            Debug.Log("無敵OFF");
     }
 }

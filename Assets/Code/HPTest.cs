@@ -10,6 +10,9 @@ public class HPTest : MonoBehaviour
     [SerializeField] private Key addMaxHPKey = Key.Digit3;
     [SerializeField] private Key fullHealKey = Key.Digit4;
     [SerializeField] private Key setHPKey = Key.Digit5;
+    [SerializeField]private Key godModeKey= Key.Digit6;
+
+    private bool isGodMode;
     private void Update()
     {
         if (Keyboard.current[damageKey].wasPressedThisFrame)
@@ -38,8 +41,14 @@ public class HPTest : MonoBehaviour
 
         if (Keyboard.current[setHPKey].wasPressedThisFrame)
         {
-            hp.SetHP(3);
+            hp.SetHP(6);
             Debug.Log($"HPê›íË CurrentHP={hp.CurrentHP}");
+        }
+        if (Keyboard.current[godModeKey].wasPressedThisFrame)
+        {
+            isGodMode = !isGodMode;
+            hp.SetGodMode(isGodMode);
+            Debug.Log($"GodMode={isGodMode}");
         }
     }
 }
