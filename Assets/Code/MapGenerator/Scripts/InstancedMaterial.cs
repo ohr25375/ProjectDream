@@ -1,3 +1,4 @@
+using UnityEditor;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "InstancedMaterial", menuName = "Scriptable Objects/InstancedMaterial")]
@@ -23,6 +24,7 @@ public class InstancedMaterial : ScriptableObject
         }
     }
     [SerializeField] private Material material;
+    [Header("Default Palette")]
     [SerializeField] private Palette paletteA = new(Color.black, Color.gray3, Color.gray6, Color.white);
     [SerializeField] private Palette paletteB = new(Color.black, Color.gray3, Color.gray6, Color.white);
     [SerializeField] private Palette paletteC = new(Color.black, Color.gray3, Color.gray6, Color.white);
@@ -34,7 +36,7 @@ public class InstancedMaterial : ScriptableObject
         if (instantiatedMaterial == null)
         {
             instantiatedMaterial = Instantiate(material);
-            SetDefaultPalettes();
+            SetPalettes();
         }
     }
 
@@ -53,7 +55,7 @@ public class InstancedMaterial : ScriptableObject
     }
 
     [ContextMenu("Update Material")]
-    private void SetDefaultPalettes()
+    private void SetPalettes()
     {
         GetMaterial();
         ChangeMaterialColors(GetMaterial(), "_PaletteA", paletteA);
@@ -71,6 +73,10 @@ public class InstancedMaterial : ScriptableObject
     private void OnValidate()
     {
         InitializeMaterial();
+        if (!EditorApplication.isPlaying)
+        {
+            SetPalettes();
+        }
     }
 #endif
 }

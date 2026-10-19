@@ -46,15 +46,27 @@ public class MapData : ScriptableObject
     }
 
 #if UNITY_EDITOR
-    [Header("Editor Variables")]
     [SerializeField] private MetatileMemory e_metatileMemory;
     public MetatileMemory EditorMemory => e_metatileMemory;
     [SerializeField] private Tileset e_tileset;
     public Tileset EditorTileset => e_tileset;
+    [SerializeField] public int e_metatileIndex = 0;
     [ContextMenu("Validate")]
     public void OnValidate()
     {
         CorrectSize();
+    }
+    public void ChangeMetatileIndex(int mapIndex, int metatileIndex)
+    {
+        var mdata = metatileDatas[mapIndex];
+        mdata.metatileIndex = metatileIndex;
+        metatileDatas[mapIndex] = mdata;
+    }
+    public void ChangeMetatilePalette(int mapIndex, Palette palette)
+    {
+        var mdata = metatileDatas[mapIndex];
+        mdata.palette = palette;
+        metatileDatas[mapIndex] = mdata;
     }
 #endif
 }

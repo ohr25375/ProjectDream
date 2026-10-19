@@ -317,7 +317,7 @@ MonoBehaviour:
   _lerpTime: 2
   _delay: 0.2
   _startingMapData: {fileID: 11400000, guid: 7935a3dae283cce4a84ab9fb758e4f80, type: 2}
-  _nextMapData: {fileID: 11400000, guid: 0c310a1e48478bd4ca16b465b79ca43c, type: 2}
+  _nextMapData: {fileID: 11400000, guid: 7935a3dae283cce4a84ab9fb758e4f80, type: 2}
   _direction: 2
 --- !u!4 &904917648
 Transform:

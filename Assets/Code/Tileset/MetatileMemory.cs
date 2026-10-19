@@ -5,6 +5,7 @@ using UnityEngine;
 public class MetatileMemory : ScriptableObject
 {
     [SerializeField] private List<MetatileSpriteData> metatiles;
+    public int Max => metatiles.Count;
 
     public MetatileSpriteData GetData(int index)
     {
