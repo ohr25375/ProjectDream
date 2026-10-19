@@ -18,17 +18,17 @@ MonoBehaviour:
     palette: 1
     data:
       AA:
-        isCollidable: 0
+        isCollidable: 1
         isInFront: 0
         isAirCollidable: 0
       BA:
         isCollidable: 0
         isInFront: 0
-        isAirCollidable: 0
+        isAirCollidable: 1
       AB:
-        isCollidable: 0
+        isCollidable: 1
         isInFront: 0
-        isAirCollidable: 0
+        isAirCollidable: 1
       BB:
         isCollidable: 0
         isInFront: 0

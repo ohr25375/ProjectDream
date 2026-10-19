@@ -1,20 +1,41 @@
 using UnityEngine;
 using UnityEditor;
+using System.Collections.Generic;
 
 [CustomEditor(typeof(MapData))]
 public class EditorMapData : Editor
 {
     private MapData _mapdata;
     private bool _editorFoldout = true;
+    private List<Texture> _buttonTextures = new();
+    private int _selectedTile = -1;
+    private bool _hasValidated = false;
     private enum PreviewMode
     {
         Sprite,
         Collisions
     };
     private PreviewMode _previewMode = PreviewMode.Sprite;
+    private List<Texture> GetButtonTextures()
+    {
+        if (_hasValidated)
+        {
+            _buttonTextures = new(new Texture[_mapdata.MaxTileCount]);
+            for (var i = 0; i < _mapdata.MaxTileCount; i++)
+            {
+                int metatileIndex = _mapdata.MetatileDatas[i].metatileIndex;
+                MetatileSpriteData metatileSpriteData = _mapdata.EditorMemory.GetData(metatileIndex);
+                Sprite sprite = _mapdata.EditorTileset.GetSprite(2);
+                _buttonTextures[i] = AssetPreview.GetAssetPreview(sprite);
+            }
+        }
+        return _buttonTextures;
+    }
     private void OnEnable()
     {
         _mapdata = target as MapData;
+        _selectedTile = -1;
+        _hasValidated = false;
     }
     private void DrawTile(Vector2 position, Vector2 offset, TileSpriteData spriteData)
     {
@@ -47,8 +68,26 @@ public class EditorMapData : Editor
         MetatileMapData metatileMapData = _mapdata.MetatileDatas[mapIndex];
         for (var i = 0; i < 4; i++)
         {
-            var pos = position + new Vector2(i % 2, i / 2);
+            var pos = position + new Vector2(i % 2, i / 2) / 2;
             DrawCollision(pos, offset, metatileMapData.data[i]);
+        }
+    }
+    private void DrawButtons()
+    {
+        //GUILayout.
+        GUIStyle style = new(GUI.skin.button);
+        style.fixedWidth = 16;
+        style.fixedHeight = 16;
+        style.margin = new(0, 0, 0, 0);
+        //style.border = new(0, 0, 0, 0);
+        //style.padding = new(0, 0, 0, 0);
+        //style.contentOffset = new(0, 0);
+        //style.overflow = new(0, 0, 0, 0);
+        _selectedTile = GUILayout.SelectionGrid(_selectedTile, GetButtonTextures().ToArray(), _mapdata.Size.x, style);
+        if (_selectedTile != -1)
+        {
+            Debug.Log($"Selected {_selectedTile}");
+            _selectedTile = -1;
         }
     }
     private void DrawPreview()
@@ -67,6 +106,7 @@ public class EditorMapData : Editor
         }
         _previewMode = (PreviewMode)EditorGUILayout.EnumPopup(new GUIContent("Preview Mode", "Change display mode of map preview"), _previewMode);
         GUILayout.BeginHorizontal(GUILayout.Height(_mapdata.Size.y * 16));
+        DrawButtons();
         Rect rt = GUILayoutUtility.GetRect(new GUIContent(), GUIStyle.none);
         for (var y = 0; y < _mapdata.Size.y; y++)
         {
@@ -83,6 +123,10 @@ public class EditorMapData : Editor
             }
         }
         GUILayout.EndHorizontal();
+    }
+    public void OnValidate()
+    {
+        _hasValidated = true;
     }
     public override void OnInspectorGUI()
     {

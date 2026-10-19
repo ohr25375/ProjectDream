@@ -29,13 +29,18 @@ public class InstancedMaterial : ScriptableObject
     [SerializeField] private Palette paletteD = new(Color.black, Color.gray3, Color.gray6, Color.white);
     private Material instantiatedMaterial;
     public Material Material => GetMaterial();
-
-    private Material GetMaterial()
+    private void InitializeMaterial()
     {
         if (instantiatedMaterial == null)
         {
             instantiatedMaterial = Instantiate(material);
+            SetDefaultPalettes();
         }
+    }
+
+    private Material GetMaterial()
+    {
+        InitializeMaterial();
         return instantiatedMaterial;
     }
 
@@ -50,6 +55,7 @@ public class InstancedMaterial : ScriptableObject
     [ContextMenu("Update Material")]
     private void SetDefaultPalettes()
     {
+        GetMaterial();
         ChangeMaterialColors(GetMaterial(), "_PaletteA", paletteA);
         ChangeMaterialColors(GetMaterial(), "_PaletteB", paletteB);
         ChangeMaterialColors(GetMaterial(), "_PaletteC", paletteC);
@@ -58,13 +64,13 @@ public class InstancedMaterial : ScriptableObject
 
     private void OnEnable()
     {
-        SetDefaultPalettes();
+        InitializeMaterial();
     }
 
 #if UNITY_EDITOR
     private void OnValidate()
     {
-        SetDefaultPalettes();
+        InitializeMaterial();
     }
 #endif
 }
