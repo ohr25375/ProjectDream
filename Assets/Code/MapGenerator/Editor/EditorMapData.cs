@@ -73,7 +73,6 @@ public class EditorMapData : Editor
             for (var x = 0; x < _mapdata.Size.x; x++)
             {
                 var mapIndex = x + y * _mapdata.Size.x;
-                var metatileIndex = _mapdata.MetatileDatas[mapIndex].metatileIndex;
                 var position = new Vector2(x, _mapdata.Size.y - 1 - y);
                 DrawCollisionSet(position, rt.position, mapIndex);
             }
@@ -111,14 +110,16 @@ public class EditorMapData : Editor
     private void DrawMapEditor()
     {
         //GUILayout.BeginHorizontal();
-        GUIStyle style = new(GUI.skin.button);
-        style.fixedWidth = 16;
-        style.fixedHeight = 16;
-        style.margin = new(0, 0, 0, 0);
-        style.border = new(0, 0, 0, 0);
-        style.padding = new(0, 0, 0, 0);
-        style.contentOffset = new(0, 0);
-        style.overflow = new(0, 0, 0, 0);
+        GUIStyle style = new(GUI.skin.button)
+        {
+            fixedWidth = 16,
+            fixedHeight = 16,
+            margin = new(0, 0, 0, 0),
+            border = new(0, 0, 0, 0),
+            padding = new(0, 0, 0, 0),
+            contentOffset = new(0, 0),
+            overflow = new(0, 0, 0, 0)
+        };
         _selectedTile = GUILayout.SelectionGrid(_selectedTile, GetButtonTextures().ToArray(), _mapdata.Size.x, style);
         //_selectedTile = GUILayout.SelectionGrid(_selectedTile, new Texture[_mapdata.MaxTileCount], _mapdata.Size.x, style);
         GUILayout.BeginVertical();
