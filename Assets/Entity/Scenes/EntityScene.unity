@@ -218,10 +218,10 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.055555556
+    x: 0
     y: 0
-    width: 0.44444445
-    height: 0.8149406
+    width: 1
+    height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
@@ -492,6 +492,7 @@ GameObject:
   - component: {fileID: 1997319217}
   - component: {fileID: 1997319216}
   - component: {fileID: 1997319220}
+  - component: {fileID: 1997319221}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -605,10 +606,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
   isPlayerTeam: 1
-  Hp: 6
   damage: 1
   isDamageContact: 0
   isInvincible: 0
+  staminaControl: {fileID: 0}
+--- !u!114 &1997319221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1997319215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48e80b66cc909d541a587cfd3bc9624c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StaminaControl
+  maxHP: 6
+  invincibleTime: 1
+  OnHPChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDead:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &2046537062
 GameObject:
   m_ObjectHideFlags: 0
@@ -639,10 +660,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EntityData
   isPlayerTeam: 0
-  Hp: 0
   damage: 1
   isDamageContact: 0
   isInvincible: 0
+  staminaControl: {fileID: 0}
 --- !u!4 &2046537064
 Transform:
   m_ObjectHideFlags: 0
@@ -671,6 +692,7 @@ GameObject:
   - component: {fileID: 2061721897}
   - component: {fileID: 2061721896}
   - component: {fileID: 2061721900}
+  - component: {fileID: 2061721901}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -784,10 +806,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
   isPlayerTeam: 0
-  Hp: 6
   damage: 1
   isDamageContact: 1
   isInvincible: 0
+  staminaControl: {fileID: 2061721901}
+--- !u!114 &2061721901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2061721895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48e80b66cc909d541a587cfd3bc9624c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StaminaControl
+  maxHP: 6
+  invincibleTime: 1
+  OnHPChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDead:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
