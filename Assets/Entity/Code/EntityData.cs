@@ -4,9 +4,12 @@ public class EntityData : MonoBehaviour
 {
     [SerializeField] private bool isPlayerTeam;//true:味方 false:敵
 
-    private Vector2 move;
+    [SerializeField] private int damage = 1;
 
-    private int damage = 1;
+    [SerializeField] private bool isDamageContact; //触れたらダメージを与えるか
+    [SerializeField] private bool isInvincible;    //無敵かどうか
+
+    [SerializeField] private StaminaControl staminaControl;
 
     //[SerializeField] private GameObject entity;
     //
@@ -14,22 +17,31 @@ public class EntityData : MonoBehaviour
     //{
     //
     //}
-
-    private void AddDamage()
+    public void DoDamage(int amount)
     {
-
+        staminaControl.Damage(amount);
     }
 
-    private void Start()
+    private void OnCollisionEnter(Collision collision)
     {
-        
-    }
-
-    private void Update()
-    {
-        if (true) //ダメージを与えたら
+        if (!isDamageContact) return;
+        var target = collision.gameObject.GetComponent<EntityData>();
+        if (target.isPlayerTeam != isPlayerTeam)
         {
-            AddDamage();
+            target.DoDamage(damage);
+        }
+    }
+
+    public void Move() //オーバーライド
+    {
+
+    }
+
+    public void Invincible() //オーバーライド
+    {
+        if (isInvincible)
+        {
+
         }
     }
 }
