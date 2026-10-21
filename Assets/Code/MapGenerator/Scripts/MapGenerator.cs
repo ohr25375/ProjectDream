@@ -9,13 +9,6 @@ public class MapGenerator : MonoBehaviour
     [SerializeField] private MetatileMemory _metatileMemory;
 
     private List<MetatileController> _metatiles;
-
-    //private TileData CreateRandomTileData()
-    //{
-    //    return new TileData{
-    //        spriteID = Random.Range(0, _tileset.Max)
-    //    };
-    //}
     private MetatileController InstantiateTile(Vector2 position, MetatileMapData metatileMapData, MetatileSpriteData metatileSpriteData)
     {
         var obj = Instantiate(_prefab, transform);

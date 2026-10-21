@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -50,7 +49,7 @@ public class MapData : ScriptableObject
     public MetatileMemory EditorMemory => e_metatileMemory;
     [SerializeField] private Tileset e_tileset;
     public Tileset EditorTileset => e_tileset;
-    [SerializeField] public int e_metatileIndex = 0;
+    [SerializeField] private int e_changingMapIndex;
     [ContextMenu("Validate")]
     public void OnValidate()
     {
@@ -62,11 +61,22 @@ public class MapData : ScriptableObject
         mdata.metatileIndex = metatileIndex;
         metatileDatas[mapIndex] = mdata;
     }
+    public void SetTileCollisionDatas(int mapIndex, IndexableMetatileStruct<TileCollisionData> tileCollisionDatas)
+    {
+        var mdata = metatileDatas[mapIndex];
+        mdata.data = tileCollisionDatas;
+        metatileDatas[mapIndex] = mdata;
+    }
     public void ChangeMetatilePalette(int mapIndex, Palette palette)
     {
         var mdata = metatileDatas[mapIndex];
         mdata.palette = palette;
         metatileDatas[mapIndex] = mdata;
+    }
+    public void ClearMap()
+    {
+        metatileDatas = new();
+        CorrectSize();
     }
 #endif
 }

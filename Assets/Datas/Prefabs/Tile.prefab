@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8e9aefb100e79c4cb23e36a3589c704, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TileController
-  _spriteController: {fileID: 1926079825748070448}
+  _spriteController: {fileID: 6825427321009338510}
   _isBackground: 1
 --- !u!1001 &1510635380617815527
 PrefabInstance:
@@ -102,34 +102,19 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6282240946088490871, guid: 529f127b489a2469295447eabcc596e7, type: 3}
-      insertIndex: 2
-      addedObject: {fileID: 1926079825748070448}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 529f127b489a2469295447eabcc596e7, type: 3}
---- !u!212 &2755481237213590867 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 3660218451458396340, guid: 529f127b489a2469295447eabcc596e7, type: 3}
-  m_PrefabInstance: {fileID: 1510635380617815527}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &4889178585226023568 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6282240946088490871, guid: 529f127b489a2469295447eabcc596e7, type: 3}
-  m_PrefabInstance: {fileID: 1510635380617815527}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1926079825748070448
+--- !u!114 &6825427321009338510 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 5354238050784075113, guid: 529f127b489a2469295447eabcc596e7, type: 3}
+  m_PrefabInstance: {fileID: 1510635380617815527}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4889178585226023568}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e95221a8cbfa241b7a7d4132b8f897e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpriteController
-  _spriteRenderer: {fileID: 2755481237213590867}
 --- !u!4 &8310387068487964943 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7467733295537929448, guid: 529f127b489a2469295447eabcc596e7, type: 3}
