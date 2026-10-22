@@ -9,7 +9,6 @@ public class EnemyStateMoveToRandomDirection : EnemyState
     protected override void OnStateEnter(params int[] variables)
     {
         base.OnStateEnter();
-        duration = variables[0];
         var random = Random.Range(0, 4);
         direction = randomDirections[random];
 
@@ -21,13 +20,13 @@ public class EnemyStateMoveToRandomDirection : EnemyState
 
     protected override void OnStateUpdate()
     {
-        if (timer < duration)
+        if (timer <= duration)
         {
             enemyController.Move(direction);
         }
         else
         {
-            ExitState();
+            ChangeToNextState();
         }
     }
 }

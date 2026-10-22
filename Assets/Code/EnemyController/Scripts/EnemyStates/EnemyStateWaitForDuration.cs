@@ -7,15 +7,15 @@ public class EnemyStateWaitForDuration : EnemyState
     protected override void OnStateEnter(params int[] variables)
     {
         base.OnStateEnter(variables);
-        duration = variables[0];
     }
     protected override void OnStateExit()
     {
-        throw new System.NotImplementedException();
+        //
     }
 
     protected override void OnStateUpdate()
     {
-        throw new System.NotImplementedException();
+        if (timer <= duration) return;
+        ChangeToNextState();
     }
 }

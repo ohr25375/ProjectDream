@@ -21,10 +21,18 @@ MonoBehaviour:
     - rid: 903794636795150572
       type: {class: EnemyStateMoveToRandomDirection, ns: , asm: Assembly-CSharp}
       data:
-        exitToStates: 
-        duration: 0
+        exitToState:
+          rid: 5975772515875422285
+        duration: 1
     - rid: 903794636795150573
       type: {class: EnemyStateWaitForDuration, ns: , asm: Assembly-CSharp}
       data:
-        exitToStates: 
-        duration: 0
+        exitToState:
+          rid: 5975772515875422286
+        duration: 1
+    - rid: 5975772515875422285
+      type: {class: ExitToNext, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 5975772515875422286
+      type: {class: ExitToNext, ns: , asm: Assembly-CSharp}
+      data: 

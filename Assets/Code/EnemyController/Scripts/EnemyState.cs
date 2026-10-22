@@ -6,7 +6,7 @@ public abstract class EnemyState
 {
     protected float timer;
     protected EnemyController enemyController;
-    [SerializeField] protected int[] exitToStates;
+    [SerializeReference, SubclassSelector] private ExitToStatesBase exitToState;
     public void UpdateState(float deltaTime)
     {
         timer += deltaTime;
@@ -21,7 +21,11 @@ public abstract class EnemyState
     {
         OnStateExit();
     }
-
+    public void ChangeToNextState()
+    {
+        ExitState();
+        enemyController.SetEnemyState(exitToState.GetExitStateIndex(enemyController.CurrentStateIndex));
+    }
     private void InitializeBaseEnemyState()
     {
         timer = 0;

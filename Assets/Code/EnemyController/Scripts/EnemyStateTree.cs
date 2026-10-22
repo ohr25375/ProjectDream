@@ -5,4 +5,6 @@ using UnityEngine;
 public class EnemyStateTree : ScriptableObject
 {
     [SerializeReference, SubclassSelector] private List<EnemyState> enemyStates;
+    public EnemyState this[int i] => enemyStates[i];
+    public int Max => enemyStates.Count;
 }
