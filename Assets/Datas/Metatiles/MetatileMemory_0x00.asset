@@ -103,3 +103,183 @@ MonoBehaviour:
         spriteID: 25
         isFlippedX: 0
         isFlippedY: 0
+  - name: WallR
+    data:
+      AA:
+        spriteID: 32
+        isFlippedX: 0
+        isFlippedY: 0
+      BA:
+        spriteID: 33
+        isFlippedX: 0
+        isFlippedY: 0
+      AB:
+        spriteID: 34
+        isFlippedX: 0
+        isFlippedY: 0
+      BB:
+        spriteID: 0
+        isFlippedX: 0
+        isFlippedY: 0
+  - name: WallGamma
+    data:
+      AA:
+        spriteID: 33
+        isFlippedX: 0
+        isFlippedY: 0
+      BA:
+        spriteID: 32
+        isFlippedX: 1
+        isFlippedY: 0
+      AB:
+        spriteID: 0
+        isFlippedX: 0
+        isFlippedY: 0
+      BB:
+        spriteID: 34
+        isFlippedX: 1
+        isFlippedY: 0
+  - name: WallLeft
+    data:
+      AA:
+        spriteID: 34
+        isFlippedX: 0
+        isFlippedY: 0
+      BA:
+        spriteID: 0
+        isFlippedX: 0
+        isFlippedY: 0
+      AB:
+        spriteID: 34
+        isFlippedX: 0
+        isFlippedY: 0
+      BB:
+        spriteID: 0
+        isFlippedX: 0
+        isFlippedY: 0
+  - name: WallRight
+    data:
+      AA:
+        spriteID: 0
+        isFlippedX: 0
+        isFlippedY: 0
+      BA:
+        spriteID: 34
+        isFlippedX: 1
+        isFlippedY: 0
+      AB:
+        spriteID: 0
+        isFlippedX: 0
+        isFlippedY: 0
+      BB:
+        spriteID: 34
+        isFlippedX: 1
+        isFlippedY: 0
+  - name: WallUp
+    data:
+      AA:
+        spriteID: 33
+        isFlippedX: 0
+        isFlippedY: 0
+      BA:
+        spriteID: 33
+        isFlippedX: 0
+        isFlippedY: 0
+      AB:
+        spriteID: 0
+        isFlippedX: 0
+        isFlippedY: 0
+      BB:
+        spriteID: 0
+        isFlippedX: 0
+        isFlippedY: 0
+  - name: WallUpDown
+    data:
+      AA:
+        spriteID: 33
+        isFlippedX: 0
+        isFlippedY: 0
+      BA:
+        spriteID: 33
+        isFlippedX: 0
+        isFlippedY: 0
+      AB:
+        spriteID: 49
+        isFlippedX: 0
+        isFlippedY: 0
+      BB:
+        spriteID: 49
+        isFlippedX: 0
+        isFlippedY: 0
+  - name: WallDown
+    data:
+      AA:
+        spriteID: 0
+        isFlippedX: 0
+        isFlippedY: 0
+      BA:
+        spriteID: 0
+        isFlippedX: 0
+        isFlippedY: 0
+      AB:
+        spriteID: 49
+        isFlippedX: 0
+        isFlippedY: 0
+      BB:
+        spriteID: 49
+        isFlippedX: 0
+        isFlippedY: 0
+  - name: WallL
+    data:
+      AA:
+        spriteID: 34
+        isFlippedX: 0
+        isFlippedY: 0
+      BA:
+        spriteID: 0
+        isFlippedX: 0
+        isFlippedY: 0
+      AB:
+        spriteID: 48
+        isFlippedX: 0
+        isFlippedY: 0
+      BB:
+        spriteID: 49
+        isFlippedX: 0
+        isFlippedY: 0
+  - name: WallL
+    data:
+      AA:
+        spriteID: 0
+        isFlippedX: 0
+        isFlippedY: 0
+      BA:
+        spriteID: 34
+        isFlippedX: 1
+        isFlippedY: 0
+      AB:
+        spriteID: 49
+        isFlippedX: 0
+        isFlippedY: 0
+      BB:
+        spriteID: 48
+        isFlippedX: 1
+        isFlippedY: 0
+  - name: CloudFloor
+    data:
+      AA:
+        spriteID: 0
+        isFlippedX: 0
+        isFlippedY: 0
+      BA:
+        spriteID: 35
+        isFlippedX: 0
+        isFlippedY: 0
+      AB:
+        spriteID: 0
+        isFlippedX: 0
+        isFlippedY: 0
+      BB:
+        spriteID: 0
+        isFlippedX: 0
+        isFlippedY: 0

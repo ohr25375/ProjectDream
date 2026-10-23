@@ -53,13 +53,22 @@ public class EditorMapData : Editor
     private void DrawTile(Vector2 position, Vector2 offset, TileSpriteData spriteData, float magnify = 1, float size = 1)
     {
         Sprite sprite = _mapdata.EditorTileset.GetSprite(spriteData.spriteID);
+        bool flipX = spriteData.isFlippedX;
+        bool flipY = spriteData.isFlippedY;
         if (sprite == null)
         {
             sprite = _mapdata.EditorTileset.GetSprite(0);
         }
         Texture2D spritePreview = AssetPreview.GetAssetPreview(sprite);
         if (spritePreview == null) return;
-        GUI.DrawTexture(new Rect(position.x * 16 * magnify + offset.x, position.y * 16 * magnify + offset.y, 8 * magnify * size, 8 * magnify * size), spritePreview);
+        Rect rect = new()
+        {
+            x = 16 * magnify * position.x + 8 * magnify * (flipX ? 1 : 0) + offset.x + (1 - size) / 2 * 8 * magnify * (flipX ? -1 : 1),
+            y = 16 * magnify * position.y + 8 * magnify * (flipY ? 1 : 0) + offset.y + (1 - size) / 2 * 8 * magnify * (flipY ? -1 : 1),
+            width = (flipX ? -1 : 1) * 8 * magnify * size,
+            height = (flipY ? -1 : 1) * 8 * magnify * size
+        };
+        GUI.DrawTexture(rect, spritePreview);
     }
     private void DrawMetatile(Vector2 position, Vector2 offset, int metatileIndex, float magnify = 1, float size = 1)
     {
@@ -146,7 +155,7 @@ public class EditorMapData : Editor
         };
         tileIdentifierRect.position += new Vector2((int)_tileIdentifier % 2, (int)_tileIdentifier / 2) * 8 * magnify;
         EditorGUI.DrawRect(tileIdentifierRect, Color.red);
-        DrawMetatile((Vector2.one) / (16 * magnify), metatilePreviewRect.position, _metatileIndex, magnify, (magnify * 8 - 2) / (magnify * 8));
+        DrawMetatile(Vector2.zero, metatilePreviewRect.position, _metatileIndex, magnify, (magnify * 8 - 2) / (magnify * 8));
         if (_selectedTile != -1)
         {
             UpdateMapData();
