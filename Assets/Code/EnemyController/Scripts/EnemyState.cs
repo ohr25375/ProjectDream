@@ -5,10 +5,13 @@ using UnityEditor;
 public abstract class EnemyState
 {
     protected float timer;
+    protected float previousTimer;
+    protected float DeltaTime => timer - previousTimer;
     protected EnemyController enemyController;
     [SerializeReference, SubclassSelector] private ExitToStatesBase exitToState;
     public void UpdateState(float deltaTime)
     {
+        previousTimer = timer;
         timer += deltaTime;
         OnStateUpdate();
     }
@@ -29,6 +32,7 @@ public abstract class EnemyState
     private void InitializeBaseEnemyState()
     {
         timer = 0;
+        previousTimer = 0;
     }
     protected virtual void OnStateEnter(params int[] variables)
     {

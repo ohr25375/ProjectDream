@@ -1,9 +1,11 @@
 using UnityEngine;
 
 [System.Serializable]
+[AddTypeMenu("Move to Random Direction")]
 public class EnemyStateMoveToRandomDirection : EnemyState
 {
-    [SerializeField] private int duration;
+    [SerializeField] private float duration;
+    [SerializeField] private float distance;
     private Vector2 direction;
     private readonly Vector2[] randomDirections = {Vector2.up, Vector2.down, Vector2.left, Vector2.right};
     protected override void OnStateEnter(params int[] variables)
@@ -20,13 +22,23 @@ public class EnemyStateMoveToRandomDirection : EnemyState
 
     protected override void OnStateUpdate()
     {
-        if (timer <= duration)
+        if (duration <= 0)
         {
-            enemyController.Move(direction);
+            ChangeToNextState();
+            return;
+        }
+        if (timer > duration)
+        {
+            if (previousTimer < duration)
+            {
+                var remaining = duration - previousTimer;
+                enemyController.Move(direction, (distance / duration) * remaining);
+            }
+            ChangeToNextState();
         }
         else
         {
-            ChangeToNextState();
+            enemyController.Move(direction, (distance / duration) * DeltaTime);
         }
     }
 }

@@ -1,6 +1,7 @@
 using UnityEngine;
 
 [System.Serializable]
+[AddTypeMenu("Wait for Duration")]
 public class EnemyStateWaitForDuration : EnemyState
 {
     [SerializeField] private float duration;

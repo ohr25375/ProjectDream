@@ -8,6 +8,7 @@ public class EnemyController
     public int CurrentStateIndex => _currentStateIndex;
     private EnemyState CurrentEnemyState => _enemyStateTree[_currentStateIndex];
     private Transform _transform;
+    public bool IsPaused = false;
     public void Initialize(Transform transform) => OnInitialize(transform);
     public void Update() => OnUpdate();
     public void SetEnemyState(int index)
@@ -36,10 +37,11 @@ public class EnemyController
     }
     private void OnUpdate()
     {
+        if (IsPaused) return;
         CurrentEnemyState.UpdateState(Time.deltaTime);
     }
-    public void Move(Vector2 direction)
+    public void Move(Vector2 direction, float speed = 1)
     {
-        _transform.position += (Vector3)direction * Time.deltaTime;
+        _transform.position += speed * (Vector3)direction;
     }
 }
