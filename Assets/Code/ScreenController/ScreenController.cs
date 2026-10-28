@@ -10,6 +10,9 @@ public class ScreenController : MonoBehaviour
     [SerializeField, Min(0)] private float _delay;
 
     private Coroutine _coroutine;
+
+    public static ScreenController Instance = null;
+    public static MapData MainMapData = null;
 #if UNITY_EDITOR
     [Header("Debug")]
     [SerializeField] private MapData _startingMapData;
@@ -26,9 +29,26 @@ public class ScreenController : MonoBehaviour
 
     private void Awake()
     {
-        _mainMapGenerator.LoadMapData(_startingMapData);
+        InitializeScreen();
     }
 #endif
+    public void InitializeScreen()
+    {
+        if (Instance != null)
+        {
+            Debug.LogWarning("Found duplicate Screen Controller. Destroying...");
+            Destroy(this);
+            return;
+        }
+        Instance = this;
+        _mainMapGenerator.LoadMapData(_startingMapData);
+        SetStaticMapData(_startingMapData);
+    }
+
+    private void SetStaticMapData(MapData mapData)
+    {
+        MainMapData = mapData;
+    }
 
     private IEnumerator MoveCamera(Vector2 target, MapData nextMapData)
     {
@@ -49,6 +69,7 @@ public class ScreenController : MonoBehaviour
         _camera.transform.position = initialPosition;
         _mainMapGenerator.LoadMapData(nextMapData);
         _subMapGenerator.gameObject.SetActive(false);
+        SetStaticMapData(nextMapData);
         _coroutine = null;
     }
     public void Initialize(MapData initialMapData)
