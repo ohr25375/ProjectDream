@@ -1,4 +1,13 @@
 [System.Serializable]
+public enum TileIdentifier
+{
+    AA,
+    BA,
+    AB,
+    BB
+}
+
+[System.Serializable]
 public struct MetatileSpriteData
 {
     public string name;

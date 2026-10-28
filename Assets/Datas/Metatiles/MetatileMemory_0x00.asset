@@ -31,22 +31,22 @@ MonoBehaviour:
         spriteID: 0
         isFlippedX: 0
         isFlippedY: 0
-  - name: Block
+  - name: Boulder
     data:
       AA:
-        spriteID: 2
+        spriteID: 6
         isFlippedX: 0
         isFlippedY: 0
       BA:
-        spriteID: 3
+        spriteID: 7
         isFlippedX: 0
         isFlippedY: 0
       AB:
-        spriteID: 18
+        spriteID: 22
         isFlippedX: 0
         isFlippedY: 0
       BB:
-        spriteID: 19
+        spriteID: 23
         isFlippedX: 0
         isFlippedY: 0
   - name: Floor
@@ -67,22 +67,22 @@ MonoBehaviour:
         spriteID: 21
         isFlippedX: 0
         isFlippedY: 0
-  - name: Boulder
+  - name: Block
     data:
       AA:
-        spriteID: 6
+        spriteID: 2
         isFlippedX: 0
         isFlippedY: 0
       BA:
-        spriteID: 7
+        spriteID: 3
         isFlippedX: 0
         isFlippedY: 0
       AB:
-        spriteID: 22
+        spriteID: 18
         isFlippedX: 0
         isFlippedY: 0
       BB:
-        spriteID: 23
+        spriteID: 19
         isFlippedX: 0
         isFlippedY: 0
   - name: Bush
