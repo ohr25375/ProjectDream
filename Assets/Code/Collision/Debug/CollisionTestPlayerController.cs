@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -23,16 +25,16 @@ public class CollisionTestPlayerController : MonoBehaviour
     [SerializeField] private List<Vector2> _colliderOffsets;
     private List<GridBasedCollider> _colliders;
     private Vector3 _currentPosition;
+    public Vector3 CurrentPosition => _currentPosition;
     private Vector2 _mapPositionOffset;
     private InputStates _currentInputStates;
     private bool _isLastHorizontalInputLeft;
     private Direction _currentMovingDirection;
+    [SerializeField] private TileCollisionFlags _tileCollisionFlags;
+    private int isColliding;
+    private List<bool> d_colliders;
     
     #region UNITY FUNCTIONS
-    private void Awake()
-    {
-        OnInitialize();
-    }
     private void OnEnable()
     {
         _inputLeft.action.started += OnInputLeft;
@@ -97,9 +99,13 @@ public class CollisionTestPlayerController : MonoBehaviour
     }
     #endregion
 
-    private void OnInitialize()
+    public void Initialize(Vector2 position)
     {
-        _currentPosition = transform.position;
+        OnInitialize(position);
+    }
+    private void OnInitialize(Vector2 position)
+    {
+        _currentPosition = position;
         _colliders = new(new GridBasedCollider[_colliderOffsets.Count]);
         for (var i = 0; i < _colliders.Count; i++)
         {
@@ -108,43 +114,64 @@ public class CollisionTestPlayerController : MonoBehaviour
             _colliders[i].SetOffset(offsetPosition);
         }
     }
-    public void SetMapPositionOffset(Vector2 offset) => _mapPositionOffset = offset;
+    public void SetMapPositionOffset(Vector2 offset)
+    {
+        _mapPositionOffset = offset;
+    }
+    public void SetCurrentPosition(Vector2 position)
+    {
+        _currentPosition = position;
+        transform.localPosition = RoundPosition(position);
+    }
+
+    public void AddCurrentPosition(Vector2 position)
+    {
+        _currentPosition += (Vector3)position;
+        transform.localPosition = RoundPosition(_currentPosition);
+    }
+    private Vector3 RoundPosition(Vector3 position)
+    {
+        return new()
+        {
+            x = Mathf.RoundToInt(position.x * 8) / 8.0f,
+            y = Mathf.RoundToInt(position.y * 8) / 8.0f,
+            z = 0,
+        };
+    }
 
     private void Update()
     {
         _currentMovingDirection = SolveInput(_currentInputStates);
         var newPosition = _currentPosition + _speed * Time.deltaTime * (Vector3)_currentMovingDirection.ToVector2();
-        Vector3 roundedPosition = new()
-        {
-            x = Mathf.RoundToInt(newPosition.x * 8) / 8.0f,
-            y = Mathf.RoundToInt(newPosition.y * 8) / 8.0f,
-            z = 0,
-        };
+        Vector3 roundedPosition = RoundPosition(newPosition);
         var currentMapPosition = roundedPosition - (Vector3)_mapPositionOffset;
         bool hasVerticalInput = _currentInputStates.HasFlag(InputStates.Up) || _currentInputStates.HasFlag(InputStates.Down);
         bool hasHorizontalInput = _currentInputStates.HasFlag(InputStates.Left) || _currentInputStates.HasFlag(InputStates.Right);
+        var colliders = ScreenController.MainMapData.GetColliders(_tileCollisionFlags);
+        d_colliders = colliders.ToList();
+        var mapSize = ScreenController.MainMapData.Size * 2;
+        isColliding = 0;
         if (hasVerticalInput && hasHorizontalInput)
         {
             foreach (var collider in _colliders)
             {
-                if (!collider.IsColliding(CreateCollisionTestMap.CollisionTiles, CreateCollisionTestMap.MapSize, _currentMovingDirection, currentMapPosition)) continue;
+                if (collider.IsColliding(colliders, mapSize, _currentMovingDirection, currentMapPosition) == 0) continue;
                 _currentMovingDirection = SolveInput(_currentInputStates, true);
                 newPosition = _currentPosition + _speed * Time.deltaTime * (Vector3)_currentMovingDirection.ToVector2();
-                roundedPosition = new()
-                {
-                    x = Mathf.RoundToInt(newPosition.x * 8) / 8.0f,
-                    y = Mathf.RoundToInt(newPosition.y * 8) / 8.0f,
-                    z = 0,
-                };
+                roundedPosition = RoundPosition(newPosition);
                 currentMapPosition = roundedPosition - (Vector3)_mapPositionOffset;
                 break;
             }
         }
         foreach (var collider in _colliders)
         {
-            if (collider.IsColliding(CreateCollisionTestMap.CollisionTiles, CreateCollisionTestMap.MapSize, _currentMovingDirection, currentMapPosition)) return;
+            int ic = collider.IsColliding(colliders, mapSize, _currentMovingDirection, currentMapPosition);
+            if (ic != 0)
+            {
+                isColliding = ic; return;
+            }
         }
         _currentPosition = newPosition;
-        transform.position = roundedPosition;
+        transform.localPosition = roundedPosition;
     }
 }

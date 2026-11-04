@@ -18,10 +18,10 @@ public class TileController
         _spriteController.SetSprite(_tileset.GetSprite(_tileData.spriteData.spriteID));
         _spriteController.SetFlipX(_tileData.spriteData.isFlippedX);
         _spriteController.SetFlipY(_tileData.spriteData.isFlippedY);
-        _spriteController.UpdateSortingOrder(_tileData.collisionData.IsInFront, false);
+        _spriteController.UpdateSortingOrder(_tileData.collisionData.HasFlag(TileCollisionFlags.IsInFront), false);
         MaterialPropertyBlock mpb = new();
         mpb.SetFloat("_Palette", (float)_palette);
-        mpb.SetFloat("_IsBackground", _tileData.collisionData.IsInFront ? 0 : 1);
+        mpb.SetFloat("_IsBackground", _tileData.collisionData.HasFlag(TileCollisionFlags.IsInFront) ? 0 : 1);
         _spriteController.SetPropertyBlock(mpb);
     }
     public void SetHorizontalFlip(bool isFlipped)

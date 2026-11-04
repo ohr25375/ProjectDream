@@ -13,7 +13,7 @@ public class EditorMapData : Editor
     private bool _hasValidated = true;
     private Palette _palette = Palette.A;
     private TileIdentifier _tileIdentifier;
-    private IndexableMetatileStruct<TileCollisionData> _tileCollisionDatas;
+    private IndexableMetatileStruct<TileCollisionFlags> _tileCollisionDatas;
     private int _metatileIndex = 0;
     private enum PreviewMode
     {
@@ -106,10 +106,10 @@ public class EditorMapData : Editor
             }
         }
     }
-    private void DrawCollision(Vector2 position, Vector2 offset, TileCollisionData collisionData)
+    private void DrawCollision(Vector2 position, Vector2 offset, TileCollisionFlags collisionData)
     {
         Rect rect = new(position * 16 + offset, Vector2.one * 8);
-        Color color = new(collisionData.IsCollidable ? 1 : 0, 0, collisionData.IsAirCollidable ? 1 : 0);
+        Color color = new(collisionData.HasFlag(TileCollisionFlags.IsCollidable) ? 1 : 0, 0, collisionData.HasFlag(TileCollisionFlags.IsAirCollidable) ? 1 : 0);
         EditorGUI.DrawRect(rect, color);
     }
     private void DrawCollisionSet(Vector2 position, Vector2 offset, int mapIndex)
@@ -162,13 +162,7 @@ public class EditorMapData : Editor
         }
         _palette = (Palette)EditorGUILayout.EnumPopup(new GUIContent("Palette", "Metatile palette"), _palette);
         _tileIdentifier = (TileIdentifier)EditorGUILayout.EnumPopup(new GUIContent("Tile", "Which tile to edit"), _tileIdentifier);
-        TileCollisionData tileCollisionData = new()
-        {
-            IsCollidable = EditorGUILayout.Toggle("Is Collidable", _tileCollisionDatas[(int)_tileIdentifier].IsCollidable),
-            IsInFront = EditorGUILayout.Toggle("Is in front", _tileCollisionDatas[(int)_tileIdentifier].IsInFront),
-            IsAirCollidable = EditorGUILayout.Toggle("Is air collidable", _tileCollisionDatas[(int)_tileIdentifier].IsAirCollidable)
-        };
-        _tileCollisionDatas[(int)_tileIdentifier] = tileCollisionData;
+        _tileCollisionDatas[(int)_tileIdentifier] = (TileCollisionFlags)EditorGUILayout.EnumFlagsField(_tileCollisionDatas[(int)_tileIdentifier]);
         GUILayout.EndVertical();
     }
 

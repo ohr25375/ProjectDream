@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using UnityEngine;
 
 public class GridBasedCollider
@@ -10,7 +10,7 @@ public class GridBasedCollider
     #endregion
 
     public void SetOffset(Vector2 offset) => _offset = offset;
-    public bool IsColliding(List<bool> colliders, Vector2Int size, Direction direction, Vector2 rootPosition)
+    public int IsColliding(ReadOnlyCollection<bool> colliders, Vector2Int size, Direction direction, Vector2 rootPosition)
     {
         var currentPosition = rootPosition + _offset;
         Vector2Int checkingPosition1, checkingPosition2;
@@ -47,11 +47,11 @@ public class GridBasedCollider
                     break;
                 }
         }
-        if (IsOutOfBounds(checkingPosition1, size) || IsOutOfBounds(checkingPosition2, size)) { return true; }
+        if (IsOutOfBounds(checkingPosition1, size) || IsOutOfBounds(checkingPosition2, size)) { return -1; }
         var index1 = checkingPosition1.y * size.x + checkingPosition1.x;
-        if (colliders[index1]) { return true; }
+        if (colliders[index1]) { return 1; }
         var index2 = checkingPosition2.y * size.x + checkingPosition2.x;
-        if (colliders[index2]) { return true; }
-        return false;
+        if (colliders[index2]) { return 2; }
+        return 0;
     }
 }
