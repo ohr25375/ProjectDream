@@ -262,10 +262,10 @@ MonoBehaviour:
   - metatileIndex: 4
     palette: 2
     data:
-      AA: 1
-      BA: 1
-      AB: 1
-      BB: 1
+      AA: 2
+      BA: 2
+      AB: 3
+      BB: 3
   - metatileIndex: 0
     palette: 2
     data:
@@ -283,10 +283,10 @@ MonoBehaviour:
   - metatileIndex: 4
     palette: 2
     data:
-      AA: 1
-      BA: 1
-      AB: 1
-      BB: 1
+      AA: 2
+      BA: 2
+      AB: 3
+      BB: 3
   - metatileIndex: 0
     palette: 2
     data:
@@ -304,10 +304,10 @@ MonoBehaviour:
   - metatileIndex: 4
     palette: 2
     data:
-      AA: 1
-      BA: 1
-      AB: 1
-      BB: 1
+      AA: 2
+      BA: 2
+      AB: 3
+      BB: 3
   - metatileIndex: 0
     palette: 2
     data:
@@ -325,10 +325,10 @@ MonoBehaviour:
   - metatileIndex: 4
     palette: 2
     data:
-      AA: 1
-      BA: 1
-      AB: 1
-      BB: 1
+      AA: 2
+      BA: 2
+      AB: 3
+      BB: 3
   - metatileIndex: 0
     palette: 2
     data:
@@ -486,10 +486,10 @@ MonoBehaviour:
   - metatileIndex: 4
     palette: 2
     data:
-      AA: 1
-      BA: 1
-      AB: 1
-      BB: 1
+      AA: 2
+      BA: 2
+      AB: 3
+      BB: 3
   - metatileIndex: 0
     palette: 2
     data:
@@ -507,10 +507,10 @@ MonoBehaviour:
   - metatileIndex: 4
     palette: 2
     data:
-      AA: 1
-      BA: 1
-      AB: 1
-      BB: 1
+      AA: 2
+      BA: 2
+      AB: 3
+      BB: 3
   - metatileIndex: 14
     palette: 2
     data:
@@ -528,10 +528,10 @@ MonoBehaviour:
   - metatileIndex: 4
     palette: 2
     data:
-      AA: 1
-      BA: 1
-      AB: 1
-      BB: 1
+      AA: 2
+      BA: 2
+      AB: 3
+      BB: 3
   - metatileIndex: 0
     palette: 2
     data:
@@ -549,10 +549,10 @@ MonoBehaviour:
   - metatileIndex: 4
     palette: 2
     data:
-      AA: 1
-      BA: 1
-      AB: 1
-      BB: 1
+      AA: 2
+      BA: 2
+      AB: 3
+      BB: 3
   - metatileIndex: 0
     palette: 2
     data:

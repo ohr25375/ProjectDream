@@ -171,14 +171,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TestPlayer
       objectReference: {fileID: 0}
-    - target: {fileID: 6410059225532822704, guid: c3f73a7afe7ca9a4e8112fab5ba763cf, type: 3}
-      propertyPath: _speed
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 6410059225532822704, guid: c3f73a7afe7ca9a4e8112fab5ba763cf, type: 3}
-      propertyPath: _tileCollisionFlags
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -338,7 +330,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.RenderPipelines.Universal.2D.Runtime::UnityEngine.Rendering.Universal.PixelPerfectCamera
   m_ComponentVersion: 1
   m_AssetsPPU: 8
-  m_RefResolutionX: 240
+  m_RefResolutionX: 256
   m_RefResolutionY: 224
   m_CropFrame: 3
   m_GridSnapping: 1
@@ -530,7 +522,7 @@ Transform:
   m_GameObject: {fileID: 1249072161}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 10.5, z: 10}
+  m_LocalPosition: {x: 0, y: 11, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -548,7 +540,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f8bce8ee37a04590b219474ff921069, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIController
-  _size: {x: 32, y: 9}
+  _size: {x: 32, y: 8}
   _sprite: {fileID: 6282240946088490871, guid: 529f127b489a2469295447eabcc596e7, type: 3}
   _tileset: {fileID: 11400000, guid: e827703367f28b74d9d2dbb9b9fcb8b2, type: 2}
 --- !u!1 &1518147847

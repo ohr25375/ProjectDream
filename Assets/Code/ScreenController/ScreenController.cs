@@ -29,19 +29,16 @@ public class ScreenController : MonoBehaviour
     [Header("Debug")]
     [SerializeField] private MapData _startingMapData;
     [SerializeField] private MapData _nextMapData;
-    [System.Serializable]
-    enum Direction
-    {
-        Left,
-        Right,
-        Up,
-        Down
-    }
     [SerializeField] private Direction _direction;
 
     private void Awake()
     {
         InitializeScreen();
+    }
+    [ContextMenu("Move Map")]
+    private void MoveMap()
+    {
+        DoMoveMap(_direction);
     }
 #endif
     public void InitializeScreen()
@@ -76,6 +73,7 @@ public class ScreenController : MonoBehaviour
 
     private IEnumerator MoveCamera(Vector2 direction, MapData nextMapData)
     {
+        _player.SetCanMove(false);
         var baseTarget = new Vector2(nextMapData.Size.x * direction.x, nextMapData.Size.y * direction.y);
         var target = 2 * baseTarget;
         _subScreen.SetActive(true);
@@ -96,6 +94,7 @@ public class ScreenController : MonoBehaviour
         }
         _camera.transform.position = initialPosition;
         _player.AddCurrentPosition((new Vector2(nextMapData.Size.x * -direction.x, nextMapData.Size.y * -direction.y)) * 2);
+        _player.SetCanMove(true);
         _subScreen.SetActive(false);
         SetStaticMapData(nextMapData);
         _coroutine = null;
@@ -124,11 +123,13 @@ public class ScreenController : MonoBehaviour
         if (_coroutine != null) return;
         _coroutine = StartCoroutine(MoveCamera(Vector2.down, nextMapData));
     }
-
-    [ContextMenu("Move Map")]
-    private void MoveMap()
+    public static void MoveMap(Direction direction)
     {
-        switch (_direction)
+        Instance.DoMoveMap(direction);
+    }
+    private void DoMoveMap(Direction direction)
+    {
+        switch (direction)
         {
             case Direction.Left: MoveScreenLeft(_nextMapData); break;
             case Direction.Right: MoveScreenRight(_nextMapData); break;

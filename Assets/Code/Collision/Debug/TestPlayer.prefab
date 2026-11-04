@@ -325,12 +325,13 @@ MonoBehaviour:
   _inputRight: {fileID: 3155669071964081729, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   _inputUp: {fileID: -4033985308170005074, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   _inputDown: {fileID: -5531009304180274197, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
-  _speed: 6
+  _speed: 8
   _colliderOffsets:
   - {x: 0, y: 0}
   - {x: -1, y: 0}
   - {x: 0, y: -1}
   - {x: -1, y: -1}
+  _tileCollisionFlags: 1
 --- !u!1 &7679167443287224639
 GameObject:
   m_ObjectHideFlags: 0

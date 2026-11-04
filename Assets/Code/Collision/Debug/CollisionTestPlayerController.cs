@@ -1,6 +1,4 @@
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -31,8 +29,7 @@ public class CollisionTestPlayerController : MonoBehaviour
     private bool _isLastHorizontalInputLeft;
     private Direction _currentMovingDirection;
     [SerializeField] private TileCollisionFlags _tileCollisionFlags;
-    private int isColliding;
-    private List<bool> d_colliders;
+    private bool _canMove = true;
     
     #region UNITY FUNCTIONS
     private void OnEnable()
@@ -58,6 +55,10 @@ public class CollisionTestPlayerController : MonoBehaviour
         _inputRight.action.canceled -= OnInputRight;
         _inputUp.action.canceled -= OnInputUp;
         _inputDown.action.canceled -= OnInputDown;
+    }
+    private void Update()
+    {
+        DoMove();
     }
     #endregion
 
@@ -99,6 +100,7 @@ public class CollisionTestPlayerController : MonoBehaviour
     }
     #endregion
 
+    public void SetCanMove(bool state) => _canMove = state;
     public void Initialize(Vector2 position)
     {
         OnInitialize(position);
@@ -139,8 +141,9 @@ public class CollisionTestPlayerController : MonoBehaviour
         };
     }
 
-    private void Update()
+    private void DoMove()
     {
+        if (!_canMove) { return; }
         _currentMovingDirection = SolveInput(_currentInputStates);
         var newPosition = _currentPosition + _speed * Time.deltaTime * (Vector3)_currentMovingDirection.ToVector2();
         Vector3 roundedPosition = RoundPosition(newPosition);
@@ -148,14 +151,18 @@ public class CollisionTestPlayerController : MonoBehaviour
         bool hasVerticalInput = _currentInputStates.HasFlag(InputStates.Up) || _currentInputStates.HasFlag(InputStates.Down);
         bool hasHorizontalInput = _currentInputStates.HasFlag(InputStates.Left) || _currentInputStates.HasFlag(InputStates.Right);
         var colliders = ScreenController.MainMapData.GetColliders(_tileCollisionFlags);
-        d_colliders = colliders.ToList();
         var mapSize = ScreenController.MainMapData.Size * 2;
-        isColliding = 0;
         if (hasVerticalInput && hasHorizontalInput)
         {
             foreach (var collider in _colliders)
             {
-                if (collider.IsColliding(colliders, mapSize, _currentMovingDirection, currentMapPosition) == 0) continue;
+                var ic = collider.IsColliding(colliders, mapSize, _currentMovingDirection, currentMapPosition);
+                if (ic < 0)
+                {
+                    ScreenController.MoveMap(_currentMovingDirection);
+                    return;
+                }
+                if (ic == 0) continue;
                 _currentMovingDirection = SolveInput(_currentInputStates, true);
                 newPosition = _currentPosition + _speed * Time.deltaTime * (Vector3)_currentMovingDirection.ToVector2();
                 roundedPosition = RoundPosition(newPosition);
@@ -165,11 +172,13 @@ public class CollisionTestPlayerController : MonoBehaviour
         }
         foreach (var collider in _colliders)
         {
-            int ic = collider.IsColliding(colliders, mapSize, _currentMovingDirection, currentMapPosition);
-            if (ic != 0)
+            var ic = collider.IsColliding(colliders, mapSize, _currentMovingDirection, currentMapPosition);
+            if (ic < 0)
             {
-                isColliding = ic; return;
+                ScreenController.MoveMap(_currentMovingDirection);
+                return;
             }
+            if (ic != 0) return;
         }
         _currentPosition = newPosition;
         transform.localPosition = roundedPosition;
