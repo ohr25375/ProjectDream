@@ -129,7 +129,6 @@ GameObject:
   m_Component:
   - component: {fileID: 272686032}
   - component: {fileID: 272686033}
-  - component: {fileID: 272686034}
   m_Layer: 0
   m_Name: Square
   m_TagString: Untagged
@@ -211,23 +210,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!114 &272686034
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 272686031}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a7635c1204cdab4dab9cae5ff730e8f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CollisionTestColliderChecker
-  _spriteRenderer: {fileID: 0}
-  _offset: {x: 0, y: 0}
-  currentPosition: {x: 0, y: 0}
-  checkingPosition1: {x: 0, y: 0}
-  checkingPosition2: {x: 0, y: 0}
 --- !u!1 &600320185
 GameObject:
   m_ObjectHideFlags: 0
@@ -238,7 +220,6 @@ GameObject:
   m_Component:
   - component: {fileID: 600320188}
   - component: {fileID: 600320187}
-  - component: {fileID: 600320186}
   m_Layer: 0
   m_Name: Square (2)
   m_TagString: Untagged
@@ -246,23 +227,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &600320186
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 600320185}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a7635c1204cdab4dab9cae5ff730e8f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CollisionTestColliderChecker
-  _spriteRenderer: {fileID: 0}
-  _offset: {x: 0, y: -1}
-  currentPosition: {x: 0, y: 0}
-  checkingPosition1: {x: 0, y: 0}
-  checkingPosition2: {x: 0, y: 0}
 --- !u!212 &600320187
 SpriteRenderer:
   serializedVersion: 2
@@ -371,11 +335,11 @@ MonoBehaviour:
   _inputUp: {fileID: -4033985308170005074, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   _inputDown: {fileID: -5531009304180274197, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   _speed: 6
-  _colliders:
-  - {fileID: 272686034}
-  - {fileID: 1808316599}
-  - {fileID: 600320186}
-  - {fileID: 1343571846}
+  _colliderOffsets:
+  - {x: 0, y: 0}
+  - {x: -1, y: 0}
+  - {x: 0, y: -1}
+  - {x: -1, y: -1}
 --- !u!4 &613622015
 Transform:
   m_ObjectHideFlags: 0
@@ -567,7 +531,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1343571848}
   - component: {fileID: 1343571847}
-  - component: {fileID: 1343571846}
   m_Layer: 0
   m_Name: Square (3)
   m_TagString: Untagged
@@ -575,23 +538,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1343571846
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1343571845}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a7635c1204cdab4dab9cae5ff730e8f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CollisionTestColliderChecker
-  _spriteRenderer: {fileID: 0}
-  _offset: {x: -1, y: -1}
-  currentPosition: {x: 0, y: 0}
-  checkingPosition1: {x: 0, y: 0}
-  checkingPosition2: {x: 0, y: 0}
 --- !u!212 &1343571847
 SpriteRenderer:
   serializedVersion: 2
@@ -676,7 +622,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1808316601}
   - component: {fileID: 1808316600}
-  - component: {fileID: 1808316599}
   m_Layer: 0
   m_Name: Square (1)
   m_TagString: Untagged
@@ -684,23 +629,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1808316599
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1808316598}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a7635c1204cdab4dab9cae5ff730e8f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CollisionTestColliderChecker
-  _spriteRenderer: {fileID: 0}
-  _offset: {x: -1, y: 0}
-  currentPosition: {x: 0, y: 0}
-  checkingPosition1: {x: 0, y: 0}
-  checkingPosition2: {x: 0, y: 0}
 --- !u!212 &1808316600
 SpriteRenderer:
   serializedVersion: 2

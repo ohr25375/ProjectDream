@@ -20,10 +20,10 @@ public class CollisionTestPlayerController : MonoBehaviour
     [SerializeField] private InputActionReference _inputUp;
     [SerializeField] private InputActionReference _inputDown;
     [SerializeField] private float _speed;
-    [SerializeField] private List<CollisionTestColliderChecker> _colliders;
+    [SerializeField] private List<Vector2> _colliderOffsets;
+    private List<GridBasedCollider> _colliders;
     private Vector3 _currentPosition;
     private Vector2 _mapPositionOffset;
-    private Vector2 _mapPosition;
     private InputStates _currentInputStates;
     private bool _isLastHorizontalInputLeft;
     private Direction _currentMovingDirection;
@@ -31,7 +31,7 @@ public class CollisionTestPlayerController : MonoBehaviour
     #region UNITY FUNCTIONS
     private void Awake()
     {
-        _currentPosition = transform.position;
+        OnInitialize();
     }
     private void OnEnable()
     {
@@ -97,6 +97,17 @@ public class CollisionTestPlayerController : MonoBehaviour
     }
     #endregion
 
+    private void OnInitialize()
+    {
+        _currentPosition = transform.position;
+        _colliders = new(new GridBasedCollider[_colliderOffsets.Count]);
+        for (var i = 0; i < _colliders.Count; i++)
+        {
+            var offsetPosition = _colliderOffsets[i];
+            _colliders[i] = new();
+            _colliders[i].SetOffset(offsetPosition);
+        }
+    }
     public void SetMapPositionOffset(Vector2 offset) => _mapPositionOffset = offset;
 
     private void Update()
@@ -109,14 +120,14 @@ public class CollisionTestPlayerController : MonoBehaviour
             y = Mathf.RoundToInt(newPosition.y * 8) / 8.0f,
             z = 0,
         };
-        var mapPosition = roundedPosition - (Vector3)_mapPositionOffset;
+        var currentMapPosition = roundedPosition - (Vector3)_mapPositionOffset;
         bool hasVerticalInput = _currentInputStates.HasFlag(InputStates.Up) || _currentInputStates.HasFlag(InputStates.Down);
         bool hasHorizontalInput = _currentInputStates.HasFlag(InputStates.Left) || _currentInputStates.HasFlag(InputStates.Right);
         if (hasVerticalInput && hasHorizontalInput)
         {
             foreach (var collider in _colliders)
             {
-                if (!collider.IsColliding(CreateCollisionTestMap.CollisionTiles, CreateCollisionTestMap.MapSize, _currentMovingDirection, mapPosition)) continue;
+                if (!collider.IsColliding(CreateCollisionTestMap.CollisionTiles, CreateCollisionTestMap.MapSize, _currentMovingDirection, currentMapPosition)) continue;
                 _currentMovingDirection = SolveInput(_currentInputStates, true);
                 newPosition = _currentPosition + _speed * Time.deltaTime * (Vector3)_currentMovingDirection.ToVector2();
                 roundedPosition = new()
@@ -125,13 +136,13 @@ public class CollisionTestPlayerController : MonoBehaviour
                     y = Mathf.RoundToInt(newPosition.y * 8) / 8.0f,
                     z = 0,
                 };
-                mapPosition = roundedPosition - (Vector3)_mapPositionOffset;
+                currentMapPosition = roundedPosition - (Vector3)_mapPositionOffset;
                 break;
             }
         }
         foreach (var collider in _colliders)
         {
-            if (collider.IsColliding(CreateCollisionTestMap.CollisionTiles, CreateCollisionTestMap.MapSize, _currentMovingDirection, mapPosition)) return;
+            if (collider.IsColliding(CreateCollisionTestMap.CollisionTiles, CreateCollisionTestMap.MapSize, _currentMovingDirection, currentMapPosition)) return;
         }
         _currentPosition = newPosition;
         transform.position = roundedPosition;
