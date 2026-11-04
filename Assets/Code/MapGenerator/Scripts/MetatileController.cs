@@ -1,7 +1,32 @@
 using UnityEngine;
 public class MetatileController : MonoBehaviour
 {
-    [SerializeField] private IndexableMetatileStruct<TileController> _tileControllers;
+    [SerializeField] private SpriteRenderer AA;
+    [SerializeField] private SpriteRenderer BA;
+    [SerializeField] private SpriteRenderer AB;
+    [SerializeField] private SpriteRenderer BB;
+
+    private readonly IndexableMetatileClass<TileController> _tileControllers = new();
+    private void Awake()
+    {
+        IndexableMetatileClass<SpriteRenderer> spriteRenderers = new()
+        {
+            AA = AA,
+            BA = BA,
+            AB = AB,
+            BB = BB,
+        };
+
+        Initialize(spriteRenderers);
+    }
+    public void Initialize(IndexableMetatileClass<SpriteRenderer> spriteRenderers)
+    {
+        for (var i = 0; i < 4; i++)
+        {
+            _tileControllers[i] = new();
+            _tileControllers[i].Initialize(spriteRenderers[i]);
+        }
+    }
 
     public void SetTileDatas(MetatileData metatileData)
     {

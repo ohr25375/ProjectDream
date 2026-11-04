@@ -25,7 +25,7 @@ public struct TileSpriteData
 [System.Serializable]
 public struct TileCollisionData
 {
-    public bool isCollidable;
-    public bool isInFront;
-    public bool isAirCollidable;
+    public bool IsCollidable;
+    public bool IsInFront;
+    public bool IsAirCollidable;
 }

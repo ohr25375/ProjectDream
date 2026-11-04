@@ -1,27 +1,27 @@
 using UnityEngine;
 
-public class TileController : MonoBehaviour
+public class TileController
 {
-    [SerializeField] private SpriteController _spriteController;
-
+    private readonly SpriteController _spriteController = new();
     private Tileset _tileset;
     private TileData _tileData;
     private Palette _palette;
-    [SerializeField] private bool _isBackground;
-    bool _isUI = false;
+    public void Initialize(SpriteRenderer spriteRenderer)
+    {
+        _spriteController.Initialize(spriteRenderer);
+    }
     public void SetPalette(Palette palette) => _palette = palette;
     public void SetTileData(TileData tileData) => _tileData = tileData;
     public void SetTileset(Tileset tileset) => _tileset = tileset;
-    public void SetTileOrder(bool isUI) => _isUI = isUI;
     public void UpdateRenderer()
     {
         _spriteController.SetSprite(_tileset.GetSprite(_tileData.spriteData.spriteID));
         _spriteController.SetFlipX(_tileData.spriteData.isFlippedX);
         _spriteController.SetFlipY(_tileData.spriteData.isFlippedY);
-        _spriteController.UpdateSortingOrder(_tileData.collisionData.isInFront, _isUI);
+        _spriteController.UpdateSortingOrder(_tileData.collisionData.IsInFront, false);
         MaterialPropertyBlock mpb = new();
         mpb.SetFloat("_Palette", (float)_palette);
-        mpb.SetFloat("_IsBackground", _isBackground ? 1 : 0);
+        mpb.SetFloat("_IsBackground", _tileData.collisionData.IsInFront ? 0 : 1);
         _spriteController.SetPropertyBlock(mpb);
     }
     public void SetHorizontalFlip(bool isFlipped)

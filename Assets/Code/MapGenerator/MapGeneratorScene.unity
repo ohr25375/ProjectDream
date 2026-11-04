@@ -311,13 +311,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6004386b4a0f9f4a8fa65111b58308b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScreenController
-  _mainMapGenerator: {fileID: 1793093003}
-  _subMapGenerator: {fileID: 1518147848}
+  _mainScreen: {fileID: 1793093002}
+  _subScreen: {fileID: 1518147847}
+  _metatileMemory: {fileID: 11400000, guid: 0e3845f3a990549419fef2be1d621685, type: 2}
+  _tileset: {fileID: 11400000, guid: e827703367f28b74d9d2dbb9b9fcb8b2, type: 2}
+  _metatilePrefab: {fileID: 7621974272041995345, guid: d040282256c27a04fb440632b63f4c45, type: 3}
   _camera: {fileID: 519420028}
   _lerpTime: 2
   _delay: 0.2
   _startingMapData: {fileID: 11400000, guid: 7935a3dae283cce4a84ab9fb758e4f80, type: 2}
-  _nextMapData: {fileID: 11400000, guid: 7935a3dae283cce4a84ab9fb758e4f80, type: 2}
+  _nextMapData: {fileID: 11400000, guid: e7d0ffe48fbff8b448018f67255980b9, type: 2}
   _direction: 2
 --- !u!4 &904917648
 Transform:
@@ -392,7 +395,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1518147849}
-  - component: {fileID: 1518147848}
   m_Layer: 0
   m_Name: SubScreen
   m_TagString: Untagged
@@ -400,22 +402,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1518147848
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1518147847}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79d32906a0b76dd4abe1faa98b8e0311, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MapGenerator
-  _mapData: {fileID: 11400000, guid: 7935a3dae283cce4a84ab9fb758e4f80, type: 2}
-  _prefab: {fileID: 7621974272041995345, guid: d040282256c27a04fb440632b63f4c45, type: 3}
-  _tileset: {fileID: 11400000, guid: e827703367f28b74d9d2dbb9b9fcb8b2, type: 2}
-  _metatileMemory: {fileID: 11400000, guid: 0e3845f3a990549419fef2be1d621685, type: 2}
 --- !u!4 &1518147849
 Transform:
   m_ObjectHideFlags: 0
@@ -440,7 +426,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1793093004}
-  - component: {fileID: 1793093003}
   m_Layer: 0
   m_Name: MainScreen
   m_TagString: Untagged
@@ -448,22 +433,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1793093003
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1793093002}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79d32906a0b76dd4abe1faa98b8e0311, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MapGenerator
-  _mapData: {fileID: 11400000, guid: 7935a3dae283cce4a84ab9fb758e4f80, type: 2}
-  _prefab: {fileID: 7621974272041995345, guid: d040282256c27a04fb440632b63f4c45, type: 3}
-  _tileset: {fileID: 11400000, guid: e827703367f28b74d9d2dbb9b9fcb8b2, type: 2}
-  _metatileMemory: {fileID: 11400000, guid: 0e3845f3a990549419fef2be1d621685, type: 2}
 --- !u!4 &1793093004
 Transform:
   m_ObjectHideFlags: 0

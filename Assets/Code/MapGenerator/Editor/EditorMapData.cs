@@ -109,7 +109,7 @@ public class EditorMapData : Editor
     private void DrawCollision(Vector2 position, Vector2 offset, TileCollisionData collisionData)
     {
         Rect rect = new(position * 16 + offset, Vector2.one * 8);
-        Color color = new(collisionData.isCollidable ? 1 : 0, 0, collisionData.isAirCollidable ? 1 : 0);
+        Color color = new(collisionData.IsCollidable ? 1 : 0, 0, collisionData.IsAirCollidable ? 1 : 0);
         EditorGUI.DrawRect(rect, color);
     }
     private void DrawCollisionSet(Vector2 position, Vector2 offset, int mapIndex)
@@ -164,9 +164,9 @@ public class EditorMapData : Editor
         _tileIdentifier = (TileIdentifier)EditorGUILayout.EnumPopup(new GUIContent("Tile", "Which tile to edit"), _tileIdentifier);
         TileCollisionData tileCollisionData = new()
         {
-            isCollidable = EditorGUILayout.Toggle("Is Collidable", _tileCollisionDatas[(int)_tileIdentifier].isCollidable),
-            isInFront = EditorGUILayout.Toggle("Is in front", _tileCollisionDatas[(int)_tileIdentifier].isInFront),
-            isAirCollidable = EditorGUILayout.Toggle("Is air collidable", _tileCollisionDatas[(int)_tileIdentifier].isAirCollidable)
+            IsCollidable = EditorGUILayout.Toggle("Is Collidable", _tileCollisionDatas[(int)_tileIdentifier].IsCollidable),
+            IsInFront = EditorGUILayout.Toggle("Is in front", _tileCollisionDatas[(int)_tileIdentifier].IsInFront),
+            IsAirCollidable = EditorGUILayout.Toggle("Is air collidable", _tileCollisionDatas[(int)_tileIdentifier].IsAirCollidable)
         };
         _tileCollisionDatas[(int)_tileIdentifier] = tileCollisionData;
         GUILayout.EndVertical();
