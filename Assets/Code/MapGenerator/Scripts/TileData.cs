@@ -11,7 +11,7 @@ public enum Palette
 public struct TileData
 {
     public TileSpriteData spriteData;
-    public TileCollisionData collisionData;
+    public TileCollisionFlags collisionData;
 }
 
 [System.Serializable]
@@ -23,9 +23,11 @@ public struct TileSpriteData
 }
 
 [System.Serializable]
-public struct TileCollisionData
+[System.Flags]
+public enum TileCollisionFlags
 {
-    public bool isCollidable;
-    public bool isInFront;
-    public bool isAirCollidable;
+    None = 0,
+    IsCollidable = 1,
+    IsInFront = 2,
+    IsAirCollidable = 4,
 }

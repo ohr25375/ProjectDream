@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "MapData", menuName = "Scriptable Objects/MapData")]
@@ -9,7 +10,27 @@ public class MapData : ScriptableObject
     public int MaxTileCount => size.x * size.y;
     [SerializeField] private List<MetatileMapData> metatileDatas = new();
     public List<MetatileMapData> MetatileDatas => metatileDatas;
+    public ReadOnlyCollection<bool> GetColliders(TileCollisionFlags collisionFlags)
+    {
+        List<bool> colliders = new(new bool[MaxTileCount * 4]);
+        for (var my = 0; my < size.y; my++)
+        {
+            for (var mx = 0; mx < size.x; mx++)
+            {
+                var mi = mx + my * size.x;
+                for (var i = 0; i < 4; i++)
+                {
+                    var tx = i & 1;
+                    var ty = 1 - (i >> 1 & 1);
+                    var index = (mx * 2 + tx) + ((my * size.x * 4) + (ty * size.x * 2));
+                    colliders[index] = (metatileDatas[mi].data[i] & collisionFlags) != 0;
+                }
+            }
+        }
+        return colliders.AsReadOnly();
+    }
 
+    #region INTERNAL
     private void CorrectListSize<T>(List<T> list, int max) where T : struct
     {
         if (list.Count == max) return;
@@ -28,17 +49,17 @@ public class MapData : ScriptableObject
             }
         }
     }
-
     private void CorrectMetatileDataSize()
     {
         var max = size.x * size.y;
         CorrectListSize(metatileDatas, max);
     }
-
     private void CorrectSize()
     {
         CorrectMetatileDataSize();
     }
+    #endregion
+
     public void OnEnable()
     {
         CorrectSize();
@@ -61,7 +82,7 @@ public class MapData : ScriptableObject
         mdata.metatileIndex = metatileIndex;
         metatileDatas[mapIndex] = mdata;
     }
-    public void SetTileCollisionDatas(int mapIndex, IndexableMetatileStruct<TileCollisionData> tileCollisionDatas)
+    public void SetTileCollisionDatas(int mapIndex, IndexableMetatileStruct<TileCollisionFlags> tileCollisionDatas)
     {
         var mdata = metatileDatas[mapIndex];
         mdata.data = tileCollisionDatas;

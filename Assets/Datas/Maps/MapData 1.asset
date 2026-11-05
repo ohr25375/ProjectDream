@@ -1,0 +1,1251 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33c79167712464c459f6e6ae14072f88, type: 3}
+  m_Name: MapData 1
+  m_EditorClassIdentifier: Assembly-CSharp::MapData
+  size: {x: 16, y: 11}
+  metatileDatas:
+  - metatileIndex: 8
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 3
+    palette: 2
+    data:
+      AA: 5
+      BA: 5
+      AB: 5
+      BB: 5
+  - metatileIndex: 3
+    palette: 2
+    data:
+      AA: 5
+      BA: 5
+      AB: 5
+      BB: 5
+  - metatileIndex: 3
+    palette: 2
+    data:
+      AA: 5
+      BA: 5
+      AB: 5
+      BB: 5
+  - metatileIndex: 3
+    palette: 2
+    data:
+      AA: 5
+      BA: 5
+      AB: 5
+      BB: 5
+  - metatileIndex: 3
+    palette: 2
+    data:
+      AA: 5
+      BA: 5
+      AB: 5
+      BB: 5
+  - metatileIndex: 3
+    palette: 2
+    data:
+      AA: 5
+      BA: 5
+      AB: 5
+      BB: 5
+  - metatileIndex: 7
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 8
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 3
+    palette: 2
+    data:
+      AA: 5
+      BA: 5
+      AB: 5
+      BB: 5
+  - metatileIndex: 3
+    palette: 2
+    data:
+      AA: 5
+      BA: 5
+      AB: 5
+      BB: 5
+  - metatileIndex: 3
+    palette: 2
+    data:
+      AA: 5
+      BA: 5
+      AB: 5
+      BB: 5
+  - metatileIndex: 3
+    palette: 2
+    data:
+      AA: 5
+      BA: 5
+      AB: 5
+      BB: 5
+  - metatileIndex: 7
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 11
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 11
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 11
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 11
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 11
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 11
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 11
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 11
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 11
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 11
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 4
+    palette: 2
+    data:
+      AA: 2
+      BA: 2
+      AB: 3
+      BB: 3
+  - metatileIndex: 0
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 4
+    palette: 2
+    data:
+      AA: 2
+      BA: 2
+      AB: 3
+      BB: 3
+  - metatileIndex: 0
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 4
+    palette: 2
+    data:
+      AA: 2
+      BA: 2
+      AB: 3
+      BB: 3
+  - metatileIndex: 0
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 14
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 4
+    palette: 2
+    data:
+      AA: 2
+      BA: 2
+      AB: 3
+      BB: 3
+  - metatileIndex: 0
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 14
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 4
+    palette: 2
+    data:
+      AA: 2
+      BA: 2
+      AB: 3
+      BB: 3
+  - metatileIndex: 0
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 4
+    palette: 2
+    data:
+      AA: 2
+      BA: 2
+      AB: 3
+      BB: 3
+  - metatileIndex: 14
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 4
+    palette: 2
+    data:
+      AA: 2
+      BA: 2
+      AB: 3
+      BB: 3
+  - metatileIndex: 0
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 4
+    palette: 2
+    data:
+      AA: 2
+      BA: 2
+      AB: 3
+      BB: 3
+  - metatileIndex: 0
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 14
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 9
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 9
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 14
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 14
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 14
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 8
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 3
+    palette: 2
+    data:
+      AA: 6
+      BA: 6
+      AB: 6
+      BB: 6
+  - metatileIndex: 3
+    palette: 2
+    data:
+      AA: 6
+      BA: 6
+      AB: 6
+      BB: 6
+  - metatileIndex: 7
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 14
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 14
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 8
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 3
+    palette: 2
+    data:
+      AA: 6
+      BA: 6
+      AB: 6
+      BB: 6
+  - metatileIndex: 3
+    palette: 2
+    data:
+      AA: 6
+      BA: 6
+      AB: 6
+      BB: 6
+  - metatileIndex: 7
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 9
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 9
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 9
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 9
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 9
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 9
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 9
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 9
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 10
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 10
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 8
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 3
+    palette: 2
+    data:
+      AA: 5
+      BA: 5
+      AB: 5
+      BB: 5
+  - metatileIndex: 3
+    palette: 2
+    data:
+      AA: 5
+      BA: 5
+      AB: 5
+      BB: 5
+  - metatileIndex: 3
+    palette: 2
+    data:
+      AA: 5
+      BA: 5
+      AB: 5
+      BB: 5
+  - metatileIndex: 3
+    palette: 2
+    data:
+      AA: 5
+      BA: 5
+      AB: 5
+      BB: 5
+  - metatileIndex: 3
+    palette: 2
+    data:
+      AA: 5
+      BA: 5
+      AB: 5
+      BB: 5
+  - metatileIndex: 3
+    palette: 2
+    data:
+      AA: 5
+      BA: 5
+      AB: 5
+      BB: 5
+  - metatileIndex: 7
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 8
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 3
+    palette: 2
+    data:
+      AA: 5
+      BA: 5
+      AB: 5
+      BB: 5
+  - metatileIndex: 3
+    palette: 2
+    data:
+      AA: 5
+      BA: 5
+      AB: 5
+      BB: 5
+  - metatileIndex: 3
+    palette: 2
+    data:
+      AA: 5
+      BA: 5
+      AB: 5
+      BB: 5
+  - metatileIndex: 3
+    palette: 2
+    data:
+      AA: 5
+      BA: 5
+      AB: 5
+      BB: 5
+  - metatileIndex: 7
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  e_metatileMemory: {fileID: 11400000, guid: 0e3845f3a990549419fef2be1d621685, type: 2}
+  e_tileset: {fileID: 11400000, guid: e827703367f28b74d9d2dbb9b9fcb8b2, type: 2}
+  e_changingMapIndex: -1

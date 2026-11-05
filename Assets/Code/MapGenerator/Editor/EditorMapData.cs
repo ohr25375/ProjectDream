@@ -13,7 +13,7 @@ public class EditorMapData : Editor
     private bool _hasValidated = true;
     private Palette _palette = Palette.A;
     private TileIdentifier _tileIdentifier;
-    private IndexableMetatileStruct<TileCollisionData> _tileCollisionDatas;
+    private IndexableMetatileStruct<TileCollisionFlags> _tileCollisionDatas;
     private int _metatileIndex = 0;
     private enum PreviewMode
     {
@@ -53,13 +53,22 @@ public class EditorMapData : Editor
     private void DrawTile(Vector2 position, Vector2 offset, TileSpriteData spriteData, float magnify = 1, float size = 1)
     {
         Sprite sprite = _mapdata.EditorTileset.GetSprite(spriteData.spriteID);
+        bool flipX = spriteData.isFlippedX;
+        bool flipY = spriteData.isFlippedY;
         if (sprite == null)
         {
             sprite = _mapdata.EditorTileset.GetSprite(0);
         }
         Texture2D spritePreview = AssetPreview.GetAssetPreview(sprite);
         if (spritePreview == null) return;
-        GUI.DrawTexture(new Rect(position.x * 16 * magnify + offset.x, position.y * 16 * magnify + offset.y, 8 * magnify * size, 8 * magnify * size), spritePreview);
+        Rect rect = new()
+        {
+            x = 16 * magnify * position.x + 8 * magnify * (flipX ? 1 : 0) + offset.x + (1 - size) / 2 * 8 * magnify * (flipX ? -1 : 1),
+            y = 16 * magnify * position.y + 8 * magnify * (flipY ? 1 : 0) + offset.y + (1 - size) / 2 * 8 * magnify * (flipY ? -1 : 1),
+            width = (flipX ? -1 : 1) * 8 * magnify * size,
+            height = (flipY ? -1 : 1) * 8 * magnify * size
+        };
+        GUI.DrawTexture(rect, spritePreview);
     }
     private void DrawMetatile(Vector2 position, Vector2 offset, int metatileIndex, float magnify = 1, float size = 1)
     {
@@ -97,10 +106,10 @@ public class EditorMapData : Editor
             }
         }
     }
-    private void DrawCollision(Vector2 position, Vector2 offset, TileCollisionData collisionData)
+    private void DrawCollision(Vector2 position, Vector2 offset, TileCollisionFlags collisionData)
     {
         Rect rect = new(position * 16 + offset, Vector2.one * 8);
-        Color color = new(collisionData.isCollidable ? 1 : 0, 0, collisionData.isAirCollidable ? 1 : 0);
+        Color color = new(collisionData.HasFlag(TileCollisionFlags.IsCollidable) ? 1 : 0, 0, collisionData.HasFlag(TileCollisionFlags.IsAirCollidable) ? 1 : 0);
         EditorGUI.DrawRect(rect, color);
     }
     private void DrawCollisionSet(Vector2 position, Vector2 offset, int mapIndex)
@@ -146,20 +155,14 @@ public class EditorMapData : Editor
         };
         tileIdentifierRect.position += new Vector2((int)_tileIdentifier % 2, (int)_tileIdentifier / 2) * 8 * magnify;
         EditorGUI.DrawRect(tileIdentifierRect, Color.red);
-        DrawMetatile((Vector2.one) / (16 * magnify), metatilePreviewRect.position, _metatileIndex, magnify, (magnify * 8 - 2) / (magnify * 8));
+        DrawMetatile(Vector2.zero, metatilePreviewRect.position, _metatileIndex, magnify, (magnify * 8 - 2) / (magnify * 8));
         if (_selectedTile != -1)
         {
             UpdateMapData();
         }
         _palette = (Palette)EditorGUILayout.EnumPopup(new GUIContent("Palette", "Metatile palette"), _palette);
         _tileIdentifier = (TileIdentifier)EditorGUILayout.EnumPopup(new GUIContent("Tile", "Which tile to edit"), _tileIdentifier);
-        TileCollisionData tileCollisionData = new()
-        {
-            isCollidable = EditorGUILayout.Toggle("Is Collidable", _tileCollisionDatas[(int)_tileIdentifier].isCollidable),
-            isInFront = EditorGUILayout.Toggle("Is in front", _tileCollisionDatas[(int)_tileIdentifier].isInFront),
-            isAirCollidable = EditorGUILayout.Toggle("Is air collidable", _tileCollisionDatas[(int)_tileIdentifier].isAirCollidable)
-        };
-        _tileCollisionDatas[(int)_tileIdentifier] = tileCollisionData;
+        _tileCollisionDatas[(int)_tileIdentifier] = (TileCollisionFlags)EditorGUILayout.EnumFlagsField(_tileCollisionDatas[(int)_tileIdentifier]);
         GUILayout.EndVertical();
     }
 

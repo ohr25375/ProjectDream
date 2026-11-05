@@ -13,5 +13,6 @@ public class MaterialSetter : MonoBehaviour
             _renderer = GetComponent<Renderer>();
         }
         _renderer.material = _material.Material;
+        Destroy(this);
     }
 }

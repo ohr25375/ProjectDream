@@ -15,3349 +15,1237 @@ MonoBehaviour:
   size: {x: 16, y: 11}
   metatileDatas:
   - metatileIndex: 3
-    palette: 1
+    palette: 2
     data:
-      AA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      BA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      AB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      BB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
+      AA: 5
+      BA: 5
+      AB: 5
+      BB: 5
   - metatileIndex: 3
-    palette: 1
+    palette: 2
     data:
-      AA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      BA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      AB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      BB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
+      AA: 5
+      BA: 5
+      AB: 5
+      BB: 5
   - metatileIndex: 3
-    palette: 1
+    palette: 2
     data:
-      AA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      BA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      AB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      BB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
+      AA: 5
+      BA: 5
+      AB: 5
+      BB: 5
   - metatileIndex: 3
-    palette: 1
+    palette: 2
     data:
-      AA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      BA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      AB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      BB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
+      AA: 5
+      BA: 5
+      AB: 5
+      BB: 5
   - metatileIndex: 3
-    palette: 1
+    palette: 2
     data:
-      AA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      BA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      AB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      BB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
+      AA: 5
+      BA: 5
+      AB: 5
+      BB: 5
   - metatileIndex: 3
-    palette: 1
+    palette: 2
     data:
-      AA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      BA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      AB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      BB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
+      AA: 5
+      BA: 5
+      AB: 5
+      BB: 5
   - metatileIndex: 3
-    palette: 1
+    palette: 2
     data:
-      AA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      BA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      AB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      BB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-  - metatileIndex: 0
-    palette: 0
+      AA: 5
+      BA: 5
+      AB: 5
+      BB: 5
+  - metatileIndex: 7
+    palette: 2
     data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-  - metatileIndex: 0
-    palette: 0
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 8
+    palette: 2
     data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
   - metatileIndex: 3
-    palette: 1
+    palette: 2
     data:
-      AA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      BA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      AB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      BB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
+      AA: 5
+      BA: 5
+      AB: 5
+      BB: 5
   - metatileIndex: 3
-    palette: 1
+    palette: 2
     data:
-      AA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      BA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      AB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      BB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
+      AA: 5
+      BA: 5
+      AB: 5
+      BB: 5
   - metatileIndex: 3
-    palette: 1
+    palette: 2
     data:
-      AA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      BA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      AB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      BB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
+      AA: 5
+      BA: 5
+      AB: 5
+      BB: 5
   - metatileIndex: 3
-    palette: 1
+    palette: 2
     data:
-      AA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      BA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      AB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      BB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
+      AA: 5
+      BA: 5
+      AB: 5
+      BB: 5
   - metatileIndex: 3
-    palette: 1
+    palette: 2
     data:
-      AA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      BA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      AB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      BB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
+      AA: 5
+      BA: 5
+      AB: 5
+      BB: 5
   - metatileIndex: 3
-    palette: 1
+    palette: 2
     data:
-      AA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      BA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      AB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      BB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
+      AA: 5
+      BA: 5
+      AB: 5
+      BB: 5
   - metatileIndex: 3
-    palette: 1
+    palette: 2
     data:
-      AA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      BA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      AB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      BB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
+      AA: 5
+      BA: 5
+      AB: 5
+      BB: 5
   - metatileIndex: 3
-    palette: 1
+    palette: 2
     data:
-      AA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      BA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      AB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      BB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
+      AA: 5
+      BA: 5
+      AB: 5
+      BB: 5
+  - metatileIndex: 12
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 11
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 11
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 11
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 11
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 11
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
   - metatileIndex: 0
     palette: 0
     data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
   - metatileIndex: 0
     palette: 0
     data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-  - metatileIndex: 0
-    palette: 0
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 11
+    palette: 2
     data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-  - metatileIndex: 0
-    palette: 0
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 11
+    palette: 2
     data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-  - metatileIndex: 0
-    palette: 0
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 11
+    palette: 2
     data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-  - metatileIndex: 0
-    palette: 0
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 11
+    palette: 2
     data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-  - metatileIndex: 0
-    palette: 0
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 11
+    palette: 2
     data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-  - metatileIndex: 0
-    palette: 0
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 13
+    palette: 2
     data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-  - metatileIndex: 0
-    palette: 0
-    data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-  - metatileIndex: 0
-    palette: 0
-    data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-  - metatileIndex: 0
-    palette: 0
-    data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-  - metatileIndex: 0
-    palette: 0
-    data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-  - metatileIndex: 0
-    palette: 0
-    data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-  - metatileIndex: 0
-    palette: 0
-    data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
   - metatileIndex: 3
-    palette: 1
+    palette: 2
     data:
-      AA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      BA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      AB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      BB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
+      AA: 5
+      BA: 5
+      AB: 5
+      BB: 5
   - metatileIndex: 3
-    palette: 1
+    palette: 2
     data:
-      AA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      BA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      AB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      BB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
+      AA: 5
+      BA: 5
+      AB: 5
+      BB: 5
+  - metatileIndex: 7
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
   - metatileIndex: 0
-    palette: 0
+    palette: 2
     data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-  - metatileIndex: 0
-    palette: 0
-    data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
   - metatileIndex: 4
     palette: 2
     data:
-      AA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 0
+      AA: 2
+      BA: 2
+      AB: 3
+      BB: 3
   - metatileIndex: 0
-    palette: 0
+    palette: 2
     data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
   - metatileIndex: 0
-    palette: 0
+    palette: 2
     data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
   - metatileIndex: 4
     palette: 2
     data:
-      AA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 0
+      AA: 2
+      BA: 2
+      AB: 3
+      BB: 3
   - metatileIndex: 0
-    palette: 0
+    palette: 2
     data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
   - metatileIndex: 0
-    palette: 0
+    palette: 2
     data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
   - metatileIndex: 4
     palette: 2
     data:
-      AA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 0
+      AA: 2
+      BA: 2
+      AB: 3
+      BB: 3
   - metatileIndex: 0
-    palette: 0
+    palette: 2
     data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-  - metatileIndex: 0
-    palette: 0
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 14
+    palette: 2
     data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
   - metatileIndex: 4
     palette: 2
     data:
-      AA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 0
+      AA: 2
+      BA: 2
+      AB: 3
+      BB: 3
   - metatileIndex: 0
-    palette: 0
+    palette: 2
     data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-  - metatileIndex: 0
-    palette: 0
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 8
+    palette: 2
     data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
   - metatileIndex: 3
-    palette: 1
+    palette: 2
     data:
-      AA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      BA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      AB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      BB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
+      AA: 5
+      BA: 5
+      AB: 5
+      BB: 5
   - metatileIndex: 3
-    palette: 1
+    palette: 2
     data:
-      AA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      BA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      AB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      BB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
+      AA: 5
+      BA: 5
+      AB: 5
+      BB: 5
+  - metatileIndex: 7
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 14
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
   - metatileIndex: 0
     palette: 0
     data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
   - metatileIndex: 0
     palette: 0
     data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
   - metatileIndex: 0
     palette: 0
     data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
   - metatileIndex: 0
     palette: 0
     data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
   - metatileIndex: 0
     palette: 0
     data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
   - metatileIndex: 0
     palette: 0
     data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
   - metatileIndex: 0
     palette: 0
     data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-  - metatileIndex: 0
-    palette: 0
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 8
+    palette: 2
     data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-  - metatileIndex: 0
-    palette: 0
-    data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-  - metatileIndex: 0
-    palette: 0
-    data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-  - metatileIndex: 0
-    palette: 0
-    data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-  - metatileIndex: 0
-    palette: 0
-    data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-  - metatileIndex: 0
-    palette: 0
-    data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-  - metatileIndex: 0
-    palette: 0
-    data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
   - metatileIndex: 3
-    palette: 1
+    palette: 2
     data:
-      AA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      BA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      AB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      BB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
+      AA: 5
+      BA: 5
+      AB: 5
+      BB: 5
   - metatileIndex: 3
-    palette: 1
+    palette: 2
     data:
-      AA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      BA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      AB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      BB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
+      AA: 5
+      BA: 5
+      AB: 5
+      BB: 5
+  - metatileIndex: 7
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
   - metatileIndex: 0
-    palette: 0
+    palette: 2
     data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-  - metatileIndex: 0
-    palette: 0
-    data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
   - metatileIndex: 4
     palette: 2
     data:
-      AA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 0
+      AA: 2
+      BA: 2
+      AB: 3
+      BB: 3
   - metatileIndex: 0
-    palette: 0
+    palette: 2
     data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
   - metatileIndex: 0
-    palette: 0
+    palette: 2
     data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
   - metatileIndex: 4
     palette: 2
     data:
-      AA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 0
-  - metatileIndex: 0
-    palette: 0
+      AA: 2
+      BA: 2
+      AB: 3
+      BB: 3
+  - metatileIndex: 14
+    palette: 2
     data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
   - metatileIndex: 0
-    palette: 0
+    palette: 2
     data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
   - metatileIndex: 4
     palette: 2
     data:
-      AA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 0
+      AA: 2
+      BA: 2
+      AB: 3
+      BB: 3
   - metatileIndex: 0
-    palette: 0
+    palette: 2
     data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
   - metatileIndex: 0
-    palette: 0
+    palette: 2
     data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
   - metatileIndex: 4
     palette: 2
     data:
-      AA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 0
+      AA: 2
+      BA: 2
+      AB: 3
+      BB: 3
   - metatileIndex: 0
-    palette: 0
+    palette: 2
     data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-  - metatileIndex: 0
-    palette: 0
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 8
+    palette: 2
     data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
   - metatileIndex: 3
-    palette: 1
+    palette: 2
     data:
-      AA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      BA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      AB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      BB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
+      AA: 5
+      BA: 5
+      AB: 5
+      BB: 5
+  - metatileIndex: 10
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
   - metatileIndex: 0
     palette: 0
     data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
   - metatileIndex: 0
     palette: 0
     data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
   - metatileIndex: 0
     palette: 0
     data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
   - metatileIndex: 0
     palette: 0
     data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
   - metatileIndex: 0
     palette: 0
     data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
   - metatileIndex: 0
     palette: 0
     data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
   - metatileIndex: 0
     palette: 0
     data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
   - metatileIndex: 0
     palette: 0
     data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
   - metatileIndex: 0
     palette: 0
     data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
   - metatileIndex: 0
     palette: 0
     data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
   - metatileIndex: 0
     palette: 0
     data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
   - metatileIndex: 0
     palette: 0
     data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
   - metatileIndex: 0
     palette: 0
     data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
   - metatileIndex: 0
     palette: 0
     data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-  - metatileIndex: 0
-    palette: 0
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 10
+    palette: 2
     data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-  - metatileIndex: 0
-    palette: 0
-    data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
   - metatileIndex: 3
-    palette: 1
+    palette: 2
     data:
-      AA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      BA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      AB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      BB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
+      AA: 5
+      BA: 5
+      AB: 5
+      BB: 5
+  - metatileIndex: 7
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
   - metatileIndex: 0
     palette: 0
     data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 14
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
   - metatileIndex: 0
     palette: 0
     data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
   - metatileIndex: 0
     palette: 0
     data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
   - metatileIndex: 0
     palette: 0
     data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
   - metatileIndex: 0
     palette: 0
     data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
   - metatileIndex: 0
     palette: 0
     data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
   - metatileIndex: 0
     palette: 0
     data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
   - metatileIndex: 0
     palette: 0
     data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
   - metatileIndex: 0
     palette: 0
     data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
   - metatileIndex: 0
     palette: 0
     data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-  - metatileIndex: 0
-    palette: 0
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 14
+    palette: 2
     data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-  - metatileIndex: 0
-    palette: 0
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 8
+    palette: 2
     data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-  - metatileIndex: 0
-    palette: 0
-    data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-  - metatileIndex: 0
-    palette: 0
-    data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
   - metatileIndex: 3
-    palette: 1
+    palette: 2
     data:
-      AA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      BA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      AB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      BB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
+      AA: 5
+      BA: 5
+      AB: 5
+      BB: 5
   - metatileIndex: 3
-    palette: 1
+    palette: 2
     data:
-      AA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      BA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      AB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      BB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
+      AA: 5
+      BA: 5
+      AB: 5
+      BB: 5
+  - metatileIndex: 7
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
   - metatileIndex: 0
     palette: 0
     data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
   - metatileIndex: 0
     palette: 0
     data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
   - metatileIndex: 0
     palette: 0
     data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
   - metatileIndex: 0
     palette: 0
     data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 14
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
   - metatileIndex: 0
     palette: 0
     data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
   - metatileIndex: 0
     palette: 0
     data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 14
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
   - metatileIndex: 0
     palette: 0
     data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
   - metatileIndex: 0
     palette: 0
     data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
   - metatileIndex: 0
     palette: 0
     data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
   - metatileIndex: 0
     palette: 0
     data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 8
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
   - metatileIndex: 3
-    palette: 0
+    palette: 2
     data:
-      AA:
-        isCollidable: 0
-        isInFront: 1
-        isAirCollidable: 1
-      BA:
-        isCollidable: 0
-        isInFront: 1
-        isAirCollidable: 1
-      AB:
-        isCollidable: 0
-        isInFront: 1
-        isAirCollidable: 1
-      BB:
-        isCollidable: 0
-        isInFront: 1
-        isAirCollidable: 1
+      AA: 5
+      BA: 5
+      AB: 5
+      BB: 5
   - metatileIndex: 3
-    palette: 0
+    palette: 2
     data:
-      AA:
-        isCollidable: 0
-        isInFront: 1
-        isAirCollidable: 1
-      BA:
-        isCollidable: 0
-        isInFront: 1
-        isAirCollidable: 1
-      AB:
-        isCollidable: 0
-        isInFront: 1
-        isAirCollidable: 1
-      BB:
-        isCollidable: 0
-        isInFront: 1
-        isAirCollidable: 1
+      AA: 5
+      BA: 5
+      AB: 5
+      BB: 5
+  - metatileIndex: 7
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 14
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
   - metatileIndex: 0
     palette: 0
     data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
   - metatileIndex: 0
     palette: 0
     data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 14
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 0
+    palette: 0
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 8
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
   - metatileIndex: 3
-    palette: 1
+    palette: 2
     data:
-      AA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      BA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      AB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      BB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
+      AA: 5
+      BA: 5
+      AB: 5
+      BB: 5
   - metatileIndex: 3
-    palette: 1
+    palette: 2
     data:
-      AA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      BA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      AB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      BB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
+      AA: 5
+      BA: 5
+      AB: 5
+      BB: 5
+  - metatileIndex: 5
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 9
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 9
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 9
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 9
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 9
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
   - metatileIndex: 0
     palette: 0
     data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
   - metatileIndex: 0
     palette: 0
     data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-  - metatileIndex: 0
-    palette: 0
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 9
+    palette: 2
     data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-  - metatileIndex: 0
-    palette: 0
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 9
+    palette: 2
     data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-  - metatileIndex: 0
-    palette: 0
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 9
+    palette: 2
     data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-  - metatileIndex: 0
-    palette: 0
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 9
+    palette: 2
     data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-  - metatileIndex: 0
-    palette: 0
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 9
+    palette: 2
     data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-  - metatileIndex: 0
-    palette: 0
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 6
+    palette: 2
     data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-  - metatileIndex: 0
-    palette: 0
-    data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-  - metatileIndex: 0
-    palette: 0
-    data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
   - metatileIndex: 3
-    palette: 0
+    palette: 2
     data:
-      AA:
-        isCollidable: 0
-        isInFront: 1
-        isAirCollidable: 1
-      BA:
-        isCollidable: 0
-        isInFront: 1
-        isAirCollidable: 1
-      AB:
-        isCollidable: 0
-        isInFront: 1
-        isAirCollidable: 1
-      BB:
-        isCollidable: 0
-        isInFront: 1
-        isAirCollidable: 1
+      AA: 5
+      BA: 5
+      AB: 5
+      BB: 5
   - metatileIndex: 3
-    palette: 0
+    palette: 2
     data:
-      AA:
-        isCollidable: 0
-        isInFront: 1
-        isAirCollidable: 1
-      BA:
-        isCollidable: 0
-        isInFront: 1
-        isAirCollidable: 1
-      AB:
-        isCollidable: 0
-        isInFront: 1
-        isAirCollidable: 1
-      BB:
-        isCollidable: 0
-        isInFront: 1
-        isAirCollidable: 1
-  - metatileIndex: 0
-    palette: 0
-    data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-  - metatileIndex: 0
-    palette: 0
-    data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
+      AA: 5
+      BA: 5
+      AB: 5
+      BB: 5
   - metatileIndex: 3
-    palette: 1
+    palette: 2
     data:
-      AA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      BA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      AB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      BB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
+      AA: 5
+      BA: 5
+      AB: 5
+      BB: 5
   - metatileIndex: 3
-    palette: 1
+    palette: 2
     data:
-      AA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      BA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      AB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      BB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-  - metatileIndex: 0
-    palette: 0
-    data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-  - metatileIndex: 0
-    palette: 0
-    data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-  - metatileIndex: 0
-    palette: 0
-    data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-  - metatileIndex: 0
-    palette: 0
-    data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-  - metatileIndex: 0
-    palette: 0
-    data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-  - metatileIndex: 0
-    palette: 0
-    data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-  - metatileIndex: 0
-    palette: 0
-    data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-  - metatileIndex: 0
-    palette: 0
-    data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-  - metatileIndex: 0
-    palette: 0
-    data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-  - metatileIndex: 0
-    palette: 0
-    data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-  - metatileIndex: 0
-    palette: 0
-    data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-  - metatileIndex: 0
-    palette: 0
-    data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-  - metatileIndex: 0
-    palette: 0
-    data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-  - metatileIndex: 0
-    palette: 0
-    data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
+      AA: 5
+      BA: 5
+      AB: 5
+      BB: 5
   - metatileIndex: 3
-    palette: 1
+    palette: 2
     data:
-      AA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      BA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      AB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      BB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
+      AA: 5
+      BA: 5
+      AB: 5
+      BB: 5
   - metatileIndex: 3
-    palette: 1
+    palette: 2
     data:
-      AA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      BA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      AB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      BB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
+      AA: 5
+      BA: 5
+      AB: 5
+      BB: 5
   - metatileIndex: 3
-    palette: 1
+    palette: 2
     data:
-      AA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      BA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      AB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      BB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
+      AA: 5
+      BA: 5
+      AB: 5
+      BB: 5
   - metatileIndex: 3
-    palette: 1
+    palette: 2
     data:
-      AA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      BA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      AB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      BB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
+      AA: 5
+      BA: 5
+      AB: 5
+      BB: 5
+  - metatileIndex: 7
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
+  - metatileIndex: 8
+    palette: 2
+    data:
+      AA: 0
+      BA: 0
+      AB: 0
+      BB: 0
   - metatileIndex: 3
-    palette: 1
+    palette: 2
     data:
-      AA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      BA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      AB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      BB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
+      AA: 5
+      BA: 5
+      AB: 5
+      BB: 5
   - metatileIndex: 3
-    palette: 1
+    palette: 2
     data:
-      AA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      BA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      AB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      BB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
+      AA: 5
+      BA: 5
+      AB: 5
+      BB: 5
   - metatileIndex: 3
-    palette: 1
+    palette: 2
     data:
-      AA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      BA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      AB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      BB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
+      AA: 5
+      BA: 5
+      AB: 5
+      BB: 5
   - metatileIndex: 3
-    palette: 1
+    palette: 2
     data:
-      AA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      BA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      AB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      BB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-  - metatileIndex: 0
-    palette: 0
-    data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-  - metatileIndex: 0
-    palette: 0
-    data:
-      AA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BA:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      AB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
-      BB:
-        isCollidable: 0
-        isInFront: 0
-        isAirCollidable: 0
+      AA: 5
+      BA: 5
+      AB: 5
+      BB: 5
   - metatileIndex: 3
-    palette: 1
+    palette: 2
     data:
-      AA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      BA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      AB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      BB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
+      AA: 5
+      BA: 5
+      AB: 5
+      BB: 5
   - metatileIndex: 3
-    palette: 1
+    palette: 2
     data:
-      AA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      BA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      AB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      BB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
+      AA: 5
+      BA: 5
+      AB: 5
+      BB: 5
   - metatileIndex: 3
-    palette: 1
+    palette: 2
     data:
-      AA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      BA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      AB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      BB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-  - metatileIndex: 3
-    palette: 1
-    data:
-      AA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      BA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      AB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      BB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-  - metatileIndex: 3
-    palette: 1
-    data:
-      AA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      BA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      AB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      BB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-  - metatileIndex: 3
-    palette: 1
-    data:
-      AA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      BA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      AB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      BB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-  - metatileIndex: 3
-    palette: 1
-    data:
-      AA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      BA:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      AB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
-      BB:
-        isCollidable: 1
-        isInFront: 0
-        isAirCollidable: 1
+      AA: 5
+      BA: 5
+      AB: 5
+      BB: 5
   e_metatileMemory: {fileID: 11400000, guid: 0e3845f3a990549419fef2be1d621685, type: 2}
   e_tileset: {fileID: 11400000, guid: e827703367f28b74d9d2dbb9b9fcb8b2, type: 2}
   e_changingMapIndex: -1

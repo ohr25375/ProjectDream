@@ -1,18 +1,11 @@
 using UnityEngine;
 
-[RequireComponent(typeof(SpriteRenderer))]
-public class SpriteController : MonoBehaviour
+public class SpriteController
 {
-    [SerializeField] private SpriteRenderer _spriteRenderer;
+    private SpriteRenderer _spriteRenderer;
     private bool _isUI = false;
     private bool _isInFront = false;
-    private void Awake()
-    {
-        if (_spriteRenderer == null)
-        {
-            _spriteRenderer = GetComponent<SpriteRenderer>();
-        }
-    }
+    public void Initialize(SpriteRenderer spriteRenderer) => _spriteRenderer = spriteRenderer;
     public void SetSprite(Sprite sprite) => _spriteRenderer.sprite = sprite;
     public void SetFlipX(bool flipX) => _spriteRenderer.flipX = flipX;
     public void SetFlipY(bool flipY) => _spriteRenderer.flipY = flipY;

@@ -1,61 +1,59 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MapGenerator : MonoBehaviour
+public class MapGenerator
 {
-    [SerializeField] private MapData _mapData;
-    [SerializeField] private GameObject _prefab;
-    [SerializeField] private Tileset _tileset;
-    [SerializeField] private MetatileMemory _metatileMemory;
-
+    private Tileset _tileset;
     private List<MetatileController> _metatiles;
-    private MetatileController InstantiateTile(Vector2 position, MetatileMapData metatileMapData, MetatileSpriteData metatileSpriteData)
+
+    public void SetTileset(Tileset tileset) => _tileset = tileset;
+
+    #region INTERNALS
+    private void InstantiateMetatileObjects(int count, GameObject prefab, Transform parentTransform, out List<MetatileController> metatileControllers, out List<GameObject> gameObjects)
     {
-        var obj = Instantiate(_prefab, transform);
-        obj.transform.localPosition = (Vector3)position * 2;
-        
-        if (obj.TryGetComponent<MetatileController>(out var metatileController))
+        metatileControllers = new(new MetatileController[count]);
+        gameObjects = new(new GameObject[count]);
+        for (var i = 0; i < count; i++)
         {
-            metatileController.UpdateTiles(_tileset, metatileMapData, metatileSpriteData);
+            var obj = Object.Instantiate(prefab, parentTransform);
+            if (obj.TryGetComponent<MetatileController>(out var metatileController))
+            {
+                metatileControllers[i] = metatileController;
+            }
+            gameObjects[i] = obj;
         }
-        return metatileController;
     }
-    private void InstantiateTiles()
+    private void SetObjectPositions(List<GameObject> gameObjects, Vector2Int mapSize)
     {
-        var mapSize = _mapData.Size;
-        _metatiles = new(new MetatileController[_mapData.MaxTileCount]);
         for (var y = 0; y < mapSize.y; y++)
         {
             for (var x = 0; x < mapSize.x; x++)
             {
-                var index = x + y * mapSize.x;
                 Vector2 position = new Vector2(x, y) - (Vector2)mapSize / 2 + new Vector2(0.5f, 0.5f);
-                var metatileMapData = _mapData.MetatileDatas[index];
-                _metatiles[index] = InstantiateTile(position, metatileMapData, _metatileMemory.GetData(metatileMapData.metatileIndex));
+                int index = x + y * mapSize.x;
+                gameObjects[index].transform.localPosition = (Vector3)position * 2;
             }
         }
     }
-    private void SetMetatileDatas()
+    private void UpdateTileDatas(List<MetatileController> metatiles, List<MetatileMapData> metatileDatas, MetatileMemory metatileMemory)
     {
-        for (var i = 0; i < _mapData.MaxTileCount; i++)
+        for (var i = 0; i < metatiles.Count; i++)
         {
-            _metatiles[i].SetTileDatas(new(_mapData.MetatileDatas[i],_metatileMemory.GetData(_mapData.MetatileDatas[i].metatileIndex)));
-            _metatiles[i].SetPalettes(_mapData.MetatileDatas[i].palette);
-            _metatiles[i].UpdateTileRenderers();
+            var metatileMapData = metatileDatas[i];
+            var metatileSpriteData = metatileMemory.GetData(metatileMapData.metatileIndex);
+            metatiles[i].UpdateTiles(_tileset, metatileMapData, metatileSpriteData);
         }
     }
-    public void LoadMapData(MapData mapData)
+    #endregion
+
+    public void InitializeObjects(GameObject prefab, Vector2Int mapSize, Transform mapCenter)
     {
-        _mapData = mapData;
-        if (_metatiles == null)
-        {
-            InstantiateTiles();
-        }
-        SetMetatileDatas();
+        InstantiateMetatileObjects(mapSize.x * mapSize.y, prefab, mapCenter, out _metatiles, out List<GameObject> gameObjects);
+        SetObjectPositions(gameObjects, mapSize);
     }
-    [ContextMenu("Load MapData")]
-    private void EditorLoadMapData()
+
+    public void LoadMapData(MapData mapData, MetatileMemory metatileMemory)
     {
-        LoadMapData(_mapData);
+        UpdateTileDatas(_metatiles, mapData.MetatileDatas, metatileMemory);
     }
 }

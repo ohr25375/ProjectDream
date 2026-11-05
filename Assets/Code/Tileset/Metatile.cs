@@ -18,7 +18,7 @@ public struct MetatileMapData
 {
     public int metatileIndex;
     public Palette palette;
-    public IndexableMetatileStruct<TileCollisionData> data;
+    public IndexableMetatileStruct<TileCollisionFlags> data;
 }
 
 public struct MetatileData
