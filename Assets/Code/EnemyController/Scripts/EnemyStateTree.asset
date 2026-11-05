@@ -13,12 +13,8 @@ MonoBehaviour:
   m_Name: EnemyStateTree
   m_EditorClassIdentifier: Assembly-CSharp::EnemyStateTree
   enemyStates:
-  - rid: 903794681494634570
+  - rid: 7066035779934879902
   - rid: 903794636795150573
-  - rid: 903794681494634581
-  - rid: 903794681494634584
-  - rid: 903794681494634586
-  - rid: 903794681494634588
   references:
     version: 2
     RefIds:
@@ -28,60 +24,17 @@ MonoBehaviour:
         exitToState:
           rid: 5975772515875422286
         duration: 1
-    - rid: 903794681494634570
-      type: {class: EnemyStateMoveToRandomDirection, ns: , asm: Assembly-CSharp}
-      data:
-        exitToState:
-          rid: 903794681494634655
-        duration: 0.25
-        distance: 1
-    - rid: 903794681494634581
-      type: {class: EnemyStateMoveToDirection, ns: , asm: Assembly-CSharp}
-      data:
-        exitToState:
-          rid: 903794681494634648
-        duration: 0.25
-        moveDirection: 2
-        distance: 1
-    - rid: 903794681494634584
-      type: {class: EnemyStateMoveToDirection, ns: , asm: Assembly-CSharp}
-      data:
-        exitToState:
-          rid: 903794681494634585
-        duration: 0.25
-        moveDirection: 4
-        distance: 1
-    - rid: 903794681494634585
-      type: {class: ExitToNext, ns: , asm: Assembly-CSharp}
-      data: 
-    - rid: 903794681494634586
-      type: {class: EnemyStateMoveToDirection, ns: , asm: Assembly-CSharp}
-      data:
-        exitToState:
-          rid: 903794681494634587
-        duration: 0.25
-        moveDirection: 1
-        distance: 1
-    - rid: 903794681494634587
-      type: {class: ExitToNext, ns: , asm: Assembly-CSharp}
-      data: 
-    - rid: 903794681494634588
-      type: {class: EnemyStateMoveToDirection, ns: , asm: Assembly-CSharp}
-      data:
-        exitToState:
-          rid: 903794681494634589
-        duration: 0.25
-        moveDirection: 3
-        distance: 1
-    - rid: 903794681494634589
-      type: {class: ExitToNext, ns: , asm: Assembly-CSharp}
-      data: 
-    - rid: 903794681494634648
-      type: {class: ExitToNext, ns: , asm: Assembly-CSharp}
-      data: 
-    - rid: 903794681494634655
-      type: {class: ExitToNext, ns: , asm: Assembly-CSharp}
-      data: 
     - rid: 5975772515875422286
+      type: {class: ExitToNext, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 7066035779934879902
+      type: {class: EnemyStateParabola, ns: , asm: Assembly-CSharp}
+      data:
+        exitToState:
+          rid: 7066035779934879903
+        duration: 1
+        velocity: {x: 1, y: 22}
+        dampening: {x: 0, y: 0.1}
+    - rid: 7066035779934879903
       type: {class: ExitToNext, ns: , asm: Assembly-CSharp}
       data: 
