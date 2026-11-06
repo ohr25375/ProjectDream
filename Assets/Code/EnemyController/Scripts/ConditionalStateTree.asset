@@ -1,0 +1,227 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dadd6e161996b5341af85d3703c4ff5a, type: 3}
+  m_Name: ConditionalStateTree
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyStateTree
+  enemyStates:
+  - rid: 7066035801670025451
+  - rid: 7066035801670025408
+  - rid: 7066035801670025391
+  - rid: 7066035801670025463
+  - rid: 7066035801670025421
+  - rid: 7066035801670025423
+  - rid: 7066035801670025436
+  - rid: 7066035801670025471
+  - rid: 7066035801670025432
+  - rid: 7066035801670025434
+  references:
+    version: 2
+    RefIds:
+    - rid: 7066035801670025391
+      type: {class: EnemyStateParabola, ns: , asm: Assembly-CSharp}
+      data:
+        exitToState:
+          rid: 7066035801670025392
+        duration:
+          rid: 7066035801670025455
+        targetOffset: {x: 1, y: -1}
+        height: 4
+    - rid: 7066035801670025392
+      type: {class: ExitToNext, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 7066035801670025408
+      type: {class: EnemyStateMath, ns: , asm: Assembly-CSharp}
+      data:
+        exitToState:
+          rid: 7066035801670025409
+        operation:
+          rid: 7066035801670025412
+        destination: 0
+    - rid: 7066035801670025409
+      type: {class: ExitToNext, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 7066035801670025412
+      type: {class: EnemyStateMathAdd, ns: , asm: Assembly-CSharp}
+      data:
+        x:
+          rid: 7066035801670025415
+        y:
+          rid: 7066035801670025414
+    - rid: 7066035801670025414
+      type: {class: EnemyValueUseImmediate, ns: , asm: Assembly-CSharp}
+      data:
+        value: 1
+    - rid: 7066035801670025415
+      type: {class: EnemyValueUseRegister, ns: , asm: Assembly-CSharp}
+      data:
+        register: 0
+    - rid: 7066035801670025421
+      type: {class: EnemyStateWaitForDuration, ns: , asm: Assembly-CSharp}
+      data:
+        exitToState:
+          rid: 7066035801670025422
+        duration:
+          rid: 7066035801670025456
+    - rid: 7066035801670025422
+      type: {class: ExitToNext, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 7066035801670025423
+      type: {class: EnemyStateConditional, ns: , asm: Assembly-CSharp}
+      data:
+        exitToState:
+          rid: 7066035801670025428
+        condition: 5
+        x:
+          rid: 7066035801670025429
+        y:
+          rid: 7066035801670025430
+        onCondition:
+          rid: 7066035801670025431
+    - rid: 7066035801670025428
+      type: {class: ExitToIndex, ns: , asm: Assembly-CSharp}
+      data:
+        stateIndex: 1
+    - rid: 7066035801670025429
+      type: {class: EnemyValueUseRegister, ns: , asm: Assembly-CSharp}
+      data:
+        register: 0
+    - rid: 7066035801670025430
+      type: {class: EnemyValueUseImmediate, ns: , asm: Assembly-CSharp}
+      data:
+        value: 5
+    - rid: 7066035801670025431
+      type: {class: ExitToNext, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 7066035801670025432
+      type: {class: EnemyStateParabola, ns: , asm: Assembly-CSharp}
+      data:
+        exitToState:
+          rid: 7066035801670025433
+        duration:
+          rid: 7066035801670025457
+        targetOffset: {x: -5, y: 5}
+        height: 4
+    - rid: 7066035801670025433
+      type: {class: ExitToNext, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 7066035801670025434
+      type: {class: EnemyStateWaitForDuration, ns: , asm: Assembly-CSharp}
+      data:
+        exitToState:
+          rid: 7066035801670025435
+        duration:
+          rid: 7066035801670025458
+    - rid: 7066035801670025435
+      type: {class: ExitToNext, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 7066035801670025436
+      type: {class: EnemyStateMath, ns: , asm: Assembly-CSharp}
+      data:
+        exitToState:
+          rid: 7066035801670025437
+        operation:
+          rid: 7066035801670025438
+        destination: 0
+    - rid: 7066035801670025437
+      type: {class: ExitToNext, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 7066035801670025438
+      type: {class: EnemyStateMathSet, ns: , asm: Assembly-CSharp}
+      data:
+        value:
+          rid: 7066035801670025439
+    - rid: 7066035801670025439
+      type: {class: EnemyValueUseImmediate, ns: , asm: Assembly-CSharp}
+      data:
+        value: 0
+    - rid: 7066035801670025451
+      type: {class: EnemyStateMathFloat, ns: , asm: Assembly-CSharp}
+      data:
+        exitToState:
+          rid: 7066035801670025452
+        operation:
+          rid: 7066035801670025453
+        destination: 0
+    - rid: 7066035801670025452
+      type: {class: ExitToNext, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 7066035801670025453
+      type: {class: EnemyStateMathFloatSet, ns: , asm: Assembly-CSharp}
+      data:
+        value:
+          rid: 7066035801670025454
+    - rid: 7066035801670025454
+      type: {class: EnemyValueFloatUseImmediate, ns: , asm: Assembly-CSharp}
+      data:
+        value: 0.5
+    - rid: 7066035801670025455
+      type: {class: EnemyValueFloatUseRegister, ns: , asm: Assembly-CSharp}
+      data:
+        register: 0
+    - rid: 7066035801670025456
+      type: {class: EnemyValueFloatUseRegister, ns: , asm: Assembly-CSharp}
+      data:
+        register: 0
+    - rid: 7066035801670025457
+      type: {class: EnemyValueFloatUseRegister, ns: , asm: Assembly-CSharp}
+      data:
+        register: 0
+    - rid: 7066035801670025458
+      type: {class: EnemyValueFloatUseRegister, ns: , asm: Assembly-CSharp}
+      data:
+        register: 0
+    - rid: 7066035801670025463
+      type: {class: EnemyStateMathFloat, ns: , asm: Assembly-CSharp}
+      data:
+        exitToState:
+          rid: 7066035801670025464
+        operation:
+          rid: 7066035801670025467
+        destination: 0
+    - rid: 7066035801670025464
+      type: {class: ExitToNext, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 7066035801670025467
+      type: {class: EnemyStateMathFloatSub, ns: , asm: Assembly-CSharp}
+      data:
+        x:
+          rid: 7066035801670025470
+        y:
+          rid: 7066035801670025469
+    - rid: 7066035801670025469
+      type: {class: EnemyValueFloatUseImmediate, ns: , asm: Assembly-CSharp}
+      data:
+        value: 0.05
+    - rid: 7066035801670025470
+      type: {class: EnemyValueFloatUseRegister, ns: , asm: Assembly-CSharp}
+      data:
+        register: 0
+    - rid: 7066035801670025471
+      type: {class: EnemyStateMathFloat, ns: , asm: Assembly-CSharp}
+      data:
+        exitToState:
+          rid: 7066035801670025472
+        operation:
+          rid: 7066035801670025473
+        destination: 0
+    - rid: 7066035801670025472
+      type: {class: ExitToNext, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 7066035801670025473
+      type: {class: EnemyStateMathFloatSet, ns: , asm: Assembly-CSharp}
+      data:
+        value:
+          rid: 7066035801670025474
+    - rid: 7066035801670025474
+      type: {class: EnemyValueFloatUseImmediate, ns: , asm: Assembly-CSharp}
+      data:
+        value: 0.5

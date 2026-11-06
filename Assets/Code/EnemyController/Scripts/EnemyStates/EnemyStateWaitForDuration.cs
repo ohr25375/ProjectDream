@@ -4,7 +4,7 @@ using UnityEngine;
 [AddTypeMenu("Wait for Duration")]
 public class EnemyStateWaitForDuration : EnemyState
 {
-    [SerializeField] private float duration;
+    [SerializeReference, SubclassSelector] private EnemyValueFloatBase duration = new EnemyValueFloatUseImmediate();
     protected override void OnStateEnter(params int[] variables)
     {
         base.OnStateEnter(variables);
@@ -16,7 +16,7 @@ public class EnemyStateWaitForDuration : EnemyState
 
     protected override void OnStateUpdate()
     {
-        if (timer <= duration) return;
+        if (timer <= duration.GetValue(enemyController)) return;
         ChangeToNextState();
     }
 }

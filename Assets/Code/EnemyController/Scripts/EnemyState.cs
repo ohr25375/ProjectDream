@@ -1,14 +1,21 @@
 using UnityEngine;
-using UnityEditor;
 
 [System.Serializable]
-public abstract class EnemyState
+public abstract class EnemyState : System.ICloneable
 {
     protected float timer;
     protected float previousTimer;
     protected float DeltaTime => timer - previousTimer;
     protected EnemyController enemyController;
-    [SerializeReference, SubclassSelector] private ExitToStatesBase exitToState;
+    [SerializeReference, SubclassSelector] private ExitToStatesBase exitToState = new ExitToNext();
+    public EnemyState Clone()
+    {
+        return MemberwiseClone() as EnemyState;
+    }
+    object System.ICloneable.Clone()
+    {
+        return Clone();
+    }
     public void UpdateState(float deltaTime)
     {
         previousTimer = timer;
@@ -25,6 +32,10 @@ public abstract class EnemyState
         OnStateExit();
     }
     public void ChangeToNextState()
+    {
+        ChangeToNextState(exitToState);
+    }
+    public void ChangeToNextState(ExitToStatesBase exitToState)
     {
         ExitState();
         enemyController.SetEnemyState(exitToState.GetExitStateIndex(enemyController.CurrentStateIndex));

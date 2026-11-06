@@ -4,7 +4,7 @@ using UnityEngine;
 [AddTypeMenu("Move to Random Direction")]
 public class EnemyStateMoveToRandomDirection : EnemyState
 {
-    [SerializeField] private float duration;
+    [SerializeReference, SubclassSelector] private EnemyValueFloatBase duration = new EnemyValueFloatUseImmediate();
     [SerializeField] private float distance;
     private Vector2 direction;
     private readonly Vector2[] randomDirections = {Vector2.up, Vector2.down, Vector2.left, Vector2.right};
@@ -22,6 +22,7 @@ public class EnemyStateMoveToRandomDirection : EnemyState
 
     protected override void OnStateUpdate()
     {
+        var duration = this.duration.GetValue(enemyController);
         if (duration <= 0)
         {
             ChangeToNextState();

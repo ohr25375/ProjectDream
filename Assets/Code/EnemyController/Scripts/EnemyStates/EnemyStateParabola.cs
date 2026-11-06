@@ -1,11 +1,10 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 [System.Serializable]
 [AddTypeMenu("Parabola")]
 public class EnemyStateParabola : EnemyState
 {
-    [SerializeField] private float duration;
+    [SerializeReference, SubclassSelector] private EnemyValueFloatBase duration = new EnemyValueFloatUseImmediate();
     [SerializeField] private Vector2 targetOffset;
     [SerializeField] private float height;
     private Vector2 previousPosition;
@@ -21,6 +20,7 @@ public class EnemyStateParabola : EnemyState
 
     protected override void OnStateUpdate()
     {
+        var duration = this.duration.GetValue(enemyController);
         if (duration <= 0)
         {
             ChangeToNextState();

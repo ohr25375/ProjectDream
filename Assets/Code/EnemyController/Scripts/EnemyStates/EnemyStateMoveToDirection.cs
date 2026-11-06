@@ -4,7 +4,7 @@ using UnityEngine;
 [AddTypeMenu("Move to Direction")]
 public class EnemyStateMoveToDirection : EnemyState
 {
-    [SerializeField] private float duration;
+    [SerializeReference, SubclassSelector] private EnemyValueFloatBase duration = new EnemyValueFloatUseImmediate();
     [SerializeField] private ValidDirection moveDirection;
     [SerializeField] private float distance;
     private Vector2 direction;
@@ -20,6 +20,7 @@ public class EnemyStateMoveToDirection : EnemyState
 
     protected override void OnStateUpdate()
     {
+        var duration = this.duration.GetValue(enemyController);
         if (duration <= 0)
         {
             ChangeToNextState();
