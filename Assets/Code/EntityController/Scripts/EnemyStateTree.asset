@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dadd6e161996b5341af85d3703c4ff5a, type: 3}
+  m_Name: EnemyStateTree
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyStateTree
+  entityStates:
+  - rid: 7066035869655236715
+  - rid: 7066035869655236705
+  references:
+    version: 2
+    RefIds:
+    - rid: 7066035869655236705
+      type: {class: EntityStateMoveToRandomDirection, ns: , asm: Assembly-CSharp}
+      data:
+        exitToState:
+          rid: 7066035869655236719
+        duration:
+          rid: 7066035869655236707
+        distance: 1
+    - rid: 7066035869655236707
+      type: {class: EntityValueFloatUseImmediate, ns: , asm: Assembly-CSharp}
+      data:
+        value: 0.5
+    - rid: 7066035869655236715
+      type: {class: EntityStateWaitForDuration, ns: , asm: Assembly-CSharp}
+      data:
+        exitToState:
+          rid: 7066035869655236716
+        duration:
+          rid: 7066035869655236717
+    - rid: 7066035869655236716
+      type: {class: ExitToNext, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 7066035869655236717
+      type: {class: EntityValueFloatUseImmediate, ns: , asm: Assembly-CSharp}
+      data:
+        value: 1
+    - rid: 7066035869655236719
+      type: {class: ExitToIndex, ns: , asm: Assembly-CSharp}
+      data:
+        stateIndex: 1
