@@ -10,26 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6efb9deee62b64f2c962cddfc6673473, type: 3}
-  m_Name: 4ToneMaterial
+  m_Name: 4ToneMaterialForeground
   m_EditorClassIdentifier: Assembly-CSharp::InstancedMaterial
-  material: {fileID: 2100000, guid: c001dc908263a2c4681241b984b9ad3f, type: 2}
+  material: {fileID: 2100000, guid: 3a2c80b77c77c164aa85fa850b56348b, type: 2}
+  isBackground: 0
+  backgroundColor: {r: 1, g: 1, b: 1, a: 1}
   paletteA:
-    color1: {r: 0.8254717, g: 1, b: 0.99807256, a: 1}
-    color2: {r: 0, g: 0, b: 0, a: 1}
-    color3: {r: 0.6, g: 0.6, b: 0.6, a: 1}
-    color4: {r: 1, g: 1, b: 1, a: 1}
+    color1: {r: 0, g: 0, b: 0, a: 1}
+    color2: {r: 0.8235295, g: 1, b: 1, a: 1}
+    color3: {r: 1, g: 1, b: 1, a: 1}
   paletteB:
-    color1: {r: 0, g: 0, b: 0, a: 0}
+    color1: {r: 0, g: 0, b: 0, a: 1}
     color2: {r: 0, g: 0, b: 0, a: 1}
     color3: {r: 0.6320754, g: 0.28872752, b: 0, a: 1}
-    color4: {r: 1, g: 1, b: 1, a: 1}
   paletteC:
-    color1: {r: 0, g: 0, b: 0, a: 0}
-    color2: {r: 0, g: 0, b: 0, a: 1}
-    color3: {r: 0.7971698, g: 0.8999371, b: 1, a: 1}
-    color4: {r: 1, g: 1, b: 1, a: 1}
+    color1: {r: 0, g: 0, b: 0, a: 1}
+    color2: {r: 0.7960785, g: 0.8980393, b: 1, a: 1}
+    color3: {r: 1, g: 1, b: 1, a: 1}
   paletteD:
     color1: {r: 1, g: 0, b: 0, a: 1}
     color2: {r: 0.3, g: 0.3, b: 0.3, a: 1}
     color3: {r: 0.8207547, g: 0, b: 0, a: 1}
-    color4: {r: 1, g: 0, b: 0, a: 1}

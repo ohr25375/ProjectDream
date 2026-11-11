@@ -1,3 +1,4 @@
+[System.Serializable]
 public class IndexableMetatileClass<T>
 {
     public T AA, BA, AB, BB;
