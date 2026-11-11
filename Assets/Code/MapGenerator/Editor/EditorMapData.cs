@@ -1,12 +1,12 @@
 using UnityEngine;
 using UnityEditor;
 using System.Collections.Generic;
-using UnityEditor.SceneManagement;
 
 [CustomEditor(typeof(MapData))]
 public class EditorMapData : Editor
 {
-    private MapData _mapdata;
+    private MapData _mapData;
+    private MapDataTiles _mapTileData;
     private bool _editorFoldout = true;
     private List<Texture> _buttonTextures = new();
     private int _selectedTile = -1;
@@ -26,16 +26,16 @@ public class EditorMapData : Editor
     {
         if (_hasValidated)
         {
-            _buttonTextures = new(new Texture[_mapdata.MaxTileCount]);
-            for (var y = 0; y < _mapdata.Size.y; y++)
+            _buttonTextures = new(new Texture[_mapTileData.MaxTileCount]);
+            for (var y = 0; y < _mapData.Size.y; y++)
             {
-                for (var x = 0; x < _mapdata.Size.x; x++)
+                for (var x = 0; x < _mapData.Size.x; x++)
                 {
-                    int index = x + y * _mapdata.Size.x;
-                    int textureIndex = x + (_mapdata.Size.y - 1 - y) * _mapdata.Size.x;
-                    int metatileIndex = _mapdata.MetatileDatas[index].metatileIndex;
-                    var tileSpriteDatas = _mapdata.EditorMemory.GetData(metatileIndex).data;
-                    Sprite sprite = _mapdata.EditorTileset.GetSprite(tileSpriteDatas[0].spriteID);
+                    int index = x + y * _mapData.Size.x;
+                    int textureIndex = x + (_mapData.Size.y - 1 - y) * _mapData.Size.x;
+                    int metatileIndex = _mapTileData.MetatileDatas[index].metatileIndex;
+                    var tileSpriteDatas = _mapData.EditorMemory.GetData(metatileIndex).data;
+                    Sprite sprite = _mapData.EditorTileset.GetSprite(tileSpriteDatas[0].spriteID);
                     _buttonTextures[textureIndex] = AssetPreview.GetAssetPreview(sprite);
                 }
             }
@@ -52,12 +52,12 @@ public class EditorMapData : Editor
     }
     private void DrawTile(Vector2 position, Vector2 offset, TileSpriteData spriteData, float magnify = 1, float size = 1)
     {
-        Sprite sprite = _mapdata.EditorTileset.GetSprite(spriteData.spriteID);
+        Sprite sprite = _mapData.EditorTileset.GetSprite(spriteData.spriteID);
         bool flipX = spriteData.isFlippedX;
         bool flipY = spriteData.isFlippedY;
         if (sprite == null)
         {
-            sprite = _mapdata.EditorTileset.GetSprite(0);
+            sprite = _mapData.EditorTileset.GetSprite(0);
         }
         Texture2D spritePreview = AssetPreview.GetAssetPreview(sprite);
         if (spritePreview == null) return;
@@ -72,7 +72,7 @@ public class EditorMapData : Editor
     }
     private void DrawMetatile(Vector2 position, Vector2 offset, int metatileIndex, float magnify = 1, float size = 1)
     {
-        var tileSpriteDatas = _mapdata.EditorMemory.GetData(metatileIndex).data;
+        var tileSpriteDatas = _mapData.EditorMemory.GetData(metatileIndex).data;
         for (var i = 0; i < 4; i++)
         {
             var pos = position + new Vector2(i % 2, i / 2) / 2;
@@ -82,12 +82,12 @@ public class EditorMapData : Editor
     private void DrawCollisions()
     {
         Rect rt = GUILayoutUtility.GetRect(new GUIContent(), GUIStyle.none);
-        for (var y = 0; y < _mapdata.Size.y; y++)
+        for (var y = 0; y < _mapData.Size.y; y++)
         {
-            for (var x = 0; x < _mapdata.Size.x; x++)
+            for (var x = 0; x < _mapData.Size.x; x++)
             {
-                var mapIndex = x + y * _mapdata.Size.x;
-                var position = new Vector2(x, _mapdata.Size.y - 1 - y);
+                var mapIndex = x + y * _mapData.Size.x;
+                var position = new Vector2(x, _mapData.Size.y - 1 - y);
                 DrawCollisionSet(position, rt.position, mapIndex);
             }
         }
@@ -95,13 +95,13 @@ public class EditorMapData : Editor
     private void DrawMetatiles()
     {
         Rect rt = GUILayoutUtility.GetRect(new GUIContent(), GUIStyle.none);
-        for (var y = 0; y < _mapdata.Size.y; y++)
+        for (var y = 0; y < _mapData.Size.y; y++)
         {
-            for (var x = 0; x < _mapdata.Size.x; x++)
+            for (var x = 0; x < _mapData.Size.x; x++)
             {
-                var mapIndex = x + y * _mapdata.Size.x;
-                var metatileIndex = _mapdata.MetatileDatas[mapIndex].metatileIndex;
-                var position = new Vector2(x, _mapdata.Size.y - 1 - y);
+                var mapIndex = x + y * _mapData.Size.x;
+                var metatileIndex = _mapTileData.MetatileDatas[mapIndex].metatileIndex;
+                var position = new Vector2(x, _mapData.Size.y - 1 - y);
                 DrawMetatile(position, rt.position, metatileIndex);
             }
         }
@@ -114,7 +114,7 @@ public class EditorMapData : Editor
     }
     private void DrawCollisionSet(Vector2 position, Vector2 offset, int mapIndex)
     {
-        MetatileMapData metatileMapData = _mapdata.MetatileDatas[mapIndex];
+        MetatileMapData metatileMapData = _mapTileData.MetatileDatas[mapIndex];
         for (var i = 0; i < 4; i++)
         {
             var pos = position + new Vector2(i % 2, i / 2) / 2;
@@ -123,7 +123,7 @@ public class EditorMapData : Editor
     }
     private void DrawMapEditor()
     {
-        //GUILayout.BeginHorizontal();
+        //Debug.Log(GUILayoutUtility.GetRect(new GUIContent(), GUIStyle.none));
         GUILayout.BeginVertical();
         GUIStyle style = new(GUI.skin.button)
         {
@@ -135,8 +135,8 @@ public class EditorMapData : Editor
             contentOffset = new(0, 0),
             overflow = new(0, 0, 0, 0)
         };
-        _selectedTile = GUILayout.SelectionGrid(_selectedTile, GetButtonTextures().ToArray(), _mapdata.Size.x, style);
-        if (GUILayout.Button("Clear Map")) _mapdata.ClearMap();
+        _selectedTile = GUILayout.SelectionGrid(_selectedTile, GetButtonTextures().ToArray(), _mapData.Size.x, style);
+        if (GUILayout.Button("Clear Map")) _mapTileData.ClearMap();
         if (GUILayout.Button("Save Asset")) SaveAsset();
 
         //_selectedTile = GUILayout.SelectionGrid(_selectedTile, new Texture[_mapdata.MaxTileCount], _mapdata.Size.x, style);
@@ -153,7 +153,7 @@ public class EditorMapData : Editor
             width = magnify * 8,
             height = magnify * 8,
         };
-        tileIdentifierRect.position += new Vector2((int)_tileIdentifier % 2, (int)_tileIdentifier / 2) * 8 * magnify;
+        tileIdentifierRect.position += 8 * magnify * new Vector2((int)_tileIdentifier % 2, (int)_tileIdentifier / 2);
         EditorGUI.DrawRect(tileIdentifierRect, Color.red);
         DrawMetatile(Vector2.zero, metatilePreviewRect.position, _metatileIndex, magnify, (magnify * 8 - 2) / (magnify * 8));
         if (_selectedTile != -1)
@@ -163,6 +163,14 @@ public class EditorMapData : Editor
         _palette = (Palette)EditorGUILayout.EnumPopup(new GUIContent("Palette", "Metatile palette"), _palette);
         _tileIdentifier = (TileIdentifier)EditorGUILayout.EnumPopup(new GUIContent("Tile", "Which tile to edit"), _tileIdentifier);
         _tileCollisionDatas[(int)_tileIdentifier] = (TileCollisionFlags)EditorGUILayout.EnumFlagsField(_tileCollisionDatas[(int)_tileIdentifier]);
+        var applyToAll = GUILayout.Button("Apply to all");
+        if (applyToAll)
+        {
+            for (var i = 0; i < 4; i++)
+            {
+                _tileCollisionDatas[i] = _tileCollisionDatas[(int)_tileIdentifier];
+            }
+        }
         GUILayout.EndVertical();
     }
 
@@ -171,18 +179,18 @@ public class EditorMapData : Editor
         bool isPreviousPressed = GUILayout.Button("Previous");
         bool isNextPressed = GUILayout.Button("Next");
         int inc = isPreviousPressed ? -1 : isNextPressed ? 1 : 0;
-        _metatileIndex = (_metatileIndex + _mapdata.EditorMemory.Max + inc) % _mapdata.EditorMemory.Max;
+        _metatileIndex = (_metatileIndex + _mapData.EditorMemory.Max + inc) % _mapData.EditorMemory.Max;
     }
 
     private void UpdateMapData()
     {
-        int selectedX = _selectedTile % _mapdata.Size.x;
-        int selectedY = _selectedTile / _mapdata.Size.x;
-        int mapY = _mapdata.Size.y - 1 - selectedY;
-        int mapIndex = selectedX + mapY * _mapdata.Size.x;
-        _mapdata.ChangeMetatileIndex(mapIndex, _metatileIndex);
-        _mapdata.SetTileCollisionDatas(mapIndex, _tileCollisionDatas);
-        _mapdata.ChangeMetatilePalette(mapIndex, _palette);
+        int selectedX = _selectedTile % _mapData.Size.x;
+        int selectedY = _selectedTile / _mapData.Size.x;
+        int mapY = _mapData.Size.y - 1 - selectedY;
+        int mapIndex = selectedX + mapY * _mapData.Size.x;
+        _mapTileData.ChangeMetatileIndex(mapIndex, _metatileIndex);
+        _mapTileData.SetTileCollisionDatas(mapIndex, _tileCollisionDatas);
+        _mapTileData.ChangeMetatilePalette(mapIndex, _palette);
         _hasValidated = true;
         _selectedTile = -1;
     }
@@ -198,18 +206,18 @@ public class EditorMapData : Editor
         EditorGUILayout.PropertyField(serializedObject.FindProperty("e_metatileMemory"));
         EditorGUILayout.PropertyField(serializedObject.FindProperty("e_tileset"));
         GUIStyle errorStyle = new(GUI.skin.label){ normal = new(){ textColor = Color.red } };
-        if (_mapdata.EditorMemory == null)
+        if (_mapData.EditorMemory == null)
         {
             EditorGUILayout.LabelField("missing Metatile Memory", errorStyle);  
             return;
         }
-        if (_mapdata.EditorTileset == null)
+        if (_mapData.EditorTileset == null)
         {
             EditorGUILayout.LabelField("missing Tileset", errorStyle);
             return;
         }
         _previewMode = (PreviewMode)EditorGUILayout.EnumPopup(new GUIContent("Preview Mode", "Change display mode of map preview"), _previewMode);
-        GUILayout.BeginHorizontal(GUILayout.Height(_mapdata.Size.y * 16));
+        GUILayout.BeginHorizontal(GUILayout.Height(_mapData.Size.y * 16));
         switch (_previewMode)
         {
             case PreviewMode.Editor: DrawMapEditor(); break;
@@ -226,7 +234,8 @@ public class EditorMapData : Editor
     public override void OnInspectorGUI()
     {
         serializedObject.Update();
-        _mapdata = target as MapData;
+        _mapData = target as MapData;
+        _mapTileData = _mapData.EditorMapTileData;
         EditorGUILayout.PropertyField(serializedObject.FindProperty("size"));
         _editorFoldout = EditorGUILayout.BeginFoldoutHeaderGroup(_editorFoldout, "Preview");
         DrawPreview();
