@@ -7,7 +7,7 @@ public class MapDataTiles
 {
     private Vector2Int size = new(16,15);
     public int MaxTileCount => size.x * size.y;
-    private List<MetatileMapData> metatileDatas = new();
+    [SerializeField] private List<MetatileMapData> metatileDatas = new();
     public List<MetatileMapData> MetatileDatas => metatileDatas;
     public ReadOnlyCollection<bool> GetColliders(TileCollisionFlags collisionFlags)
     {

@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "MapData", menuName = "Scriptable Objects/MapData")]
 public class MapData : ScriptableObject
 {
-    private MapDataTiles _mapTileData;
+    [SerializeField] private MapDataTiles _mapTileData;
     private MapDataTiles MapTileData
     {
         get
