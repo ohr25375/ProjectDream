@@ -12,6 +12,7 @@ public struct MetatileSpriteData
 {
     public string name;
     public IndexableMetatileStruct<TileSpriteData> data;
+    public readonly bool IsNull() => name == "";
 }
 [System.Serializable]
 public struct MetatileMapData

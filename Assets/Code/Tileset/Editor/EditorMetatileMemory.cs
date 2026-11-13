@@ -8,12 +8,14 @@ public class EditorMetatileMemory : Editor
     private const float SPRITE_SIZE = 8;
     private int _selectedMetatileIndex = 0;
     private int _currentMetatileSubIndex = 0;
+
     #region UNITY
     public override void OnInspectorGUI()
     {
         serializedObject.Update();
         DrawInspector();
         serializedObject.ApplyModifiedProperties();
+        AssetDatabase.SaveAssetIfDirty(target);
     }
     #endregion
 
@@ -29,7 +31,7 @@ public class EditorMetatileMemory : Editor
         EditorGUILayout.BeginHorizontal();
         {
             float magnify = 2;
-            DrawMetatileSelector(_metatileMemory);
+            DrawMetatileSelectorMenu(_metatileMemory);
             var rect = EditorGUILayout.BeginVertical();
             {
                 DrawSelectedSpriteIndicator(_metatileMemory, rect, magnify);
@@ -54,6 +56,7 @@ public class EditorMetatileMemory : Editor
                 if (selected != -1)
                 {
                     _metatileMemory.EditorModifyTileSpriteID(_selectedMetatileIndex, (TileIdentifier)_currentMetatileSubIndex, selected);
+                    EditorUtility.SetDirty(target);
                 }
             }
             EditorGUILayout.EndHorizontal();
@@ -61,6 +64,7 @@ public class EditorMetatileMemory : Editor
         EditorGUILayout.EndHorizontal();
     }
 
+    #region SUB_FUNCTIONS
     private void DrawSelectedSpriteIndicator(MetatileMemory metatileMemory, Rect rect, float size = 1)
     {
         var spriteIndex = metatileMemory.GetData(_selectedMetatileIndex).data[_currentMetatileSubIndex].spriteID;
@@ -72,8 +76,6 @@ public class EditorMetatileMemory : Editor
         spriteIdentifierRect.position += (SPRITE_SIZE * size + 1) * new Vector2(spriteIndex % 16, spriteIndex / 16) - Vector2.one;
         EditorGUI.DrawRect(spriteIdentifierRect, Color.red);
     }
-
-    #region SUB_FUNCTIONS
     private bool IsRequirementsSet(MetatileMemory metatileMemory)
     {
         GUIStyle errorStyle = new(GUI.skin.label) { normal = new() { textColor = Color.red } };
@@ -84,31 +86,21 @@ public class EditorMetatileMemory : Editor
         }
         return true;
     }
-    private void DrawMetatileSelector(MetatileMemory metatileMemory)
+    private void DrawMetatileSelectorMenu(MetatileMemory metatileMemory)
     {
         var metatileSpriteData = metatileMemory.GetData(_selectedMetatileIndex);
-        GUIStyle verticalButtonStyle = new(GUI.skin.button)
-        {
-            stretchHeight = true,
-            stretchWidth = false
-        };
         float magnify = 4;
         EditorGUILayout.BeginVertical(GUILayout.Height(magnify * SPRITE_SIZE * 2));
         {
-            EditorGUILayout.BeginHorizontal();
-            bool isPreviousPressed = GUILayout.Button("©", verticalButtonStyle);
-            DrawMetatile(metatileMemory, metatileSpriteData);
-            bool isNextPressed = GUILayout.Button("¨", verticalButtonStyle);
-            int inc = isPreviousPressed ? -1 : isNextPressed ? 1 : 0;
-            _selectedMetatileIndex = (_selectedMetatileIndex + metatileMemory.Max + inc) % metatileMemory.Max;
-            EditorGUILayout.EndHorizontal();
+            _selectedMetatileIndex = EditorExtensions.DrawMetatileSelector(metatileMemory, _selectedMetatileIndex, ref _currentMetatileSubIndex);
             EditorGUILayout.BeginHorizontal();
             {
                 if (GUILayout.Button("+"))
                 {
-                    metatileMemory.EditorInsertData(_selectedMetatileIndex);
-                    _selectedMetatileIndex++;
+                    _selectedMetatileIndex = metatileMemory.EditorInsertData(_selectedMetatileIndex);
+                    EditorUtility.SetDirty(target);
                 }
+                if (_selectedMetatileIndex == 0) GUI.enabled = false;
                 if (GUILayout.Button("-"))
                 {
                     metatileMemory.EditorDeleteData(_selectedMetatileIndex);
@@ -116,25 +108,26 @@ public class EditorMetatileMemory : Editor
                     {
                         _selectedMetatileIndex--;
                     }
+                    EditorUtility.SetDirty(target);
                 }
+                GUI.enabled = true;
             }
             EditorGUILayout.EndHorizontal();
-            EditorGUILayout.LabelField($"Name: {metatileSpriteData.name}");
-            var newName = EditorGUILayout.TextField(metatileSpriteData.name);
+            var disabledCount = metatileMemory.GetDisabledCount();
+            EditorGUILayout.LabelField($"[{_selectedMetatileIndex + 1}/{metatileMemory.Max - disabledCount}{(disabledCount > 0 ? $"({disabledCount})" : "")}]Name: {metatileSpriteData.name}");
+            var newName = EditorGUILayout.DelayedTextField(metatileSpriteData.name);
             if (newName != metatileSpriteData.name)
             {
                 metatileMemory.EditorModifyMetatileName(_selectedMetatileIndex, newName);
+                EditorUtility.SetDirty(target);
+            }
+            var selectedMetatilePalette = EditorExtensions.DrawMetatileMemories(metatileMemory, _selectedMetatileIndex);
+            if (selectedMetatilePalette != -1)
+            {
+                _selectedMetatileIndex = selectedMetatilePalette;
             }
         }
         EditorGUILayout.EndVertical();
-    }
-    private void DrawMetatile(MetatileMemory metatileMemory, MetatileSpriteData metatileSpriteData)
-    {
-        var selectedMetatileSubIndex = EditorExtensions.DrawTileIdentiferSelector(_currentMetatileSubIndex, metatileMemory.EditorTileset, metatileSpriteData);
-        if (selectedMetatileSubIndex != -1)
-        {
-            _currentMetatileSubIndex = selectedMetatileSubIndex;
-        }
     }
     #endregion
 }

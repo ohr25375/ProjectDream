@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 [CustomEditor(typeof(MapData))]
 public class EditorMapData : Editor
@@ -9,12 +8,11 @@ public class EditorMapData : Editor
     private MapData _mapData;
     private MapDataTiles _mapTileData;
     private bool _editorFoldout = true;
-    private List<Texture> _buttonTextures = new();
-    private bool _hasValidated = true;
     private Palette _palette = Palette.A;
-    private TileIdentifier _tileIdentifier;
+    private int _tileIdentifier;
     private IndexableMetatileStruct<TileCollisionFlags> _tileCollisionDatas;
     private int _metatileIndex = 0;
+    private bool _clearMapDataSafety = false;
     private enum PreviewMode
     {
         Editor,
@@ -22,29 +20,8 @@ public class EditorMapData : Editor
         Collisions
     };
     private PreviewMode _previewMode = PreviewMode.Sprite;
-    private List<Texture> GetButtonTextures()
-    {
-        if (_hasValidated)
-        {
-            _buttonTextures = new(new Texture[_mapTileData.MaxTileCount]);
-            for (var y = 0; y < _mapData.Size.y; y++)
-            {
-                for (var x = 0; x < _mapData.Size.x; x++)
-                {
-                    int index = x + y * _mapData.Size.x;
-                    int textureIndex = x + (_mapData.Size.y - 1 - y) * _mapData.Size.x;
-                    int metatileIndex = _mapTileData.MetatileDatas[index].metatileIndex;
-                    var tileSpriteDatas = _mapData.EditorMemory.GetData(metatileIndex).data;
-                    Sprite sprite = _mapData.EditorTileset.GetSprite(tileSpriteDatas[0].spriteID);
-                    _buttonTextures[textureIndex] = AssetPreview.GetAssetPreview(sprite);
-                }
-            }
-        }
-        return _buttonTextures;
-    }
     private void OnEnable()
     {
-        _hasValidated = true;
         _palette = Palette.A;
         _tileCollisionDatas = new();
         _metatileIndex = 0;
@@ -121,45 +98,41 @@ public class EditorMapData : Editor
         var mapTileCount = _mapData.Size.x * _mapData.Size.y;
         var selectedTile = GUILayout.SelectionGrid(-1, new string[mapTileCount], _mapData.Size.x, style);
         DrawMetatilesAsOne(rect, _mapData.Size, _mapData.MetatileDatas);
-        if (GUILayout.Button("Clear Map")) _mapTileData.ClearMap();
+        GUILayout.BeginHorizontal();
+        _clearMapDataSafety = GUILayout.Toggle(_clearMapDataSafety, "", GUILayout.ExpandWidth(false));
+        if (!_clearMapDataSafety) GUI.enabled = false;
+        if (GUILayout.Button($"Clear Map{(_clearMapDataSafety ? "": " (Disable safety first)")}")) _mapTileData.ClearMap();
+        GUI.enabled = true;
+        GUILayout.EndHorizontal();
         if (GUILayout.Button("Save Asset")) SaveAsset();
 
         //_selectedTile = GUILayout.SelectionGrid(_selectedTile, new Texture[_mapdata.MaxTileCount], _mapdata.Size.x, style);
         GUILayout.EndVertical();
         GUILayout.BeginVertical();
         GUILayout.BeginHorizontal();
-        DrawMetatileSelector();
-        EditorGUILayout.LabelField($"Name: {_mapData.EditorMemory.GetData(_metatileIndex).name}");
+        _metatileIndex = EditorExtensions.DrawMetatileSelector(_mapData.EditorMemory, _metatileIndex, ref _tileIdentifier);
         GUILayout.EndHorizontal();
-        var metatileSpriteData = _mapData.EditorMemory.GetData(_metatileIndex);
-        var selectedTileIdentifier = EditorExtensions.DrawTileIdentiferSelector((int)_tileIdentifier, _mapData.EditorTileset, metatileSpriteData);
-        if (selectedTileIdentifier != -1)
-        {
-            _tileIdentifier = (TileIdentifier)selectedTileIdentifier;
-        }
+        EditorGUILayout.LabelField($"Name: {_mapData.EditorMemory.GetData(_metatileIndex).name}");
         if (selectedTile != -1)
         {
             UpdateMapData(selectedTile);
         }
         _palette = (Palette)EditorGUILayout.EnumPopup(new GUIContent("Palette", "Metatile palette"), _palette);
-        _tileCollisionDatas[(int)_tileIdentifier] = (TileCollisionFlags)EditorGUILayout.EnumFlagsField(_tileCollisionDatas[(int)_tileIdentifier]);
-        var applyToAll = GUILayout.Button("Apply to all");
+        _tileCollisionDatas[_tileIdentifier] = (TileCollisionFlags)EditorGUILayout.EnumFlagsField(_tileCollisionDatas[_tileIdentifier]);
+        var applyToAll = GUILayout.Button("Copy collision to all subtiles");
         if (applyToAll)
         {
             for (var i = 0; i < 4; i++)
             {
-                _tileCollisionDatas[i] = _tileCollisionDatas[(int)_tileIdentifier];
+                _tileCollisionDatas[i] = _tileCollisionDatas[_tileIdentifier];
             }
         }
+        var selectedMetatile = EditorExtensions.DrawMetatileMemories(_mapData.EditorMemory, _metatileIndex);
+        if (selectedMetatile != -1)
+        {
+            _metatileIndex = selectedMetatile;
+        }
         EditorGUILayout.EndVertical();
-    }
-
-    private void DrawMetatileSelector()
-    {
-        bool isPreviousPressed = GUILayout.Button("Previous");
-        bool isNextPressed = GUILayout.Button("Next");
-        int inc = isPreviousPressed ? -1 : isNextPressed ? 1 : 0;
-        _metatileIndex = (_metatileIndex + _mapData.EditorMemory.Max + inc) % _mapData.EditorMemory.Max;
     }
 
     private void UpdateMapData(int selectedTile)
@@ -171,7 +144,6 @@ public class EditorMapData : Editor
         _mapTileData.ChangeMetatileIndex(mapIndex, _metatileIndex);
         _mapTileData.SetTileCollisionDatas(mapIndex, _tileCollisionDatas);
         _mapTileData.ChangeMetatilePalette(mapIndex, _palette);
-        _hasValidated = true;
         selectedTile = -1;
     }
     private void SaveAsset()
@@ -206,10 +178,6 @@ public class EditorMapData : Editor
         }
 
         GUILayout.EndHorizontal();
-    }
-    public void OnValidate()
-    {
-        _hasValidated = true;
     }
     public override void OnInspectorGUI()
     {
