@@ -7,6 +7,7 @@ public class UIController : MonoBehaviour
     [SerializeField] private GameObject _sprite;
     [SerializeField] private Tileset _tileset;
     private List<SpriteController> _spriteControllers;
+    public List<SpriteController> SpriteControllers => _spriteControllers;
 
     private void Awake()
     {
