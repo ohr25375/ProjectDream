@@ -13,6 +13,9 @@ public class EditorMapData : Editor
     private IndexableMetatileStruct<TileCollisionFlags> _tileCollisionDatas;
     private int _metatileIndex = 0;
     private bool _clearMapDataSafety = false;
+    private int _lastSelectedMapTile = -1;
+    private bool _isPaletteOverlayEnabled = false;
+    private float _paletteOverlayValue = 0.5f;
     private enum PreviewMode
     {
         Editor,
@@ -55,6 +58,19 @@ public class EditorMapData : Editor
     }
     private void DrawMetatilesAsOne(Rect rect, Vector2Int mapSize, List<MetatileMapData> metatileDatas)
     {
+        if (_lastSelectedMapTile != -1)
+        {
+            var sx = _lastSelectedMapTile % mapSize.x;
+            var sy = _lastSelectedMapTile / mapSize.x;
+            Rect selectedRect = new()
+            {
+                x = rect.x + sx * 16 - 1,
+                y = rect.y + sy * 16,
+                width = 17,
+                height = 17,
+            };
+            EditorGUI.DrawRect(selectedRect, Color.green);
+        }
         for (var y = 0; y < mapSize.y; y++)
         {
             for (var x = 0; x < mapSize.x; x++)
@@ -66,10 +82,43 @@ public class EditorMapData : Editor
             }
         }
     }
+    private void DrawBasicPaletteOverlay(Rect rect, Vector2Int mapSize, List<MetatileMapData> metatileDatas)
+    {
+        for (var y = 0; y < mapSize.y; y++)
+        {
+            for (var x = 0; x < mapSize.x; x++)
+            {
+                var mapIndex = x + y * mapSize.x;
+                Rect selectedRect = new()
+                {
+                    x = rect.x + x * 16,
+                    y = rect.y + (mapSize.y - 1 - y) * 16 + 1,
+                    width = 15,
+                    height = 15,
+                };
+                var paletteIndex = (int)metatileDatas[mapIndex].palette;
+                var color = Color.black;
+                switch (paletteIndex)
+                {
+                    case 0: color = Color.red; break;
+                    case 1: color = Color.green; break;
+                    case 2: color = Color.cyan; break;
+                    case 3: color = Color.magenta; break;
+                }
+                color.a = _paletteOverlayValue;
+                EditorGUI.DrawRect(selectedRect, color);
+            }
+        }
+    }
     private void DrawCollision(Vector2 position, Vector2 offset, TileCollisionFlags collisionData)
     {
         Rect rect = new(position * 16 + offset, Vector2.one * 8);
-        Color color = new(collisionData.HasFlag(TileCollisionFlags.IsCollidable) ? 1 : 0, 0, collisionData.HasFlag(TileCollisionFlags.IsAirCollidable) ? 1 : 0);
+        Color color = new()
+        {
+            r = collisionData.HasFlag(TileCollisionFlags.IsCollidable) ? 1 : 0,
+            g = 0,
+            b = collisionData.HasFlag(TileCollisionFlags.IsAirCollidable) ? 1 : 0
+        };
         EditorGUI.DrawRect(rect, color);
     }
     private void DrawCollisionSet(Vector2 position, Vector2 offset, int mapIndex)
@@ -98,26 +147,50 @@ public class EditorMapData : Editor
         var mapTileCount = _mapData.Size.x * _mapData.Size.y;
         var selectedTile = GUILayout.SelectionGrid(-1, new string[mapTileCount], _mapData.Size.x, style);
         DrawMetatilesAsOne(rect, _mapData.Size, _mapData.MetatileDatas);
+        if (_isPaletteOverlayEnabled) DrawBasicPaletteOverlay(rect, _mapData.Size, _mapData.MetatileDatas);
         GUILayout.BeginHorizontal();
         _clearMapDataSafety = GUILayout.Toggle(_clearMapDataSafety, "", GUILayout.ExpandWidth(false));
         if (!_clearMapDataSafety) GUI.enabled = false;
         if (GUILayout.Button($"Clear Map{(_clearMapDataSafety ? "": " (Disable safety first)")}")) _mapTileData.ClearMap();
         GUI.enabled = true;
         GUILayout.EndHorizontal();
-        if (GUILayout.Button("Save Asset")) SaveAsset();
-
+        GUIStyle saveStyle = new(GUI.skin.button);
+        bool isDirty = EditorUtility.IsDirty(target);
+        GUI.enabled = isDirty;
+        if (GUILayout.Button(isDirty ? "### SAVE ASSET ###" : "Asset is saved", saveStyle)) SaveAsset();
+        GUI.enabled = true;
         //_selectedTile = GUILayout.SelectionGrid(_selectedTile, new Texture[_mapdata.MaxTileCount], _mapdata.Size.x, style);
         GUILayout.EndVertical();
         GUILayout.BeginVertical();
         GUILayout.BeginHorizontal();
         _metatileIndex = EditorExtensions.DrawMetatileSelector(_mapData.EditorMemory, _metatileIndex, ref _tileIdentifier);
+        GUILayout.BeginVertical();
+        var isPaletteOverlayEnabled = EditorGUILayout.ToggleLeft("Palette Overlay", _isPaletteOverlayEnabled);
+        if (isPaletteOverlayEnabled !=  _isPaletteOverlayEnabled)
+        {
+            _isPaletteOverlayEnabled = isPaletteOverlayEnabled;
+        }
+        _paletteOverlayValue = EditorGUILayout.Slider(_paletteOverlayValue, 0, 1);
+        GUILayout.EndVertical();
         GUILayout.EndHorizontal();
         EditorGUILayout.LabelField($"Name: {_mapData.EditorMemory.GetData(_metatileIndex).name}");
         if (selectedTile != -1)
         {
             UpdateMapData(selectedTile);
+            _lastSelectedMapTile = selectedTile;
         }
-        _palette = (Palette)EditorGUILayout.EnumPopup(new GUIContent("Palette", "Metatile palette"), _palette);
+        string[] palettePopupTexts = { "A", "B", "C", "D" };
+        if (_isPaletteOverlayEnabled)
+        {
+            palettePopupTexts = new string[]
+            {
+                "A (Red)",
+                "B (Green)",
+                "C (Cyan)",
+                "D (Magenta)"
+            };
+        }
+        _palette = (Palette)EditorGUILayout.Popup(new GUIContent("Palette: "), (int)_palette, palettePopupTexts);
         _tileCollisionDatas[_tileIdentifier] = (TileCollisionFlags)EditorGUILayout.EnumFlagsField(_tileCollisionDatas[_tileIdentifier]);
         var applyToAll = GUILayout.Button("Copy collision to all subtiles");
         if (applyToAll)
@@ -144,11 +217,10 @@ public class EditorMapData : Editor
         _mapTileData.ChangeMetatileIndex(mapIndex, _metatileIndex);
         _mapTileData.SetTileCollisionDatas(mapIndex, _tileCollisionDatas);
         _mapTileData.ChangeMetatilePalette(mapIndex, _palette);
-        selectedTile = -1;
+        EditorUtility.SetDirty(target);
     }
     private void SaveAsset()
     {
-        EditorUtility.SetDirty(target);
         AssetDatabase.SaveAssetIfDirty(target);
     }
 

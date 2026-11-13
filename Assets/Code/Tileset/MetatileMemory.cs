@@ -33,6 +33,12 @@ public class MetatileMemory : ScriptableObject
         largeData.data[(int)subIndex] = data;
         metatiles[index] = largeData;
     }
+    public void EditorModifyTileSpriteData(int index, TileIdentifier subIndex, TileSpriteData data)
+    {
+        var largeData = metatiles[index];
+        largeData.data[(int)subIndex] = data;
+        metatiles[index] = largeData;
+    }
     public void EditorModifyMetatileName(int index, string metatileName)
     {
         var largeData = metatiles[index];
