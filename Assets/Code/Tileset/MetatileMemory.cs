@@ -1,5 +1,5 @@
+using System;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "MetatileMemory", menuName = "Scriptable Objects/MetatileMemory")]
@@ -20,20 +20,6 @@ public class MetatileMemory : ScriptableObject
 #if UNITY_EDITOR
     [SerializeField] private Tileset e_tileset;
     public Tileset EditorTileset => e_tileset;
-    [SerializeReference] public List<Texture> EditorTextureCache = new();
-    private void OnValidate()
-    {
-        RefreshCache();
-    }
-    [ContextMenu("Refresh Cache")]
-    public void RefreshCache()
-    {
-        EditorTextureCache = new(new Texture[e_tileset.Max]);
-        for (var i = 0; i < e_tileset.Max; i++)
-        {
-            EditorTextureCache[i] = AssetPreview.GetAssetPreview(e_tileset.GetSprite(i));
-        }
-    }
     public void EditorModifyTileSpriteID(int index, TileIdentifier subIndex, int spriteIndex)
     {
         var largeData = metatiles[index];
@@ -51,7 +37,18 @@ public class MetatileMemory : ScriptableObject
     public void EditorInsertData(int index)
     {
         var data = GetData(index);
-        data.name += "1";
+        var suffixStartPosition = data.name.Length;
+        while (suffixStartPosition > 0 && char.IsDigit(data.name[suffixStartPosition - 1]))
+        {
+            suffixStartPosition--;
+        }
+        var prefix = data.name[..suffixStartPosition];
+        var suffix = " 0";
+        if (data.name.Length - suffixStartPosition > 0)
+        {
+            suffix = $"{int.Parse(data.name[suffixStartPosition..]) + 1}";
+        }
+        data.name = prefix + suffix;
         metatiles.Insert(index + 1, data);
     }
     public void EditorDeleteData(int index)

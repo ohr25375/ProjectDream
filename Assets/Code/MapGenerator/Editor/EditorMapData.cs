@@ -76,6 +76,19 @@ public class EditorMapData : Editor
             }
         }
     }
+    private void DrawMetatilesAsOne(Rect rect, Vector2Int mapSize, List<MetatileMapData> metatileDatas)
+    {
+        for (var y = 0; y < mapSize.y; y++)
+        {
+            for (var x = 0; x < mapSize.x; x++)
+            {
+                var mapIndex = x + y * mapSize.x;
+                var metatileIndex = metatileDatas[mapIndex].metatileIndex;
+                var position = new Vector2(x, mapSize.y - 1 - y);
+                EditorExtensions.DrawMetatileAsOne(_mapData.EditorTileset, _mapData.EditorMemory.GetData(metatileIndex), position, rect.position);
+            }
+        }
+    }
     private void DrawCollision(Vector2 position, Vector2 offset, TileCollisionFlags collisionData)
     {
         Rect rect = new(position * 16 + offset, Vector2.one * 8);
@@ -94,7 +107,7 @@ public class EditorMapData : Editor
     private void DrawMapEditor()
     {
         //Debug.Log(GUILayoutUtility.GetRect(new GUIContent(), GUIStyle.none));
-        GUILayout.BeginVertical();
+        var rect = EditorGUILayout.BeginVertical();
         GUIStyle style = new(GUI.skin.button)
         {
             fixedWidth = 16,
@@ -105,7 +118,9 @@ public class EditorMapData : Editor
             contentOffset = new(0, 0),
             overflow = new(0, 0, 0, 0)
         };
-        var selectedTile = GUILayout.SelectionGrid(-1, GetButtonTextures().ToArray(), _mapData.Size.x, style);
+        var mapTileCount = _mapData.Size.x * _mapData.Size.y;
+        var selectedTile = GUILayout.SelectionGrid(-1, new string[mapTileCount], _mapData.Size.x, style);
+        DrawMetatilesAsOne(rect, _mapData.Size, _mapData.MetatileDatas);
         if (GUILayout.Button("Clear Map")) _mapTileData.ClearMap();
         if (GUILayout.Button("Save Asset")) SaveAsset();
 
@@ -116,23 +131,17 @@ public class EditorMapData : Editor
         DrawMetatileSelector();
         EditorGUILayout.LabelField($"Name: {_mapData.EditorMemory.GetData(_metatileIndex).name}");
         GUILayout.EndHorizontal();
-        float magnify = 4;
-        Rect metatilePreviewRect = GUILayoutUtility.GetRect(new GUIContent(), GUIStyle.none, GUILayout.MinWidth(magnify * 8 * 2), GUILayout.MinHeight(magnify * 8 * 2));
-        metatilePreviewRect.x += 20;
-        Rect tileIdentifierRect = new(metatilePreviewRect)
+        var metatileSpriteData = _mapData.EditorMemory.GetData(_metatileIndex);
+        var selectedTileIdentifier = EditorExtensions.DrawTileIdentiferSelector((int)_tileIdentifier, _mapData.EditorTileset, metatileSpriteData);
+        if (selectedTileIdentifier != -1)
         {
-            width = magnify * 8,
-            height = magnify * 8,
-        };
-        tileIdentifierRect.position += 8 * magnify * new Vector2((int)_tileIdentifier % 2, (int)_tileIdentifier / 2);
-        EditorGUI.DrawRect(tileIdentifierRect, Color.red);
-        EditorExtensions.DrawMetatile(_mapData.EditorTileset, _mapData.EditorMemory.GetData(_metatileIndex), Vector2.zero, metatilePreviewRect.position, magnify, (magnify * 8 - 2) / (magnify * 8));
+            _tileIdentifier = (TileIdentifier)selectedTileIdentifier;
+        }
         if (selectedTile != -1)
         {
             UpdateMapData(selectedTile);
         }
         _palette = (Palette)EditorGUILayout.EnumPopup(new GUIContent("Palette", "Metatile palette"), _palette);
-        _tileIdentifier = (TileIdentifier)EditorGUILayout.EnumPopup(new GUIContent("Tile", "Which tile to edit"), _tileIdentifier);
         _tileCollisionDatas[(int)_tileIdentifier] = (TileCollisionFlags)EditorGUILayout.EnumFlagsField(_tileCollisionDatas[(int)_tileIdentifier]);
         var applyToAll = GUILayout.Button("Apply to all");
         if (applyToAll)
@@ -142,7 +151,7 @@ public class EditorMapData : Editor
                 _tileCollisionDatas[i] = _tileCollisionDatas[(int)_tileIdentifier];
             }
         }
-        GUILayout.EndVertical();
+        EditorGUILayout.EndVertical();
     }
 
     private void DrawMetatileSelector()

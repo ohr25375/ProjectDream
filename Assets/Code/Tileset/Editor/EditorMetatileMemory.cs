@@ -1,9 +1,5 @@
-using System.Collections.Generic;
-using System.Drawing.Printing;
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.UIElements;
-using static TMPro.SpriteAssetUtilities.TexturePacker_JsonArray;
 
 [CustomEditor(typeof(MetatileMemory))]
 public class EditorMetatileMemory : Editor
@@ -12,8 +8,6 @@ public class EditorMetatileMemory : Editor
     private const float SPRITE_SIZE = 8;
     private int _selectedMetatileIndex = 0;
     private int _currentMetatileSubIndex = 0;
-    private bool _hasValidated = true;
-    private List<Texture> _editorTilesetTextureCache = new();
     #region UNITY
     public override void OnInspectorGUI()
     {
@@ -42,19 +36,20 @@ public class EditorMetatileMemory : Editor
                 var buttonStyle = EditorExtensions.ButtonStyle(SPRITE_SIZE, magnify);
                 buttonStyle.margin = new(1, 1, 1, 1);
                 var selected = GUILayout.SelectionGrid(-1, new string[256], 16, buttonStyle);
-                var textures = _metatileMemory.EditorTextureCache;
                 for (var i = 0; i < 256; i++)
                 {
                     int x = i % 16;
                     int y = i / 16;
+                    var sprite = _metatileMemory.EditorTileset.GetSprite(i);
+                    var spriteRect = sprite.GetNormalizedSpriteRect();
                     Rect textureRect = new()
                     {
-                        x = 8 * magnify * x + rect.x,// + (1 - size) / 2 * 8 * magnify,
-                        y = 8 * magnify * y + rect.y,// + (1 - size) / 2 * 8 * magnify,
-                        width  = 8 * magnify,// * size,
-                        height = 8 * magnify,// * size
+                        x = (8 * magnify + 1) * x + rect.x,
+                        y = (8 * magnify + 1) * y + rect.y,
+                        width  = 8 * magnify,
+                        height = 8 * magnify,
                     };
-                    GUI.DrawTexture(textureRect, textures[i]);
+                    GUI.DrawTextureWithTexCoords(textureRect, sprite.texture, spriteRect);
                 }
                 if (selected != -1)
                 {
@@ -64,7 +59,6 @@ public class EditorMetatileMemory : Editor
             EditorGUILayout.EndHorizontal();
         }
         EditorGUILayout.EndHorizontal();
-        _hasValidated = false;
     }
 
     private void DrawSelectedSpriteIndicator(MetatileMemory metatileMemory, Rect rect, float size = 1)
@@ -118,6 +112,10 @@ public class EditorMetatileMemory : Editor
                 if (GUILayout.Button("-"))
                 {
                     metatileMemory.EditorDeleteData(_selectedMetatileIndex);
+                    if (_selectedMetatileIndex > 0)
+                    {
+                        _selectedMetatileIndex--;
+                    }
                 }
             }
             EditorGUILayout.EndHorizontal();
@@ -132,47 +130,11 @@ public class EditorMetatileMemory : Editor
     }
     private void DrawMetatile(MetatileMemory metatileMemory, MetatileSpriteData metatileSpriteData)
     {
-        float magnify = 4;
-        var rect = EditorGUILayout.BeginVertical(GUILayout.Width(magnify * SPRITE_SIZE * 2));
+        var selectedMetatileSubIndex = EditorExtensions.DrawTileIdentiferSelector(_currentMetatileSubIndex, metatileMemory.EditorTileset, metatileSpriteData);
+        if (selectedMetatileSubIndex != -1)
         {
-            Rect tileIdentifierRect = new(rect)
-            {
-                width = magnify * SPRITE_SIZE,
-                height = magnify * SPRITE_SIZE,
-            };
-            tileIdentifierRect.position += SPRITE_SIZE * magnify * new Vector2(_currentMetatileSubIndex % 2, _currentMetatileSubIndex >> 1);
-            var selectedMetatileSubIndex = DrawSelectionGrid(2, 2, SPRITE_SIZE, magnify);
-            EditorGUI.DrawRect(tileIdentifierRect, Color.red);
-            if (selectedMetatileSubIndex != -1)
-            {
-                _currentMetatileSubIndex = selectedMetatileSubIndex;
-            }
-            EditorExtensions.DrawMetatile(metatileMemory.EditorTileset, metatileSpriteData, Vector2.zero, rect.position, magnify, (magnify * SPRITE_SIZE - 2) / (magnify * SPRITE_SIZE));
+            _currentMetatileSubIndex = selectedMetatileSubIndex;
         }
-        EditorGUILayout.EndVertical();
-    }
-    private int DrawSelectionGrid(Vector2Int size, float spriteSize, float buttonSize = 1, int margin = 1) => DrawSelectionGrid(size.x, size.y, spriteSize, buttonSize, margin);
-    private int DrawSelectionGrid(int width, int height, float spriteSize, float buttonSize = 1, int margin = 0)
-    {
-        var style = EditorExtensions.ButtonStyle(spriteSize, buttonSize);
-        style.margin = new(margin, margin, margin, margin);
-        var selected = -1;
-        EditorGUILayout.BeginVertical();
-        for (var y = 0; y < height; y++)
-        {
-            EditorGUILayout.BeginHorizontal();
-            for (var x = 0; x < width; x++)
-            {
-                var index = x + y * width;
-                if (GUILayout.Button("", style))
-                {
-                    selected = x + y * width;
-                }
-            }
-            EditorGUILayout.EndHorizontal();
-        }
-        EditorGUILayout.EndVertical();
-        return selected;
     }
     #endregion
 }
