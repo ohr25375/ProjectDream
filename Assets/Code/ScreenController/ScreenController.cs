@@ -25,10 +25,11 @@ public class ScreenController : MonoBehaviour
 
     public static ScreenController Instance = null;
     public static MapData MainMapData = null;
+    public int _currentMapIndex = 0;
+    private WorldMapData CurrentWorldMapData => _worldData.GetWorldMapData(_currentMapIndex);
 #if UNITY_EDITOR
     [Header("Debug")]
-    [SerializeField] private MapData _startingMapData;
-    [SerializeField] private MapData _nextMapData;
+    [SerializeField] private WorldData _worldData;
     [SerializeField] private Direction _direction;
 
     private void Awake()
@@ -50,14 +51,15 @@ public class ScreenController : MonoBehaviour
             return;
         }
         Instance = this;
-        _mainMapGenerator.InitializeObjects(_metatilePrefab, _startingMapData.Size, _mainScreen.transform);
-        _subMapGenerator.InitializeObjects(_metatilePrefab, _startingMapData.Size, _subScreen.transform);
+        var startingMapData = _worldData.GetWorldMapData(0).MapData;
+        _mainMapGenerator.InitializeObjects(_metatilePrefab, startingMapData.Size, _mainScreen.transform);
+        _subMapGenerator.InitializeObjects(_metatilePrefab, startingMapData.Size, _subScreen.transform);
         _subScreen.SetActive(false);
         _mainMapGenerator.SetTileset(_tileset);
         _subMapGenerator.SetTileset(_tileset);
         _player.Initialize(_playerStartingPosition);
-        _player.SetMapPositionOffset(GetPositionFromXY(0, 0, _startingMapData.Size * 2) - new Vector3(0.5f, 0.5f, 0));
-        SetStaticMapData(_startingMapData);
+        _player.SetMapPositionOffset(GetPositionFromXY(0, 0, startingMapData.Size * 2) - new Vector3(0.5f, 0.5f, 0));
+        SetStaticMapData(startingMapData);
     }
 
     private Vector3 GetPositionFromXY(int x, int y, Vector2Int size)
@@ -71,9 +73,11 @@ public class ScreenController : MonoBehaviour
         _mainMapGenerator.LoadMapData(mapData, _metatileMemory);
     }
 
-    private IEnumerator MoveCamera(Vector2 direction, MapData nextMapData)
+    private IEnumerator MoveCamera(Vector2 direction, int nextMapIndex)
     {
         _player.SetCanMove(false);
+        var nextMap = _worldData.GetWorldMapData(nextMapIndex);
+        var nextMapData = nextMap.MapData;
         var baseTarget = new Vector2(nextMapData.Size.x * direction.x, nextMapData.Size.y * direction.y);
         var target = 2 * baseTarget;
         _subScreen.SetActive(true);
@@ -97,31 +101,12 @@ public class ScreenController : MonoBehaviour
         _player.SetCanMove(true);
         _subScreen.SetActive(false);
         SetStaticMapData(nextMapData);
+        _currentMapIndex = nextMapIndex;
         _coroutine = null;
     }
     public void Initialize(MapData initialMapData)
     {
         _mainMapGenerator.LoadMapData(initialMapData, _metatileMemory);
-    }
-    public void MoveScreenLeft(MapData nextMapData)
-    {
-        if (_coroutine != null) return;
-        _coroutine = StartCoroutine(MoveCamera(Vector2.left, nextMapData));
-    }
-    public void MoveScreenRight(MapData nextMapData)
-    {
-        if (_coroutine != null) return;
-        _coroutine = StartCoroutine(MoveCamera(Vector2.right, nextMapData));
-    }
-    public void MoveScreenUp(MapData nextMapData)
-    {
-        if (_coroutine != null) return;
-        _coroutine = StartCoroutine(MoveCamera(Vector2.up, nextMapData));
-    }
-    public void MoveScreenDown(MapData nextMapData)
-    {
-        if (_coroutine != null) return;
-        _coroutine = StartCoroutine(MoveCamera(Vector2.down, nextMapData));
     }
     public static void MoveMap(Direction direction)
     {
@@ -129,12 +114,9 @@ public class ScreenController : MonoBehaviour
     }
     private void DoMoveMap(Direction direction)
     {
-        switch (direction)
-        {
-            case Direction.Left: MoveScreenLeft(_nextMapData); break;
-            case Direction.Right: MoveScreenRight(_nextMapData); break;
-            case Direction.Up: MoveScreenUp(_nextMapData); break;
-            case Direction.Down: MoveScreenDown(_nextMapData); break;
-        }
+        if (!_worldData.IsNextMapReachable(_currentMapIndex, direction)) return;
+        if (_coroutine != null) return;
+        var nextIndex = _worldData.GetNextIndex(_currentMapIndex, direction);
+        _coroutine = StartCoroutine(MoveCamera(direction.ToVector2(), nextIndex));
     }
 }

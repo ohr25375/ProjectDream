@@ -380,8 +380,8 @@ MonoBehaviour:
   _delay: 0.2
   _player: {fileID: 1622154127}
   _playerStartingPosition: {x: 0, y: 0}
-  _startingMapData: {fileID: 11400000, guid: 7935a3dae283cce4a84ab9fb758e4f80, type: 2}
-  _nextMapData: {fileID: 11400000, guid: 7935a3dae283cce4a84ab9fb758e4f80, type: 2}
+  _currentMapIndex: 0
+  _worldData: {fileID: 11400000, guid: f14b206a4695bf047ba20f73759ad621, type: 2}
   _direction: 2
 --- !u!4 &904917648
 Transform:
