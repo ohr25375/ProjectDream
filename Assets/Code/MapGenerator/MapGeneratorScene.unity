@@ -381,7 +381,7 @@ MonoBehaviour:
   _player: {fileID: 1622154127}
   _playerStartingPosition: {x: 0, y: 0}
   _startingMapData: {fileID: 11400000, guid: 7935a3dae283cce4a84ab9fb758e4f80, type: 2}
-  _nextMapData: {fileID: 11400000, guid: e7d0ffe48fbff8b448018f67255980b9, type: 2}
+  _nextMapData: {fileID: 11400000, guid: 7935a3dae283cce4a84ab9fb758e4f80, type: 2}
   _direction: 2
 --- !u!4 &904917648
 Transform:

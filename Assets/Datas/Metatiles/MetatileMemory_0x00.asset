@@ -190,7 +190,7 @@ MonoBehaviour:
         isFlippedX: 0
         isFlippedY: 0
       BB:
-        spriteID: 0
+        spriteID: 36
         isFlippedX: 0
         isFlippedY: 0
   - name: WallUpDown
@@ -283,3 +283,4 @@ MonoBehaviour:
         spriteID: 0
         isFlippedX: 0
         isFlippedY: 0
+  e_tileset: {fileID: 11400000, guid: e827703367f28b74d9d2dbb9b9fcb8b2, type: 2}

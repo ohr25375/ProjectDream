@@ -1,6 +1,7 @@
-using UnityEngine;
-using UnityEditor;
 using System.Collections.Generic;
+using UnityEditor;
+using UnityEngine;
+using UnityEngine.UIElements;
 
 [CustomEditor(typeof(MapData))]
 public class EditorMapData : Editor
@@ -9,7 +10,6 @@ public class EditorMapData : Editor
     private MapDataTiles _mapTileData;
     private bool _editorFoldout = true;
     private List<Texture> _buttonTextures = new();
-    private int _selectedTile = -1;
     private bool _hasValidated = true;
     private Palette _palette = Palette.A;
     private TileIdentifier _tileIdentifier;
@@ -44,40 +44,10 @@ public class EditorMapData : Editor
     }
     private void OnEnable()
     {
-        _selectedTile = -1;
         _hasValidated = true;
         _palette = Palette.A;
         _tileCollisionDatas = new();
         _metatileIndex = 0;
-    }
-    private void DrawTile(Vector2 position, Vector2 offset, TileSpriteData spriteData, float magnify = 1, float size = 1)
-    {
-        Sprite sprite = _mapData.EditorTileset.GetSprite(spriteData.spriteID);
-        bool flipX = spriteData.isFlippedX;
-        bool flipY = spriteData.isFlippedY;
-        if (sprite == null)
-        {
-            sprite = _mapData.EditorTileset.GetSprite(0);
-        }
-        Texture2D spritePreview = AssetPreview.GetAssetPreview(sprite);
-        if (spritePreview == null) return;
-        Rect rect = new()
-        {
-            x = 16 * magnify * position.x + 8 * magnify * (flipX ? 1 : 0) + offset.x + (1 - size) / 2 * 8 * magnify * (flipX ? -1 : 1),
-            y = 16 * magnify * position.y + 8 * magnify * (flipY ? 1 : 0) + offset.y + (1 - size) / 2 * 8 * magnify * (flipY ? -1 : 1),
-            width = (flipX ? -1 : 1) * 8 * magnify * size,
-            height = (flipY ? -1 : 1) * 8 * magnify * size
-        };
-        GUI.DrawTexture(rect, spritePreview);
-    }
-    private void DrawMetatile(Vector2 position, Vector2 offset, int metatileIndex, float magnify = 1, float size = 1)
-    {
-        var tileSpriteDatas = _mapData.EditorMemory.GetData(metatileIndex).data;
-        for (var i = 0; i < 4; i++)
-        {
-            var pos = position + new Vector2(i % 2, i / 2) / 2;
-            DrawTile(pos, offset, tileSpriteDatas[i], magnify, size);
-        }
     }
     private void DrawCollisions()
     {
@@ -92,17 +62,17 @@ public class EditorMapData : Editor
             }
         }
     }
-    private void DrawMetatiles()
+    private void DrawMetatiles(Vector2Int mapSize, List<MetatileMapData> metatileDatas)
     {
         Rect rt = GUILayoutUtility.GetRect(new GUIContent(), GUIStyle.none);
-        for (var y = 0; y < _mapData.Size.y; y++)
+        for (var y = 0; y < mapSize.y; y++)
         {
-            for (var x = 0; x < _mapData.Size.x; x++)
+            for (var x = 0; x < mapSize.x; x++)
             {
-                var mapIndex = x + y * _mapData.Size.x;
-                var metatileIndex = _mapTileData.MetatileDatas[mapIndex].metatileIndex;
-                var position = new Vector2(x, _mapData.Size.y - 1 - y);
-                DrawMetatile(position, rt.position, metatileIndex);
+                var mapIndex = x + y * mapSize.x;
+                var metatileIndex = metatileDatas[mapIndex].metatileIndex;
+                var position = new Vector2(x, mapSize.y - 1 - y);
+                EditorExtensions.DrawMetatile(_mapData.EditorTileset, _mapData.EditorMemory.GetData(metatileIndex), position, rt.position);
             }
         }
     }
@@ -135,7 +105,7 @@ public class EditorMapData : Editor
             contentOffset = new(0, 0),
             overflow = new(0, 0, 0, 0)
         };
-        _selectedTile = GUILayout.SelectionGrid(_selectedTile, GetButtonTextures().ToArray(), _mapData.Size.x, style);
+        var selectedTile = GUILayout.SelectionGrid(-1, GetButtonTextures().ToArray(), _mapData.Size.x, style);
         if (GUILayout.Button("Clear Map")) _mapTileData.ClearMap();
         if (GUILayout.Button("Save Asset")) SaveAsset();
 
@@ -144,6 +114,7 @@ public class EditorMapData : Editor
         GUILayout.BeginVertical();
         GUILayout.BeginHorizontal();
         DrawMetatileSelector();
+        EditorGUILayout.LabelField($"Name: {_mapData.EditorMemory.GetData(_metatileIndex).name}");
         GUILayout.EndHorizontal();
         float magnify = 4;
         Rect metatilePreviewRect = GUILayoutUtility.GetRect(new GUIContent(), GUIStyle.none, GUILayout.MinWidth(magnify * 8 * 2), GUILayout.MinHeight(magnify * 8 * 2));
@@ -155,10 +126,10 @@ public class EditorMapData : Editor
         };
         tileIdentifierRect.position += 8 * magnify * new Vector2((int)_tileIdentifier % 2, (int)_tileIdentifier / 2);
         EditorGUI.DrawRect(tileIdentifierRect, Color.red);
-        DrawMetatile(Vector2.zero, metatilePreviewRect.position, _metatileIndex, magnify, (magnify * 8 - 2) / (magnify * 8));
-        if (_selectedTile != -1)
+        EditorExtensions.DrawMetatile(_mapData.EditorTileset, _mapData.EditorMemory.GetData(_metatileIndex), Vector2.zero, metatilePreviewRect.position, magnify, (magnify * 8 - 2) / (magnify * 8));
+        if (selectedTile != -1)
         {
-            UpdateMapData();
+            UpdateMapData(selectedTile);
         }
         _palette = (Palette)EditorGUILayout.EnumPopup(new GUIContent("Palette", "Metatile palette"), _palette);
         _tileIdentifier = (TileIdentifier)EditorGUILayout.EnumPopup(new GUIContent("Tile", "Which tile to edit"), _tileIdentifier);
@@ -182,17 +153,17 @@ public class EditorMapData : Editor
         _metatileIndex = (_metatileIndex + _mapData.EditorMemory.Max + inc) % _mapData.EditorMemory.Max;
     }
 
-    private void UpdateMapData()
+    private void UpdateMapData(int selectedTile)
     {
-        int selectedX = _selectedTile % _mapData.Size.x;
-        int selectedY = _selectedTile / _mapData.Size.x;
+        int selectedX = selectedTile % _mapData.Size.x;
+        int selectedY = selectedTile / _mapData.Size.x;
         int mapY = _mapData.Size.y - 1 - selectedY;
         int mapIndex = selectedX + mapY * _mapData.Size.x;
         _mapTileData.ChangeMetatileIndex(mapIndex, _metatileIndex);
         _mapTileData.SetTileCollisionDatas(mapIndex, _tileCollisionDatas);
         _mapTileData.ChangeMetatilePalette(mapIndex, _palette);
         _hasValidated = true;
-        _selectedTile = -1;
+        selectedTile = -1;
     }
     private void SaveAsset()
     {
@@ -221,7 +192,7 @@ public class EditorMapData : Editor
         switch (_previewMode)
         {
             case PreviewMode.Editor: DrawMapEditor(); break;
-            case PreviewMode.Sprite: DrawMetatiles(); break;
+            case PreviewMode.Sprite: DrawMetatiles(_mapData.Size, _mapData.MetatileDatas); break;
             case PreviewMode.Collisions: DrawCollisions(); break;
         }
 
