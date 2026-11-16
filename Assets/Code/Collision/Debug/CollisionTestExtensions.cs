@@ -28,4 +28,17 @@ public static class CollisionTestExtensions
             _ => Vector2Int.zero,
         };
     }
+    public static Direction GetRelativeDirection(this Direction direction, int bias)
+    {
+        if (bias == 0) return direction;
+        bool isBiasPositive = bias > 0;
+        return direction switch
+        {
+            Direction.Left => isBiasPositive ? Direction.Down : Direction.Up,
+            Direction.Right => isBiasPositive ? Direction.Down : Direction.Up,
+            Direction.Up => isBiasPositive ? Direction.Left : Direction.Right,
+            Direction.Down => isBiasPositive ? Direction.Left : Direction.Right,
+            _ => Direction.None,
+        };
+    }
 }

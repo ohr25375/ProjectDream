@@ -10,7 +10,8 @@ public class GridBasedCollider
     #endregion
 
     public void SetOffset(Vector2 offset) => _offset = offset;
-    public int IsColliding(ReadOnlyCollection<bool> colliders, Vector2Int size, Direction direction, Vector2 rootPosition)
+    public int IsColliding(ReadOnlyCollection<bool> colliders, Vector2Int size, Direction direction, Vector2 rootPosition) => IsColliding(colliders, size, direction, rootPosition, out _);
+    public int IsColliding(ReadOnlyCollection<bool> colliders, Vector2Int size, Direction direction, Vector2 rootPosition, out int colliderBias)
     {
         var currentPosition = rootPosition + _offset;
         Vector2Int checkingPosition1, checkingPosition2;
@@ -18,26 +19,26 @@ public class GridBasedCollider
         {
             case Direction.Left:
                 {
-                    checkingPosition1 = new Vector2Int(Mathf.FloorToInt(currentPosition.x), Mathf.FloorToInt(currentPosition.y));
-                    checkingPosition2 = new Vector2Int(Mathf.FloorToInt(currentPosition.x), Mathf.CeilToInt(currentPosition.y));
+                    checkingPosition1 = new Vector2Int(Mathf.FloorToInt(currentPosition.x), Mathf.FloorToInt(currentPosition.y));   // negative side (down)
+                    checkingPosition2 = new Vector2Int(Mathf.FloorToInt(currentPosition.x), Mathf.CeilToInt(currentPosition.y));    // positive side (up)
                     break;
                 }
             case Direction.Right:
                 {
-                    checkingPosition1 = new Vector2Int(Mathf.CeilToInt(currentPosition.x), Mathf.FloorToInt(currentPosition.y));
-                    checkingPosition2 = new Vector2Int(Mathf.CeilToInt(currentPosition.x), Mathf.CeilToInt(currentPosition.y));
+                    checkingPosition1 = new Vector2Int(Mathf.CeilToInt(currentPosition.x), Mathf.FloorToInt(currentPosition.y));    // negative side (down)
+                    checkingPosition2 = new Vector2Int(Mathf.CeilToInt(currentPosition.x), Mathf.CeilToInt(currentPosition.y));     // positive side (up)
                     break;
                 }
             case Direction.Up:
                 {
-                    checkingPosition1 = new Vector2Int(Mathf.FloorToInt(currentPosition.x), Mathf.CeilToInt(currentPosition.y));
-                    checkingPosition2 = new Vector2Int(Mathf.CeilToInt(currentPosition.x), Mathf.CeilToInt(currentPosition.y));
+                    checkingPosition1 = new Vector2Int(Mathf.FloorToInt(currentPosition.x), Mathf.CeilToInt(currentPosition.y));    // negative side (left)
+                    checkingPosition2 = new Vector2Int(Mathf.CeilToInt(currentPosition.x), Mathf.CeilToInt(currentPosition.y));     // positive side (right)
                     break;
                 }
             case Direction.Down:
                 {
-                    checkingPosition1 = new Vector2Int(Mathf.FloorToInt(currentPosition.x), Mathf.FloorToInt(currentPosition.y));
-                    checkingPosition2 = new Vector2Int(Mathf.CeilToInt(currentPosition.x), Mathf.FloorToInt(currentPosition.y));
+                    checkingPosition1 = new Vector2Int(Mathf.FloorToInt(currentPosition.x), Mathf.FloorToInt(currentPosition.y));   // negative side (left)
+                    checkingPosition2 = new Vector2Int(Mathf.CeilToInt(currentPosition.x), Mathf.FloorToInt(currentPosition.y));    // positive side (right)
                     break;
                 }
             default:
@@ -47,11 +48,14 @@ public class GridBasedCollider
                     break;
                 }
         }
+        colliderBias = 0;
         if (IsOutOfBounds(checkingPosition1, size) || IsOutOfBounds(checkingPosition2, size)) { return -1; }
         var index1 = checkingPosition1.y * size.x + checkingPosition1.x;
-        if (colliders[index1]) { return 1; }
         var index2 = checkingPosition2.y * size.x + checkingPosition2.x;
-        if (colliders[index2]) { return 2; }
+        bool isNegativeColliderColliding = colliders[index1];
+        bool isPositiveColliderColliding = colliders[index2];
+        colliderBias = (isNegativeColliderColliding ? -1 : 0) + (isPositiveColliderColliding ? 1 : 0);
+        if (isNegativeColliderColliding || isPositiveColliderColliding) return 1;
         return 0;
     }
 }
