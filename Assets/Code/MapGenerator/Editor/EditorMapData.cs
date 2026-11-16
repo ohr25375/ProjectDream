@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using static UnityEditor.PlayerSettings;
 
 [CustomEditor(typeof(MapData))]
 public class EditorMapData : Editor
@@ -14,7 +15,7 @@ public class EditorMapData : Editor
     private int _metatileIndex = 0;
     private bool _clearMapDataSafety = false;
     private int _lastSelectedMapTile = -1;
-    private bool _isPaletteOverlayEnabled = false;
+    private bool _isPaletteOverlayEnabled = true;
     private float _paletteOverlayValue = 0.5f;
     private enum PreviewMode
     {
@@ -37,7 +38,7 @@ public class EditorMapData : Editor
             for (var x = 0; x < _mapData.Size.x; x++)
             {
                 var mapIndex = x + y * _mapData.Size.x;
-                var position = new Vector2(x, _mapData.Size.y - 1 - y);
+                var position = new Vector2Int(x, _mapData.Size.y - 1 - y);
                 DrawCollisionSet(position, rt.position, mapIndex);
             }
         }
@@ -112,21 +113,22 @@ public class EditorMapData : Editor
     }
     private void DrawCollision(Vector2 position, Vector2 offset, TileCollisionFlags collisionData)
     {
-        Rect rect = new(position * 16 + offset, Vector2.one * 8);
+        Rect rect = new(offset + position * 8, Vector2.one * 8);
         Color color = new()
         {
             r = collisionData.HasFlag(TileCollisionFlags.IsCollidable) ? 1 : 0,
             g = 0,
-            b = collisionData.HasFlag(TileCollisionFlags.IsAirCollidable) ? 1 : 0
+            b = collisionData.HasFlag(TileCollisionFlags.IsAirCollidable) ? 1 : 0,
+            a = 1
         };
         EditorGUI.DrawRect(rect, color);
     }
-    private void DrawCollisionSet(Vector2 position, Vector2 offset, int mapIndex)
+    private void DrawCollisionSet(Vector2Int position, Vector2 offset, int mapIndex)
     {
         MetatileMapData metatileMapData = _mapTileData.MetatileDatas[mapIndex];
         for (var i = 0; i < 4; i++)
         {
-            var pos = position + new Vector2(i % 2, i / 2) / 2;
+            var pos = position * 2 + new Vector2(i % 2, i / 2);
             DrawCollision(pos, offset, metatileMapData.data[i]);
         }
     }
@@ -166,11 +168,13 @@ public class EditorMapData : Editor
         _metatileIndex = EditorExtensions.DrawMetatileSelector(_mapData.EditorMemory, _metatileIndex, ref _tileIdentifier);
         GUILayout.BeginVertical();
         var isPaletteOverlayEnabled = EditorGUILayout.ToggleLeft("Palette Overlay", _isPaletteOverlayEnabled);
+        GUI.enabled = isPaletteOverlayEnabled;
         if (isPaletteOverlayEnabled !=  _isPaletteOverlayEnabled)
         {
             _isPaletteOverlayEnabled = isPaletteOverlayEnabled;
         }
         _paletteOverlayValue = EditorGUILayout.Slider(_paletteOverlayValue, 0, 1);
+        GUI.enabled = true;
         GUILayout.EndVertical();
         GUILayout.EndHorizontal();
         EditorGUILayout.LabelField($"Name: {_mapData.EditorMemory.GetData(_metatileIndex).name}");
