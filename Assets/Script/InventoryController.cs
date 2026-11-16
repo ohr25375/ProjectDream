@@ -1,3 +1,4 @@
+using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -11,17 +12,24 @@ public class InventoryController : MonoBehaviour
 
     private Vector3 targetPosition;
     private bool isOpen = false;
-    //private bool isMoving = false;  
+    private bool isMoving = false;  
     private void Start()
     {
         targetPosition = inventoryUI.localPosition;
     }
     private void Update()
     {
-        inventoryUI.localPosition = Vector3.MoveTowards(inventoryUI.localPosition,targetPosition,moveSpeed * Time.deltaTime);
+            inventoryUI.localPosition = Vector3.MoveTowards(inventoryUI.localPosition,targetPosition,moveSpeed * Time.deltaTime);
+           
+        if (inventoryUI.localPosition == targetPosition)
+        {
+            isMoving = false;
+        }
     }
+
     private void OnInventoryInput(InputAction.CallbackContext context)
     {
+        if (isMoving) return;
         if (isOpen) CloseInventory();
         else OpenInventory();
 
@@ -40,12 +48,13 @@ public class InventoryController : MonoBehaviour
 
     void OpenInventory()
     {
-        //isMoving = true;
+        isMoving = true;
         targetPosition = new Vector3(inventoryUI.localPosition.x,openY,inventoryUI.localPosition.z);
     }
 
     void CloseInventory()
     {
+        isMoving = true;
         targetPosition = new Vector3(inventoryUI.localPosition.x,closeY,inventoryUI.localPosition.z);
     }
 }
