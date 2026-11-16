@@ -1,11 +1,18 @@
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
-using static UnityEditor.PlayerSettings;
 
 [CustomEditor(typeof(MapData))]
 public class EditorMapData : Editor
 {
+    [System.Serializable]
+    private enum EditorOverlay
+    {
+        None,
+        Palette,
+        Collider,
+    };
+
     private MapData _mapData;
     private MapDataTiles _mapTileData;
     private bool _editorFoldout = true;
@@ -15,31 +22,31 @@ public class EditorMapData : Editor
     private int _metatileIndex = 0;
     private bool _clearMapDataSafety = false;
     private int _lastSelectedMapTile = -1;
-    private bool _isPaletteOverlayEnabled = true;
-    private float _paletteOverlayValue = 0.5f;
-    private enum PreviewMode
+    private EditorOverlay _editorOverlayMode;
+    private float _overlayOpacity = 0.5f;
+    public enum PreviewMode
     {
         Editor,
         Sprite,
         Collisions
     };
-    private PreviewMode _previewMode = PreviewMode.Sprite;
+    public static PreviewMode GlobalDefaultPreviewMode = PreviewMode.Sprite;
+    private PreviewMode _previewMode = GlobalDefaultPreviewMode;
     private void OnEnable()
     {
         _palette = Palette.A;
         _tileCollisionDatas = new();
         _metatileIndex = 0;
     }
-    private void DrawCollisions()
+    private void DrawCollisions(Rect rect, float alpha = 1)
     {
-        Rect rt = GUILayoutUtility.GetRect(new GUIContent(), GUIStyle.none);
         for (var y = 0; y < _mapData.Size.y; y++)
         {
             for (var x = 0; x < _mapData.Size.x; x++)
             {
                 var mapIndex = x + y * _mapData.Size.x;
                 var position = new Vector2Int(x, _mapData.Size.y - 1 - y);
-                DrawCollisionSet(position, rt.position, mapIndex);
+                DrawCollisionSet(position, rect.position, mapIndex, alpha);
             }
         }
     }
@@ -106,12 +113,12 @@ public class EditorMapData : Editor
                     case 2: color = Color.cyan; break;
                     case 3: color = Color.magenta; break;
                 }
-                color.a = _paletteOverlayValue;
+                color.a = _overlayOpacity;
                 EditorGUI.DrawRect(selectedRect, color);
             }
         }
     }
-    private void DrawCollision(Vector2 position, Vector2 offset, TileCollisionFlags collisionData)
+    private void DrawCollision(Vector2 position, Vector2 offset, TileCollisionFlags collisionData, float alpha)
     {
         Rect rect = new(offset + position * 8, Vector2.one * 8);
         Color color = new()
@@ -119,17 +126,17 @@ public class EditorMapData : Editor
             r = collisionData.HasFlag(TileCollisionFlags.IsCollidable) ? 1 : 0,
             g = 0,
             b = collisionData.HasFlag(TileCollisionFlags.IsAirCollidable) ? 1 : 0,
-            a = 1
+            a = alpha,
         };
         EditorGUI.DrawRect(rect, color);
     }
-    private void DrawCollisionSet(Vector2Int position, Vector2 offset, int mapIndex)
+    private void DrawCollisionSet(Vector2Int position, Vector2 offset, int mapIndex, float alpha)
     {
         MetatileMapData metatileMapData = _mapTileData.MetatileDatas[mapIndex];
         for (var i = 0; i < 4; i++)
         {
             var pos = position * 2 + new Vector2(i % 2, i / 2);
-            DrawCollision(pos, offset, metatileMapData.data[i]);
+            DrawCollision(pos, offset, metatileMapData.data[i], alpha);
         }
     }
     private void DrawMapEditor()
@@ -149,7 +156,12 @@ public class EditorMapData : Editor
         var mapTileCount = _mapData.Size.x * _mapData.Size.y;
         var selectedTile = GUILayout.SelectionGrid(-1, new string[mapTileCount], _mapData.Size.x, style);
         DrawMetatilesAsOne(rect, _mapData.Size, _mapData.MetatileDatas);
-        if (_isPaletteOverlayEnabled) DrawBasicPaletteOverlay(rect, _mapData.Size, _mapData.MetatileDatas);
+        switch (_editorOverlayMode)
+        {
+            default: break;
+            case EditorOverlay.Palette: DrawBasicPaletteOverlay(rect, _mapData.Size, _mapData.MetatileDatas); break;
+            case EditorOverlay.Collider: DrawCollisions(rect, _overlayOpacity); break;
+        }
         GUILayout.BeginHorizontal();
         _clearMapDataSafety = GUILayout.Toggle(_clearMapDataSafety, "", GUILayout.ExpandWidth(false));
         if (!_clearMapDataSafety) GUI.enabled = false;
@@ -167,13 +179,12 @@ public class EditorMapData : Editor
         GUILayout.BeginHorizontal();
         _metatileIndex = EditorExtensions.DrawMetatileSelector(_mapData.EditorMemory, _metatileIndex, ref _tileIdentifier);
         GUILayout.BeginVertical();
-        var isPaletteOverlayEnabled = EditorGUILayout.ToggleLeft("Palette Overlay", _isPaletteOverlayEnabled);
-        GUI.enabled = isPaletteOverlayEnabled;
-        if (isPaletteOverlayEnabled !=  _isPaletteOverlayEnabled)
+        _editorOverlayMode = (EditorOverlay)EditorGUILayout.EnumPopup(_editorOverlayMode);
+        if (_editorOverlayMode == EditorOverlay.None)
         {
-            _isPaletteOverlayEnabled = isPaletteOverlayEnabled;
+            GUI.enabled = false;
         }
-        _paletteOverlayValue = EditorGUILayout.Slider(_paletteOverlayValue, 0, 1);
+        _overlayOpacity = EditorGUILayout.Slider(_overlayOpacity, 0, 1);
         GUI.enabled = true;
         GUILayout.EndVertical();
         GUILayout.EndHorizontal();
@@ -184,7 +195,7 @@ public class EditorMapData : Editor
             _lastSelectedMapTile = selectedTile;
         }
         string[] palettePopupTexts = { "A", "B", "C", "D" };
-        if (_isPaletteOverlayEnabled)
+        if (_editorOverlayMode == EditorOverlay.Palette)
         {
             palettePopupTexts = new string[]
             {
@@ -244,13 +255,18 @@ public class EditorMapData : Editor
             EditorGUILayout.LabelField("missing Tileset", errorStyle);
             return;
         }
-        _previewMode = (PreviewMode)EditorGUILayout.EnumPopup(new GUIContent("Preview Mode", "Change display mode of map preview"), _previewMode);
-        GUILayout.BeginHorizontal(GUILayout.Height(_mapData.Size.y * 16));
+        var selectedPreviewMode = (PreviewMode)EditorGUILayout.EnumPopup(new GUIContent("Preview Mode", "Change display mode of map preview"), _previewMode);
+        if (selectedPreviewMode != _previewMode)
+        {
+            _previewMode = selectedPreviewMode;
+            GlobalDefaultPreviewMode = selectedPreviewMode;
+        }
+        Rect rect = EditorGUILayout.BeginHorizontal(GUILayout.Height(_mapData.Size.y * 16));
         switch (_previewMode)
         {
             case PreviewMode.Editor: DrawMapEditor(); break;
             case PreviewMode.Sprite: DrawMetatiles(_mapData.Size, _mapData.MetatileDatas); break;
-            case PreviewMode.Collisions: DrawCollisions(); break;
+            case PreviewMode.Collisions: DrawCollisions(rect); break;
         }
 
         GUILayout.EndHorizontal();
