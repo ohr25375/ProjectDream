@@ -1,0 +1,105 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e292b4e8210cbf49a87c8c12768f312, type: 3}
+  m_Name: AlphaDungeon
+  m_EditorClassIdentifier: Assembly-CSharp::WorldData
+  mapDatas:
+  - mapData: {fileID: 11400000, guid: 8074b4bfbc554fd4a9636d0396b172e6, type: 2}
+    exits:
+      North: 3
+      South: -1
+      East: -1
+      West: 1
+  - mapData: {fileID: 11400000, guid: 6b382224bc89025409911f821c514504, type: 2}
+    exits:
+      North: 2
+      South: -1
+      East: 0
+      West: -1
+  - mapData: {fileID: 11400000, guid: 2ea042cdd85f1af4eb71f6769949b340, type: 2}
+    exits:
+      North: -1
+      South: 1
+      East: -1
+      West: -1
+  - mapData: {fileID: 11400000, guid: 728b9db862c4985459dc7cfe8417edfa, type: 2}
+    exits:
+      North: 4
+      South: 0
+      East: 7
+      West: -1
+  - mapData: {fileID: 11400000, guid: 609b35dcac6f1f34f8c65ce1247cc4e6, type: 2}
+    exits:
+      North: -1
+      South: 3
+      East: 6
+      West: 5
+  - mapData: {fileID: 11400000, guid: 4be26328698a14f439ef96b64614d5b9, type: 2}
+    exits:
+      North: -1
+      South: -1
+      East: 4
+      West: -1
+  - mapData: {fileID: 11400000, guid: 9f81c33256b97ac42b37d76a166aba27, type: 2}
+    exits:
+      North: -1
+      South: -1
+      East: -1
+      West: 4
+  - mapData: {fileID: 11400000, guid: 53e9ecfcd03e93a41ada1e446353ec72, type: 2}
+    exits:
+      North: -1
+      South: 8
+      East: 10
+      West: 3
+  - mapData: {fileID: 11400000, guid: 5459ce54bcf48a64c9341f526118f695, type: 2}
+    exits:
+      North: 7
+      South: -1
+      East: 9
+      West: 0
+  - mapData: {fileID: 11400000, guid: 2e67b2eb30b070549a2b9fbf1cf446f2, type: 2}
+    exits:
+      North: -1
+      South: -1
+      East: -1
+      West: 8
+  - mapData: {fileID: 11400000, guid: ba6352a58ace8254cb9289962fe19a70, type: 2}
+    exits:
+      North: 14
+      South: -1
+      East: 11
+      West: 7
+  - mapData: {fileID: 11400000, guid: 02f4059b8a5fc0f4b92cdfce43503396, type: 2}
+    exits:
+      North: 12
+      South: 13
+      East: -1
+      West: 10
+  - mapData: {fileID: 11400000, guid: fa8bf49323aa24e47acba31421209709, type: 2}
+    exits:
+      North: -1
+      South: 11
+      East: -1
+      West: -1
+  - mapData: {fileID: 11400000, guid: 3dc9be077118de847a35f7f3e93cd4df, type: 2}
+    exits:
+      North: 11
+      South: -1
+      East: -1
+      West: -1
+  - mapData: {fileID: 11400000, guid: 50b2f2263f2f39e48a07a26583afe5df, type: 2}
+    exits:
+      North: -1
+      South: 10
+      East: -1
+      West: -1

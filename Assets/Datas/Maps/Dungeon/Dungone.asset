@@ -64,61 +64,285 @@ MonoBehaviour:
         AB: -1
         BB: -1
     - metatileIndex: 3
-      palette: 0
+      palette: 2
       data:
         AA: -1
+        BA: -1
+        AB: -1
+        BB: -1
+    - metatileIndex: 3
+      palette: 2
+      data:
+        AA: -1
+        BA: -1
+        AB: -1
+        BB: -1
+    - metatileIndex: 3
+      palette: 2
+      data:
+        AA: -1
+        BA: -1
+        AB: -1
+        BB: -1
+    - metatileIndex: 3
+      palette: 2
+      data:
+        AA: -1
+        BA: -1
+        AB: -1
+        BB: -1
+    - metatileIndex: 3
+      palette: 2
+      data:
+        AA: -1
+        BA: -1
+        AB: -1
+        BB: -1
+    - metatileIndex: 3
+      palette: 2
+      data:
+        AA: -1
+        BA: -1
+        AB: -1
+        BB: -1
+    - metatileIndex: 3
+      palette: 2
+      data:
+        AA: -1
+        BA: -1
+        AB: -1
+        BB: -1
+    - metatileIndex: 3
+      palette: 2
+      data:
+        AA: -1
+        BA: -1
+        AB: -1
+        BB: -1
+    - metatileIndex: 3
+      palette: 2
+      data:
+        AA: -1
+        BA: -1
+        AB: -1
+        BB: -1
+    - metatileIndex: 0
+      palette: 0
+      data:
+        AA: 0
+        BA: 0
+        AB: 0
+        BB: 0
+    - metatileIndex: 0
+      palette: 0
+      data:
+        AA: 0
+        BA: 0
+        AB: 0
+        BB: 0
+    - metatileIndex: 0
+      palette: 0
+      data:
+        AA: 0
+        BA: 0
+        AB: 0
+        BB: 0
+    - metatileIndex: 0
+      palette: 0
+      data:
+        AA: 0
+        BA: 0
+        AB: 0
+        BB: 0
+    - metatileIndex: 0
+      palette: 0
+      data:
+        AA: 0
+        BA: 0
+        AB: 0
+        BB: 0
+    - metatileIndex: 0
+      palette: 0
+      data:
+        AA: 0
+        BA: 0
+        AB: 0
+        BB: 0
+    - metatileIndex: 0
+      palette: 0
+      data:
+        AA: 0
+        BA: 0
+        AB: 0
+        BB: 0
+    - metatileIndex: 0
+      palette: 0
+      data:
+        AA: 0
+        BA: 0
+        AB: 0
+        BB: 0
+    - metatileIndex: 0
+      palette: 0
+      data:
+        AA: 0
+        BA: 0
+        AB: 0
+        BB: 0
+    - metatileIndex: 0
+      palette: 0
+      data:
+        AA: 0
+        BA: 0
+        AB: 0
+        BB: 0
+    - metatileIndex: 0
+      palette: 0
+      data:
+        AA: 0
+        BA: 0
+        AB: 0
+        BB: 0
+    - metatileIndex: 0
+      palette: 0
+      data:
+        AA: 0
+        BA: 0
+        AB: 0
+        BB: 0
+    - metatileIndex: 0
+      palette: 0
+      data:
+        AA: 0
+        BA: 0
+        AB: 0
+        BB: 0
+    - metatileIndex: 0
+      palette: 0
+      data:
+        AA: 0
+        BA: 0
+        AB: 0
+        BB: 0
+    - metatileIndex: 0
+      palette: 0
+      data:
+        AA: 0
         BA: 0
         AB: 0
         BB: 0
     - metatileIndex: 3
-      palette: 0
+      palette: 2
       data:
         AA: -1
+        BA: -1
+        AB: -1
+        BB: -1
+    - metatileIndex: 0
+      palette: 0
+      data:
+        AA: 0
         BA: 0
         AB: 0
         BB: 0
-    - metatileIndex: 3
+    - metatileIndex: 0
+      palette: 0
+      data:
+        AA: 0
+        BA: 0
+        AB: 0
+        BB: 0
+    - metatileIndex: 0
+      palette: 0
+      data:
+        AA: 0
+        BA: 0
+        AB: 0
+        BB: 0
+    - metatileIndex: 4
       palette: 2
       data:
-        AA: -1
-        BA: -1
-        AB: -1
-        BB: -1
-    - metatileIndex: 3
+        AA: 2
+        BA: 2
+        AB: 3
+        BB: 3
+    - metatileIndex: 0
+      palette: 0
+      data:
+        AA: 0
+        BA: 0
+        AB: 0
+        BB: 0
+    - metatileIndex: 0
+      palette: 0
+      data:
+        AA: 0
+        BA: 0
+        AB: 0
+        BB: 0
+    - metatileIndex: 4
       palette: 2
       data:
-        AA: -1
-        BA: -1
-        AB: -1
-        BB: -1
-    - metatileIndex: 3
+        AA: 2
+        BA: 2
+        AB: 3
+        BB: 3
+    - metatileIndex: 0
+      palette: 0
+      data:
+        AA: 0
+        BA: 0
+        AB: 0
+        BB: 0
+    - metatileIndex: 0
+      palette: 0
+      data:
+        AA: 0
+        BA: 0
+        AB: 0
+        BB: 0
+    - metatileIndex: 4
       palette: 2
       data:
-        AA: -1
-        BA: -1
-        AB: -1
-        BB: -1
-    - metatileIndex: 3
+        AA: 2
+        BA: 2
+        AB: 3
+        BB: 3
+    - metatileIndex: 0
+      palette: 0
+      data:
+        AA: 0
+        BA: 0
+        AB: 0
+        BB: 0
+    - metatileIndex: 0
+      palette: 0
+      data:
+        AA: 0
+        BA: 0
+        AB: 0
+        BB: 0
+    - metatileIndex: 4
       palette: 2
       data:
-        AA: -1
-        BA: -1
-        AB: -1
-        BB: -1
-    - metatileIndex: 3
-      palette: 2
+        AA: 2
+        BA: 2
+        AB: 3
+        BB: 3
+    - metatileIndex: 0
+      palette: 0
       data:
-        AA: -1
-        BA: -1
-        AB: -1
-        BB: -1
-    - metatileIndex: 3
-      palette: 2
+        AA: 0
+        BA: 0
+        AB: 0
+        BB: 0
+    - metatileIndex: 0
+      palette: 0
       data:
-        AA: -1
-        BA: -1
-        AB: -1
-        BB: -1
+        AA: 0
+        BA: 0
+        AB: 0
+        BB: 0
     - metatileIndex: 3
       palette: 2
       data:
@@ -457,230 +681,6 @@ MonoBehaviour:
         BB: 0
     - metatileIndex: 3
       palette: 2
-      data:
-        AA: -1
-        BA: -1
-        AB: -1
-        BB: -1
-    - metatileIndex: 0
-      palette: 0
-      data:
-        AA: 0
-        BA: 0
-        AB: 0
-        BB: 0
-    - metatileIndex: 0
-      palette: 0
-      data:
-        AA: 0
-        BA: 0
-        AB: 0
-        BB: 0
-    - metatileIndex: 0
-      palette: 0
-      data:
-        AA: 0
-        BA: 0
-        AB: 0
-        BB: 0
-    - metatileIndex: 4
-      palette: 2
-      data:
-        AA: 2
-        BA: 2
-        AB: 3
-        BB: 3
-    - metatileIndex: 0
-      palette: 0
-      data:
-        AA: 0
-        BA: 0
-        AB: 0
-        BB: 0
-    - metatileIndex: 0
-      palette: 0
-      data:
-        AA: 0
-        BA: 0
-        AB: 0
-        BB: 0
-    - metatileIndex: 4
-      palette: 2
-      data:
-        AA: 2
-        BA: 2
-        AB: 3
-        BB: 3
-    - metatileIndex: 0
-      palette: 0
-      data:
-        AA: 0
-        BA: 0
-        AB: 0
-        BB: 0
-    - metatileIndex: 0
-      palette: 0
-      data:
-        AA: 0
-        BA: 0
-        AB: 0
-        BB: 0
-    - metatileIndex: 4
-      palette: 2
-      data:
-        AA: 2
-        BA: 2
-        AB: 3
-        BB: 3
-    - metatileIndex: 0
-      palette: 0
-      data:
-        AA: 0
-        BA: 0
-        AB: 0
-        BB: 0
-    - metatileIndex: 0
-      palette: 0
-      data:
-        AA: 0
-        BA: 0
-        AB: 0
-        BB: 0
-    - metatileIndex: 4
-      palette: 2
-      data:
-        AA: 2
-        BA: 2
-        AB: 3
-        BB: 3
-    - metatileIndex: 0
-      palette: 0
-      data:
-        AA: 0
-        BA: 0
-        AB: 0
-        BB: 0
-    - metatileIndex: 0
-      palette: 0
-      data:
-        AA: 0
-        BA: 0
-        AB: 0
-        BB: 0
-    - metatileIndex: 3
-      palette: 2
-      data:
-        AA: -1
-        BA: -1
-        AB: -1
-        BB: -1
-    - metatileIndex: 0
-      palette: 0
-      data:
-        AA: 0
-        BA: 0
-        AB: 0
-        BB: 0
-    - metatileIndex: 0
-      palette: 0
-      data:
-        AA: 0
-        BA: 0
-        AB: 0
-        BB: 0
-    - metatileIndex: 0
-      palette: 0
-      data:
-        AA: 0
-        BA: 0
-        AB: 0
-        BB: 0
-    - metatileIndex: 0
-      palette: 0
-      data:
-        AA: 0
-        BA: 0
-        AB: 0
-        BB: 0
-    - metatileIndex: 0
-      palette: 0
-      data:
-        AA: 0
-        BA: 0
-        AB: 0
-        BB: 0
-    - metatileIndex: 0
-      palette: 0
-      data:
-        AA: 0
-        BA: 0
-        AB: 0
-        BB: 0
-    - metatileIndex: 0
-      palette: 0
-      data:
-        AA: 0
-        BA: 0
-        AB: 0
-        BB: 0
-    - metatileIndex: 0
-      palette: 0
-      data:
-        AA: 0
-        BA: 0
-        AB: 0
-        BB: 0
-    - metatileIndex: 0
-      palette: 0
-      data:
-        AA: 0
-        BA: 0
-        AB: 0
-        BB: 0
-    - metatileIndex: 0
-      palette: 0
-      data:
-        AA: 0
-        BA: 0
-        AB: 0
-        BB: 0
-    - metatileIndex: 0
-      palette: 0
-      data:
-        AA: 0
-        BA: 0
-        AB: 0
-        BB: 0
-    - metatileIndex: 0
-      palette: 0
-      data:
-        AA: 0
-        BA: 0
-        AB: 0
-        BB: 0
-    - metatileIndex: 0
-      palette: 0
-      data:
-        AA: 0
-        BA: 0
-        AB: 0
-        BB: 0
-    - metatileIndex: 0
-      palette: 0
-      data:
-        AA: 0
-        BA: 0
-        AB: 0
-        BB: 0
-    - metatileIndex: 0
-      palette: 0
-      data:
-        AA: 0
-        BA: 0
-        AB: 0
-        BB: 0
-    - metatileIndex: 3
-      palette: 0
       data:
         AA: -1
         BA: -1
