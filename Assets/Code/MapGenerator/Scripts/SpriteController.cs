@@ -6,6 +6,8 @@ public class SpriteController
     private bool _isUI = false;
     private bool _isInFront = false;
     public void Initialize(SpriteRenderer spriteRenderer) => _spriteRenderer = spriteRenderer;
+    public void Enable() => _spriteRenderer.gameObject.SetActive(true);
+    public void ReturnToPool() => _spriteRenderer.gameObject.SetActive(false);
     public void SetSprite(Sprite sprite) => _spriteRenderer.sprite = sprite;
     public void SetFlipX(bool flipX) => _spriteRenderer.flipX = flipX;
     public void SetFlipY(bool flipY) => _spriteRenderer.flipY = flipY;
@@ -18,4 +20,5 @@ public class SpriteController
         _isUI = isUI;
         _spriteRenderer.sortingOrder = (_isInFront ? 100 : -100) + (_isUI ? 1000 : 0); 
     }
+    public void SetGlobalPosition(Vector3 position) => _spriteRenderer.gameObject.transform.position = position;
 }

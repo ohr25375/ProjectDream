@@ -5,13 +5,12 @@ using UnityEngine;
 public class EntityStateMoveToDirection : EntityState
 {
     [SerializeReference, SubclassSelector] private EntityValueFloatBase duration = new EntityValueFloatUseImmediate();
-    [SerializeField] private ValidDirection moveDirection;
+    [SerializeField] private Direction moveDirection;
     [SerializeField] private float distance;
-    private Vector2 direction;
+    [SerializeField] private bool collision = true;
     protected override void OnStateEnter(params int[] variables)
     {
         base.OnStateEnter();
-        direction = moveDirection.GetValidDirection();
     }
     protected override void OnStateExit()
     {
@@ -31,13 +30,13 @@ public class EntityStateMoveToDirection : EntityState
             if (previousTimer < duration)
             {
                 var remaining = duration - previousTimer;
-                entityController.Move(direction, (distance / duration) * remaining);
+                entityController.Move(moveDirection, collision, (distance / duration) * remaining);
             }
             ChangeToNextState();
         }
         else
         {
-            entityController.Move(direction, (distance / duration) * DeltaTime);
+            entityController.Move(moveDirection, collision, (distance / duration) * DeltaTime);
         }
     }
 }

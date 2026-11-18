@@ -78,12 +78,12 @@ public class CollisionTestPlayerController : MonoBehaviour
     public void SetCurrentPosition(Vector2 position)
     {
         _currentPosition = position;
-        transform.localPosition = RoundPosition(position);
+        transform.localPosition = ExtensionFunctions.RoundPosition(position);
     }
     public void AddCurrentPosition(Vector2 position)
     {
         _currentPosition += (Vector3)position;
-        transform.localPosition = RoundPosition(_currentPosition);
+        transform.localPosition = ExtensionFunctions.RoundPosition(_currentPosition);
     }
     #endregion
 
@@ -126,19 +126,6 @@ public class CollisionTestPlayerController : MonoBehaviour
     #endregion
 
     #region INTERNAL
-    private Vector3 RoundPosition(Vector3 position)
-    {
-        return new()
-        {
-            x = Mathf.RoundToInt(position.x * 8) / 8.0f,
-            y = Mathf.RoundToInt(position.y * 8) / 8.0f,
-            z = 0,
-        };
-    }
-    private Vector3 GetNewPosition()
-    {
-        return _currentPosition + _speed * Time.deltaTime * (Vector3)_currentMovingDirection.ToVector2();
-    }
     private bool ComputeCollision(Vector2Int mapSize, ReadOnlyCollection<bool> colliders, out CollisionResults collisionResults, out Vector3 newPosition)
     {
         collisionResults = new()
@@ -147,8 +134,8 @@ public class CollisionTestPlayerController : MonoBehaviour
             hasFlatCollision = false,
             totalBias = 0
         };
-        newPosition = GetNewPosition();
-        Vector3 roundedPosition = RoundPosition(newPosition);
+        newPosition = ExtensionFunctions.GetNewPosition(_currentPosition, _speed * Time.deltaTime, _currentMovingDirection);
+        Vector3 roundedPosition = ExtensionFunctions.RoundPosition(newPosition);
         var currentMapPosition = roundedPosition - (Vector3)_mapPositionOffset;
         foreach (var collider in _colliders)
         {
@@ -169,7 +156,7 @@ public class CollisionTestPlayerController : MonoBehaviour
         if (!collisionResults.isColliding)
         {
             _currentPosition = newPosition;
-            transform.localPosition = RoundPosition(newPosition);
+            transform.localPosition = ExtensionFunctions.RoundPosition(_currentPosition);
             return false;
         }
         if (!collisionResults.hasFlatCollision)
@@ -195,6 +182,7 @@ public class CollisionTestPlayerController : MonoBehaviour
             _colliders[i] = new();
             _colliders[i].SetOffset(offsetPosition);
         }
+        transform.localPosition = ExtensionFunctions.RoundPosition(_currentPosition);
     }
     private void DoMove()
     {
@@ -221,7 +209,7 @@ public class CollisionTestPlayerController : MonoBehaviour
             if (!collisionResults.isColliding)
             {
                 _currentPosition = newPosition;
-                transform.localPosition = RoundPosition(newPosition);
+                transform.localPosition = ExtensionFunctions.RoundPosition(_currentPosition);
                 return;
             }
         }

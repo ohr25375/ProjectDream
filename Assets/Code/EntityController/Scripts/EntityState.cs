@@ -8,6 +8,7 @@ public abstract class EntityState : System.ICloneable
     protected float DeltaTime => timer - previousTimer;
     protected EntityController entityController;
     [SerializeReference, SubclassSelector] private ExitToStatesBase exitToState = new ExitToNext();
+    [SerializeField] public int animationFrame = 0;
     public EntityState Clone()
     {
         return MemberwiseClone() as EntityState;

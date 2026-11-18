@@ -61,8 +61,7 @@ public class ScreenController : MonoBehaviour
         _player.SetMapPositionOffset(GetPositionFromXY(0, 0, startingMapData.Size * 2) - new Vector3(0.5f, 0.5f, 0));
         SetStaticMapData(startingMapData);
     }
-
-    private Vector3 GetPositionFromXY(int x, int y, Vector2Int size)
+    public static Vector3 GetPositionFromXY(int x, int y, Vector2Int size)
     {
         return new Vector3(x - size.x / 2 + 0.5f, y - size.y / 2 + 0.5f, 0);
     }

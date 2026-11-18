@@ -104,5 +104,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52488548cd61d4028af0d71cbc92013f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MaterialSetter
-  _material: {fileID: 11400000, guid: a282a3a760ac84618a67cf309299afaa, type: 2}
+  _material: {fileID: 11400000, guid: b15085dcf49c03d4f9a308c98c332757, type: 2}
   _renderer: {fileID: 3660218451458396340}

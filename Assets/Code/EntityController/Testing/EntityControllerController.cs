@@ -3,19 +3,26 @@ using UnityEngine;
 
 public class EntityControllerController : MonoBehaviour
 {
-    private readonly EntityController enemyController = new();
+    private EntityController enemyController = new();
 
-    public void Initialize(List<EntityState> entityStates, Vector2Int position)
+
+    public void Initialize(EntityData entityData, List<SpriteController> spriteControllers, Vector2Int position, Vector2 mapPositionOffset)
     {
-        OnInitialize(entityStates, position);
+        OnInitialize(entityData, spriteControllers, position, mapPositionOffset);
     }
     public void UpdateEntity()
     {
         enemyController.Update();
     }
-    private void OnInitialize(List<EntityState> entityStates, Vector2Int position)
+    private void OnInitialize(EntityData entityData, List<SpriteController> spriteControllers, Vector2Int position, Vector2 mapPositionOffset)
     {
-        enemyController.SetStateTree(entityStates);
+        enemyController.InjectSpriteControllers(spriteControllers);
+        enemyController.SetMapPositionOffset(mapPositionOffset);
+        enemyController.SetCollisionFlags(entityData.InitialCollisionFlags);
+        enemyController.InitializeGridBasedColliders(entityData);
+        enemyController.SetAnimationFrames(entityData.AnimationFrames);
+        enemyController.SetStateTree(entityData.EntityStateTree.GetClone());
         enemyController.Initialize(transform, position);
     }
+    public void ReturnToPool() => enemyController.ReturnToPool();
 }

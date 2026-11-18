@@ -6,8 +6,9 @@ public class EntityStateMoveToRandomDirection : EntityState
 {
     [SerializeReference, SubclassSelector] private EntityValueFloatBase duration = new EntityValueFloatUseImmediate();
     [SerializeField] private float distance;
-    private Vector2 direction;
-    private readonly Vector2[] randomDirections = {Vector2.up, Vector2.down, Vector2.left, Vector2.right};
+    [SerializeField] private bool collision = true;
+    private Direction direction;
+    private readonly Direction[] randomDirections = {Direction.Up, Direction.Down, Direction.Left, Direction.Right};
     protected override void OnStateEnter(params int[] variables)
     {
         base.OnStateEnter();
@@ -33,13 +34,13 @@ public class EntityStateMoveToRandomDirection : EntityState
             if (previousTimer < duration)
             {
                 var remaining = duration - previousTimer;
-                entityController.Move(direction, (distance / duration) * remaining);
+                entityController.Move(direction, collision, (distance / duration) * remaining);
             }
             ChangeToNextState();
         }
         else
         {
-            entityController.Move(direction, (distance / duration) * DeltaTime);
+            entityController.Move(direction, collision, (distance / duration) * DeltaTime);
         }
     }
 }
