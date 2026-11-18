@@ -38,7 +38,10 @@ public class HeartUI : MonoBehaviour
             else
                 sprite = tileset.GetSprite(emptyHeartIndex);
 
-            uiController.GetSprite(heartStartPosition.x + i,heartStartPosition.y)?.SetSprite(sprite);
+            int x=i%10;
+            int y=i/10;
+
+            uiController.GetSprite(heartStartPosition.x + x,heartStartPosition.y-y)?.SetSprite(sprite);
         }
     }
 }

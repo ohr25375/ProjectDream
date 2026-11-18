@@ -275,10 +275,10 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.28044596
-    y: 0.15853658
-    width: 0.43910807
-    height: 0.6829268
+    x: 0.19500594
+    y: 0.02536998
+    width: 0.60879904
+    height: 0.9471459
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
@@ -882,7 +882,7 @@ MonoBehaviour:
   fullHeartIndex: 2
   halfHeartIndex: 4
   emptyHeartIndex: 1
-  heartStartPosition: {x: 0, y: 0}
+  heartStartPosition: {x: 0, y: 2}
 --- !u!4 &1410218648
 Transform:
   m_ObjectHideFlags: 0
