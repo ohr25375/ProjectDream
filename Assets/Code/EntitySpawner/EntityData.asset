@@ -19,3 +19,22 @@ MonoBehaviour:
   - {x: 0, y: -1}
   - {x: -1, y: -1}
   _initialCollisionFlags: 1
+  _animationFrames:
+  - parts:
+    - sprite: {fileID: -986961151, guid: de63f9e604f19df448425f52380fc8eb, type: 3}
+      flipX: 1
+    - sprite: {fileID: -986961151, guid: de63f9e604f19df448425f52380fc8eb, type: 3}
+      flipX: 0
+    - sprite: {fileID: 2077378519, guid: de63f9e604f19df448425f52380fc8eb, type: 3}
+      flipX: 1
+    - sprite: {fileID: 2077378519, guid: de63f9e604f19df448425f52380fc8eb, type: 3}
+      flipX: 0
+  - parts:
+    - sprite: {fileID: 1082455601, guid: de63f9e604f19df448425f52380fc8eb, type: 3}
+      flipX: 1
+    - sprite: {fileID: 1082455601, guid: de63f9e604f19df448425f52380fc8eb, type: 3}
+      flipX: 0
+    - sprite: {fileID: -1208469226, guid: de63f9e604f19df448425f52380fc8eb, type: 3}
+      flipX: 1
+    - sprite: {fileID: -1208469226, guid: de63f9e604f19df448425f52380fc8eb, type: 3}
+      flipX: 0

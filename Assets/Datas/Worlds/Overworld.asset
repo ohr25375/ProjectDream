@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Overworld
   m_EditorClassIdentifier: Assembly-CSharp::WorldData
   mapDatas:
-  - mapData: {fileID: 11400000, guid: ce9de8f85f06bab4a8767a79ad348c02, type: 2}
+  - mapData: {fileID: 11400000, guid: 27835ea41fbeb2e469befc1c9ea758d6, type: 2}
     exits:
       North: 1
       South: 2

@@ -403,6 +403,56 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7968015115431417482, guid: 0bb114c1e0a06044a832418b4e36f21c, type: 3}
   m_PrefabInstance: {fileID: 797097416}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &803950151
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 803950152}
+  - component: {fileID: 803950153}
+  m_Layer: 0
+  m_Name: EnemySpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &803950152
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 803950151}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1793093004}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &803950153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 803950151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ab1a77c33ca16a4bb8b4d158170079f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntitySpawner
+  _entityPrefab: {fileID: 2557161864096716409, guid: 4de60d83133ad5045913c815ad59d7a0, type: 3}
+  _spritePrefab: {fileID: 6282240946088490871, guid: 529f127b489a2469295447eabcc596e7, type: 3}
+  _entityData: {fileID: 11400000, guid: 0d9018be939f599499acc6cef9c3dac8, type: 2}
+  _maxEntityCount: 32
+  _spriteControllerCount: 256
+  debugSpawnPosition: {x: -1, y: 0}
 --- !u!1 &904917646
 GameObject:
   m_ObjectHideFlags: 0
@@ -734,6 +784,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1622154126}
+  - {fileID: 803950152}
   m_Father: {fileID: 904917648}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1955427950 stripped

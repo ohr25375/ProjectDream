@@ -13,8 +13,14 @@ MonoBehaviour:
   m_Name: ConditionalStateTree
   m_EditorClassIdentifier: Assembly-CSharp::EnemyStateTree
   entityStates:
-  - rid: 7066036074364534907
+  - rid: 7066036074364534940
   - rid: 7066036074364534875
+  - rid: 7066036074364535014
+  - rid: 7066036074364535023
+  - rid: 7066036074364535031
+  - rid: 7066036074364535040
+  - rid: 7066036074364535043
+  - rid: 7066036074364535049
   references:
     version: 2
     RefIds:
@@ -23,6 +29,7 @@ MonoBehaviour:
       data:
         exitToState:
           rid: 7066036074364534876
+        animationFrame: 0
         duration:
           rid: 7066036074364534877
     - rid: 7066036074364534876
@@ -32,20 +39,141 @@ MonoBehaviour:
       type: {class: EntityValueFloatUseImmediate, ns: , asm: Assembly-CSharp}
       data:
         value: 0.5
-    - rid: 7066036074364534907
-      type: {class: EntityStateMoveToDirection, ns: , asm: Assembly-CSharp}
+    - rid: 7066036074364534940
+      type: {class: EntityStateMoveToRandomDirection, ns: , asm: Assembly-CSharp}
       data:
         exitToState:
-          rid: 7066036074364534908
+          rid: 7066036074364534941
+        animationFrame: 1
         duration:
-          rid: 7066036074364534909
-        moveDirection: 1
-        distance: 1
+          rid: 7066036074364534942
+        distance: 2
         collision: 1
-    - rid: 7066036074364534908
+    - rid: 7066036074364534941
       type: {class: ExitToNext, ns: , asm: Assembly-CSharp}
       data: 
-    - rid: 7066036074364534909
+    - rid: 7066036074364534942
+      type: {class: EntityValueFloatUseImmediate, ns: , asm: Assembly-CSharp}
+      data:
+        value: 0.2
+    - rid: 7066036074364535014
+      type: {class: EntityStateMath, ns: , asm: Assembly-CSharp}
+      data:
+        exitToState:
+          rid: 7066036074364535015
+        animationFrame: 0
+        operation:
+          rid: 7066036074364535018
+        destination: 0
+    - rid: 7066036074364535015
+      type: {class: ExitToNext, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 7066036074364535018
+      type: {class: EntityStateMathAdd, ns: , asm: Assembly-CSharp}
+      data:
+        x:
+          rid: 7066036074364535021
+        y:
+          rid: 7066036074364535020
+    - rid: 7066036074364535020
+      type: {class: EntityValueUseImmediate, ns: , asm: Assembly-CSharp}
+      data:
+        value: 1
+    - rid: 7066036074364535021
+      type: {class: EntityValueUseRegister, ns: , asm: Assembly-CSharp}
+      data:
+        register: 0
+    - rid: 7066036074364535023
+      type: {class: EntityStateConditional, ns: , asm: Assembly-CSharp}
+      data:
+        exitToState:
+          rid: 7066036074364535028
+        animationFrame: 0
+        condition: 2
+        x:
+          rid: 7066036074364535029
+        y:
+          rid: 7066036074364535026
+        onCondition:
+          rid: 7066036074364535030
+    - rid: 7066036074364535026
+      type: {class: EntityValueUseImmediate, ns: , asm: Assembly-CSharp}
+      data:
+        value: 3
+    - rid: 7066036074364535028
+      type: {class: ExitToIndex, ns: , asm: Assembly-CSharp}
+      data:
+        stateIndex: 0
+    - rid: 7066036074364535029
+      type: {class: EntityValueUseRegister, ns: , asm: Assembly-CSharp}
+      data:
+        register: 0
+    - rid: 7066036074364535030
+      type: {class: ExitToNext, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 7066036074364535031
+      type: {class: EntityStateMath, ns: , asm: Assembly-CSharp}
+      data:
+        exitToState:
+          rid: 7066036074364535032
+        animationFrame: 0
+        operation:
+          rid: 7066036074364535033
+        destination: 0
+    - rid: 7066036074364535032
+      type: {class: ExitToNext, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 7066036074364535033
+      type: {class: EntityStateMathSet, ns: , asm: Assembly-CSharp}
+      data:
+        value:
+          rid: 7066036074364535034
+    - rid: 7066036074364535034
+      type: {class: EntityValueUseImmediate, ns: , asm: Assembly-CSharp}
+      data:
+        value: 0
+    - rid: 7066036074364535040
+      type: {class: EntityStateWaitForDuration, ns: , asm: Assembly-CSharp}
+      data:
+        exitToState:
+          rid: 7066036074364535041
+        animationFrame: 0
+        duration:
+          rid: 7066036074364535042
+    - rid: 7066036074364535041
+      type: {class: ExitToNext, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 7066036074364535042
       type: {class: EntityValueFloatUseImmediate, ns: , asm: Assembly-CSharp}
       data:
         value: 0.5
+    - rid: 7066036074364535043
+      type: {class: EntityStateWaitForDuration, ns: , asm: Assembly-CSharp}
+      data:
+        exitToState:
+          rid: 7066036074364535044
+        animationFrame: 1
+        duration:
+          rid: 7066036074364535045
+    - rid: 7066036074364535044
+      type: {class: ExitToNext, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 7066036074364535045
+      type: {class: EntityValueFloatUseImmediate, ns: , asm: Assembly-CSharp}
+      data:
+        value: 1
+    - rid: 7066036074364535049
+      type: {class: EntityStateWaitForDuration, ns: , asm: Assembly-CSharp}
+      data:
+        exitToState:
+          rid: 7066036074364535050
+        animationFrame: 0
+        duration:
+          rid: 7066036074364535051
+    - rid: 7066036074364535050
+      type: {class: ExitToNext, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 7066036074364535051
+      type: {class: EntityValueFloatUseImmediate, ns: , asm: Assembly-CSharp}
+      data:
+        value: 1

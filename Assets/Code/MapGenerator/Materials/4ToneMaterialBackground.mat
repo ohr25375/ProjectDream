@@ -60,9 +60,9 @@ Material:
     - _Palette: 0
     m_Colors:
     - White: {r: 1, g: 1, b: 1, a: 1}
-    - _Background: {r: 1, g: 0.77736986, b: 0.36320752, a: 1}
-    - _PaletteA_Color1: {r: 0.33333328, g: 0.33333328, b: 0.33333328, a: 1}
-    - _PaletteA_Color2: {r: 0.6666666, g: 0.6666666, b: 0.6666666, a: 1}
+    - _Background: {r: 0, g: 0, b: 0, a: 1}
+    - _PaletteA_Color1: {r: 0.33, g: 0.33, b: 0.33, a: 1}
+    - _PaletteA_Color2: {r: 0.66, g: 0.66, b: 0.66, a: 1}
     - _PaletteA_Color3: {r: 1, g: 1, b: 1, a: 1}
     - _PaletteB_Color1: {r: 0.33333328, g: 0.33333328, b: 0.33333328, a: 1}
     - _PaletteB_Color2: {r: 0.6666666, g: 0.6666666, b: 0.6666666, a: 1}
