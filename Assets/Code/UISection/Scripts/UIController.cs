@@ -28,10 +28,9 @@ public class UIController : MonoBehaviour
                 spriteController.Initialize(spriteRenderer);
                 spriteController.SetUI(true);
                 spriteController.SetSprite(_tileset.GetSprite(1));
-                MaterialPropertyBlock mpb = new();
-                mpb.SetFloat("_Palette", 1);
-                mpb.SetFloat("_IsBackground", 1);
-                spriteController.SetPropertyBlock(mpb);
+                spriteController.SetPalette(Palette.B);
+                spriteController.SetIsBackground(true);
+                spriteController.UpdateRenderer();
                 _spriteControllers[index] = spriteController;
             }
         }

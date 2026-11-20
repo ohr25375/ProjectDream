@@ -29,6 +29,9 @@ public class CollisionTestPlayerController : MonoBehaviour
     [SerializeField] private InputActionReference _inputDown;
     [SerializeField] private float _speed;
     [SerializeField] private List<Vector2> _colliderOffsets;
+    [SerializeField] private GameObject _sprite;
+    private List<SpriteController> _spriteControllers;
+    private Palette _currentPalette = Palette.A;
     [Header("Experimental")]
     [SerializeField] private StaminaControl _staminaController;
     public StaminaControl StaminaController => _staminaController;
@@ -43,6 +46,7 @@ public class CollisionTestPlayerController : MonoBehaviour
     private bool _isKnockbacking = false;
     private Direction _knockbackDirection;
     private Coroutine _knockbackTimer;
+    private Coroutine _flashTimer;
     
     #region UNITY FUNCTIONS
     private void OnEnable()
@@ -121,6 +125,15 @@ public class CollisionTestPlayerController : MonoBehaviour
             StopCoroutine(_knockbackTimer);
         }
         _knockbackTimer = StartCoroutine(KnockbackTimer());
+    }
+    public void Damage(int amount)
+    {
+        if (!_staminaController.Damage(amount)) return;
+        if (_flashTimer != null)
+        {
+            StopCoroutine(_flashTimer);
+        }
+        _flashTimer = StartCoroutine(FlashTimer());
     }
     #endregion
 
@@ -235,6 +248,15 @@ public class CollisionTestPlayerController : MonoBehaviour
             _colliders[i].SetOffset(offsetPosition);
         }
         transform.localPosition = ExtensionFunctions.RoundPosition(_currentPosition);
+
+        _spriteControllers = new(new SpriteController[_colliderOffsets.Count]);
+        for (var i = 0; i < _colliderOffsets.Count; i++)
+        {
+            var obj = Instantiate(_sprite, transform);
+            _spriteControllers[i] = new();
+            _spriteControllers[i].Initialize(obj.GetComponent<SpriteRenderer>());
+            _spriteControllers[i].SetGlobalPosition(transform.position + (Vector3)_colliderOffsets[i] + new Vector3(0.5f, 0.5f));
+        }
     }
     private void DoMove()
     {
@@ -283,5 +305,28 @@ public class CollisionTestPlayerController : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         _isKnockbacking = false;
         _knockbackTimer = null;
+    }
+    public void SetPalette(Palette palette)
+    {
+        _currentPalette = palette;
+    }
+    public void SetTemporaryPalette(Palette palette)
+    {
+        foreach (var spriteController in _spriteControllers)
+        {
+            spriteController.SetPalette(palette);
+            spriteController.UpdateRenderer();
+        }
+    }
+    private IEnumerator FlashTimer()
+    {
+        var modifiedPalette = Palette.A;
+        while (_staminaController.IsHitCooldown)
+        {
+            modifiedPalette += 1;
+            SetTemporaryPalette(modifiedPalette);
+            yield return new WaitForSeconds(0.05f);
+        }
+        SetTemporaryPalette(_currentPalette);
     }
 }

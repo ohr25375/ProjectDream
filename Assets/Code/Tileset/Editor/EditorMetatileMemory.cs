@@ -8,7 +8,7 @@ public class EditorMetatileMemory : Editor
     private const float SPRITE_SIZE = 8;
     private int _selectedMetatileIndex = 0;
     private int _currentMetatileSubIndex = 0;
-    private float _editorMagnification;
+    public static float EditorMagnification;
 
     #region UNITY
     public override void OnInspectorGUI()
@@ -29,8 +29,8 @@ public class EditorMetatileMemory : Editor
             serializedObject.ApplyModifiedProperties();
             return;
         }
-        bool isEditorZoomed = EditorGUILayout.Toggle("x2", _editorMagnification > 1.0f);
-        _editorMagnification = isEditorZoomed ? 2.0f : 1.0f;
+        bool isEditorZoomed = EditorGUILayout.Toggle("x2", EditorMagnification > 1.0f);
+        EditorMagnification = isEditorZoomed ? 2.0f : 1.0f;
         EditorGUILayout.BeginHorizontal();
         {
             float magnify = 2;
@@ -138,7 +138,7 @@ public class EditorMetatileMemory : Editor
                 metatileMemory.EditorModifyMetatileName(_selectedMetatileIndex, newName);
                 EditorUtility.SetDirty(target);
             }
-            var selectedMetatilePalette = EditorExtensions.DrawMetatileMemories(metatileMemory, _selectedMetatileIndex, _editorMagnification);
+            var selectedMetatilePalette = EditorExtensions.DrawMetatileMemories(metatileMemory, _selectedMetatileIndex, EditorMagnification);
             if (selectedMetatilePalette != -1)
             {
                 _selectedMetatileIndex = selectedMetatilePalette;

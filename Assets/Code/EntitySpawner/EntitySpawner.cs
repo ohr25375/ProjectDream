@@ -150,7 +150,7 @@ public class EntitySpawner : MonoBehaviour
                     };
                     if (!entityCollider.Overlaps(playerCollider)) continue;
                     _playerController.RegisterKnockback(entityColliderPosition);
-                    _playerController.StaminaController.Damage(1);
+                    _playerController.Damage(1);
                     return;
                 }
             }

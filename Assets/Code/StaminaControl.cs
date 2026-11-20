@@ -27,9 +27,9 @@ public class StaminaControl : MonoBehaviour
         OnDead ??= new UnityEvent();
     }
 
-    public virtual void Damage(int damage)
+    public virtual bool Damage(int damage)
     {
-        if (IsGodMode||isInvincible) return;
+        if (IsGodMode||isInvincible) return false;
 
         CurrentHP -= damage;
 
@@ -41,11 +41,12 @@ public class StaminaControl : MonoBehaviour
         if (CurrentHP == 0)
         {
             Die();
-            return;
+            return true;
         }
 
         if (invincibleTime > 0)
             StartCoroutine(Invincible());
+        return true;
     }
 
     public virtual void Heal(int amount)
