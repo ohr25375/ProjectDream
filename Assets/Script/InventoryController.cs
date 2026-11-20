@@ -12,7 +12,8 @@ public class InventoryController : MonoBehaviour
 
     private Vector3 targetPosition;
     private bool isOpen = false;
-    private bool isMoving = false;  
+    private bool isMoving = false;
+    private bool canOpenInventory = true;
     private void Start()
     {
         targetPosition = inventoryUI.localPosition;
@@ -29,6 +30,7 @@ public class InventoryController : MonoBehaviour
 
     private void OnInventoryInput(InputAction.CallbackContext context)
     {
+        if (!canOpenInventory) return;
         if (isMoving) return;
         if (isOpen) CloseInventory();
         else OpenInventory();
