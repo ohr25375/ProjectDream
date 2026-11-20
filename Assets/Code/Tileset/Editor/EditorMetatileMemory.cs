@@ -8,6 +8,7 @@ public class EditorMetatileMemory : Editor
     private const float SPRITE_SIZE = 8;
     private int _selectedMetatileIndex = 0;
     private int _currentMetatileSubIndex = 0;
+    private float _editorMagnification;
 
     #region UNITY
     public override void OnInspectorGUI()
@@ -28,6 +29,8 @@ public class EditorMetatileMemory : Editor
             serializedObject.ApplyModifiedProperties();
             return;
         }
+        bool isEditorZoomed = EditorGUILayout.Toggle("x2", _editorMagnification > 1.0f);
+        _editorMagnification = isEditorZoomed ? 2.0f : 1.0f;
         EditorGUILayout.BeginHorizontal();
         {
             float magnify = 2;
@@ -93,7 +96,7 @@ public class EditorMetatileMemory : Editor
         EditorGUILayout.BeginVertical(GUILayout.Height(magnify * SPRITE_SIZE * 2));
         {
             EditorGUILayout.BeginHorizontal();
-            _selectedMetatileIndex = EditorExtensions.DrawMetatileSelector(metatileMemory, _selectedMetatileIndex, ref _currentMetatileSubIndex);
+            _selectedMetatileIndex = EditorExtensions.DrawMetatileSelector(metatileMemory, _selectedMetatileIndex, ref _currentMetatileSubIndex, out Rect rect);
             var spriteData = metatileSpriteData.data[_currentMetatileSubIndex];
             EditorGUILayout.BeginVertical();
             var stateX = GUILayout.Toggle(spriteData.isFlippedX, $"{(TileIdentifier)_currentMetatileSubIndex}: FlipX");
@@ -135,7 +138,7 @@ public class EditorMetatileMemory : Editor
                 metatileMemory.EditorModifyMetatileName(_selectedMetatileIndex, newName);
                 EditorUtility.SetDirty(target);
             }
-            var selectedMetatilePalette = EditorExtensions.DrawMetatileMemories(metatileMemory, _selectedMetatileIndex);
+            var selectedMetatilePalette = EditorExtensions.DrawMetatileMemories(metatileMemory, _selectedMetatileIndex, _editorMagnification);
             if (selectedMetatilePalette != -1)
             {
                 _selectedMetatileIndex = selectedMetatilePalette;

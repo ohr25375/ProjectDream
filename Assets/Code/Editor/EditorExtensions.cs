@@ -104,10 +104,10 @@ public static class EditorExtensions
         EditorGUILayout.EndVertical();
         return selected;
     }
-    public static int DrawTileIdentiferSelector(int currentIndex, Tileset tileset, MetatileSpriteData metatileSpriteData, float spriteSize = SPRITE_SIZE)
+    public static int DrawTileIdentiferSelector(int currentIndex, Tileset tileset, MetatileSpriteData metatileSpriteData, out Rect rect, float spriteSize = SPRITE_SIZE)
     {
         float magnify = 4;
-        var rect = EditorGUILayout.BeginVertical(GUILayout.Width(magnify * spriteSize * 2));
+        rect = EditorGUILayout.BeginVertical(GUILayout.Width(magnify * spriteSize * 2));
         Rect tileIdentifierRect = new(rect)
         {
             width = magnify * spriteSize,
@@ -120,7 +120,7 @@ public static class EditorExtensions
         EditorGUILayout.EndVertical();
         return selectedMetatileSubIndex;
     }
-    public static int DrawMetatileSelector(MetatileMemory metatileMemory, int selectedMetatileIndex, ref int currentMetatileSubIndex)
+    public static int DrawMetatileSelector(MetatileMemory metatileMemory, int selectedMetatileIndex, ref int currentMetatileSubIndex, out Rect rect)
     {
         var metatileSpriteData = metatileMemory.GetData(selectedMetatileIndex);
         GUIStyle verticalButtonStyle = new(GUI.skin.button)
@@ -132,7 +132,7 @@ public static class EditorExtensions
         EditorGUILayout.BeginHorizontal();
         bool isPreviousPressed = GUILayout.Button("Å©", verticalButtonStyle);
 
-        var selectedMetatileSubIndex = DrawTileIdentiferSelector(currentMetatileSubIndex, metatileMemory.EditorTileset, metatileSpriteData);
+        var selectedMetatileSubIndex = DrawTileIdentiferSelector(currentMetatileSubIndex, metatileMemory.EditorTileset, metatileSpriteData, out rect);
         if (selectedMetatileSubIndex != -1)
         {
             currentMetatileSubIndex = selectedMetatileSubIndex;
@@ -149,14 +149,14 @@ public static class EditorExtensions
         EditorGUILayout.EndHorizontal();
         return selectedMetatileIndex;
     }
-    public static int DrawMetatileMemories(MetatileMemory metatileMemory, int selectedMetatileIndex)
+    public static int DrawMetatileMemories(MetatileMemory metatileMemory, int selectedMetatileIndex, float magnification)
     {
         const int ROW_SIZE = 16;
         var rect = EditorGUILayout.BeginHorizontal();
         var count = metatileMemory.Max;
         var drawIndex = 0;
         var validCount = metatileMemory.Max - metatileMemory.GetDisabledCount();
-        var selected = GUILayout.SelectionGrid(-1, new string[validCount], ROW_SIZE, ButtonStyle(SPRITE_SIZE * 2));
+        var selected = GUILayout.SelectionGrid(-1, new string[validCount], ROW_SIZE, ButtonStyle(SPRITE_SIZE * 2, magnification));
         for (int i = 0; i < count; i++)
         {
             var data = metatileMemory.GetData(i, true);
@@ -165,7 +165,7 @@ public static class EditorExtensions
             int y = drawIndex / ROW_SIZE;
             if (selectedMetatileIndex == i)
             {
-                var size = 2;
+                var size = 2 * magnification;
                 Rect spriteIdentifierRect = new(rect)
                 {
                     width = SPRITE_SIZE * size + 1,
@@ -174,7 +174,7 @@ public static class EditorExtensions
                 spriteIdentifierRect.position += (SPRITE_SIZE * size) * new Vector2(drawIndex % ROW_SIZE, drawIndex / ROW_SIZE) - Vector2.right;
                 EditorGUI.DrawRect(spriteIdentifierRect, Color.red);
             }
-            DrawMetatileAsOne(metatileMemory.EditorTileset, data, new Vector2(x, y), rect.position);
+            DrawMetatileAsOne(metatileMemory.EditorTileset, data, new Vector2(x, y), rect.position, magnification);
             drawIndex++;
         }
         EditorGUILayout.EndHorizontal();

@@ -22,6 +22,9 @@ public class EntitySpawner : MonoBehaviour
     private List<EntityControllerController> _entityControllers;
     private List<SpriteControllerRenderer> _spriteControllerRenderers;
 
+    [Header("Experimental")]
+    [SerializeField] private CollisionTestPlayerController _playerController;
+
     #region UNITY
     private void Awake()
     {
@@ -30,6 +33,7 @@ public class EntitySpawner : MonoBehaviour
     private void Update()
     {
         UpdateControllers();
+        DoPlayerCollision();
     }
     #endregion
 
@@ -118,6 +122,38 @@ public class EntitySpawner : MonoBehaviour
         foreach (var obj in activeObjects)
         {
             obj.UpdateEntity();
+        }
+    }
+    private void DoPlayerCollision()
+    {
+        var activeObjects = _entityControllers.Where(x => x.gameObject.activeSelf);
+        foreach (var obj in activeObjects)
+        {
+            // experimental collision testing
+            var entityColliderPositions = obj.GetColliderPositions();
+            var playerColliderPositions = _playerController.GetColliderPositions();
+            foreach (var entityColliderPosition in entityColliderPositions)
+            {
+                Rect entityCollider = new()
+                {
+                    center = entityColliderPosition,
+                    width = 1,
+                    height = 1,
+                };
+                foreach (var playerColliderPosition in playerColliderPositions)
+                {
+                    Rect playerCollider = new()
+                    {
+                        center = playerColliderPosition,
+                        width = 1,
+                        height = 1,
+                    };
+                    if (!entityCollider.Overlaps(playerCollider)) continue;
+                    _playerController.RegisterKnockback(entityColliderPosition);
+                    _playerController.StaminaController.Damage(1);
+                    return;
+                }
+            }
         }
     }
     public void ActivateNew(EntityData entityData, Vector2Int spawnPosition)

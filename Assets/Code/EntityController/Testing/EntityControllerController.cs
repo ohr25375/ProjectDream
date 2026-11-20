@@ -3,9 +3,7 @@ using UnityEngine;
 
 public class EntityControllerController : MonoBehaviour
 {
-    private EntityController enemyController = new();
-
-
+    private readonly EntityController enemyController = new();
     public void Initialize(EntityData entityData, List<SpriteController> spriteControllers, Vector2Int position, Vector2 mapPositionOffset)
     {
         OnInitialize(entityData, spriteControllers, position, mapPositionOffset);
@@ -24,5 +22,6 @@ public class EntityControllerController : MonoBehaviour
         enemyController.SetStateTree(entityData.EntityStateTree.GetClone());
         enemyController.Initialize(transform, position);
     }
+    public List<Vector2> GetColliderPositions() => enemyController.GetColliderPositions();
     public void ReturnToPool() => enemyController.ReturnToPool();
 }

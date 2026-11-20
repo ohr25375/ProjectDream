@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using UnityEngine;
@@ -28,6 +29,9 @@ public class CollisionTestPlayerController : MonoBehaviour
     [SerializeField] private InputActionReference _inputDown;
     [SerializeField] private float _speed;
     [SerializeField] private List<Vector2> _colliderOffsets;
+    [Header("Experimental")]
+    [SerializeField] private StaminaControl _staminaController;
+    public StaminaControl StaminaController => _staminaController;
     private List<GridBasedCollider> _colliders;
     private Vector3 _currentPosition;
     private Vector2 _mapPositionOffset;
@@ -36,6 +40,9 @@ public class CollisionTestPlayerController : MonoBehaviour
     private Direction _currentMovingDirection;
     [SerializeField] private TileCollisionFlags _tileCollisionFlags;
     private bool _canMove = true;
+    private bool _isKnockbacking = false;
+    private Direction _knockbackDirection;
+    private Coroutine _knockbackTimer;
     
     #region UNITY FUNCTIONS
     private void OnEnable()
@@ -65,6 +72,7 @@ public class CollisionTestPlayerController : MonoBehaviour
     private void Update()
     {
         DoMove();
+        DoKnockback();
     }
     #endregion
 
@@ -84,6 +92,35 @@ public class CollisionTestPlayerController : MonoBehaviour
     {
         _currentPosition += (Vector3)position;
         transform.localPosition = ExtensionFunctions.RoundPosition(_currentPosition);
+    }
+    public List<Vector2> GetColliderPositions()
+    {
+        var colliderPositions = new List<Vector2>(new Vector2[_colliderOffsets.Count]);
+        for (var i = 0; i < _colliderOffsets.Count; i++)
+        {
+            colliderPositions[i] = (Vector2)transform.localPosition + _colliderOffsets[i];
+        }
+        return colliderPositions;
+    }
+    public void RegisterKnockback(Vector2 damageOrigin)
+    {
+        if (_staminaController.IsHitCooldown) { return; }
+        var damageDirection = (damageOrigin - (Vector2)transform.localPosition).normalized;
+        var xAbs = Mathf.Abs(damageDirection.x);
+        var yAbs = Mathf.Abs(damageDirection.y);
+        if (xAbs > yAbs)
+        {
+            _knockbackDirection = damageDirection.x < 0 ? Direction.Right : Direction.Left;
+        }
+        else
+        {
+            _knockbackDirection = damageDirection.y < 0 ? Direction.Up : Direction.Down;
+        }
+        if (_knockbackTimer != null)
+        {
+            StopCoroutine(_knockbackTimer);
+        }
+        _knockbackTimer = StartCoroutine(KnockbackTimer());
     }
     #endregion
 
@@ -126,7 +163,7 @@ public class CollisionTestPlayerController : MonoBehaviour
     #endregion
 
     #region INTERNAL
-    private bool ComputeCollision(Vector2Int mapSize, ReadOnlyCollection<bool> colliders, out CollisionResults collisionResults, out Vector3 newPosition)
+    private bool ComputeCollision(Direction movingDirection, float deltaSpeed, Vector2Int mapSize, ReadOnlyCollection<bool> colliders, out CollisionResults collisionResults, out Vector3 newPosition, bool isMoveMap = true)
     {
         collisionResults = new()
         {
@@ -134,15 +171,15 @@ public class CollisionTestPlayerController : MonoBehaviour
             hasFlatCollision = false,
             totalBias = 0
         };
-        newPosition = ExtensionFunctions.GetNewPosition(_currentPosition, _speed * Time.deltaTime, _currentMovingDirection);
+        newPosition = ExtensionFunctions.GetNewPosition(_currentPosition, deltaSpeed, movingDirection);
         Vector3 roundedPosition = ExtensionFunctions.RoundPosition(newPosition);
         var currentMapPosition = roundedPosition - (Vector3)_mapPositionOffset;
         foreach (var collider in _colliders)
         {
-            var ic = collider.IsColliding(colliders, mapSize, _currentMovingDirection, currentMapPosition, out int colliderBias);
-            if (ic < 0)
+            var ic = collider.IsColliding(colliders, mapSize, movingDirection, currentMapPosition, out int colliderBias);
+            if (ic < 0 && isMoveMap)
             {
-                ScreenController.MoveMap(_currentMovingDirection);
+                ScreenController.MoveMap(movingDirection);
                 return false;
             }
             collisionResults.totalBias += colliderBias;
@@ -172,6 +209,21 @@ public class CollisionTestPlayerController : MonoBehaviour
     {
         OnInitialize(position);
     }
+    public bool ForceMove(Direction direction, float speed)
+    {
+        var colliders = ScreenController.MainMapData.GetColliders(_tileCollisionFlags);
+        var mapSize = ScreenController.MainMapData.Size * 2;
+        ComputeCollision(direction, speed * Time.deltaTime, mapSize, colliders, out CollisionResults collisionResults, out Vector3 newPosition, false);
+        if (collisionResults.isColliding)
+        {
+            return false;
+        }
+
+        _currentPosition = newPosition;
+        transform.localPosition = ExtensionFunctions.RoundPosition(_currentPosition);
+        return true;
+    }
+
     private void OnInitialize(Vector2 position)
     {
         _currentPosition = position;
@@ -193,18 +245,18 @@ public class CollisionTestPlayerController : MonoBehaviour
         bool hasVerticalInput = _currentInputStates.HasFlag(InputStates.Up) || _currentInputStates.HasFlag(InputStates.Down);
         if (hasVerticalInput)
         {
-            if (!ComputeCollision(mapSize, colliders, out CollisionResults collisionResults, out Vector3 newPosition)) { return; }
+            if (!ComputeCollision(_currentMovingDirection, _speed * Time.deltaTime, mapSize, colliders, out CollisionResults collisionResults, out Vector3 newPosition)) { return; }
             if (!DoCollision(collisionResults, newPosition)) { return; }
         }
         bool hasHorizontalInput = _currentInputStates.HasFlag(InputStates.Left) || _currentInputStates.HasFlag(InputStates.Right);
         if (hasHorizontalInput)
         {
             _currentMovingDirection = SolveInput(_currentInputStates, true);
-            if (!ComputeCollision(mapSize, colliders, out CollisionResults collisionResults, out Vector3 newPosition)) { return; }
+            if (!ComputeCollision(_currentMovingDirection, _speed * Time.deltaTime, mapSize, colliders, out CollisionResults collisionResults, out Vector3 newPosition)) { return; }
             if (!DoCollision(collisionResults, newPosition)) { return; }
         }
         {
-            if (!ComputeCollision(mapSize, colliders, out CollisionResults collisionResults, out Vector3 newPosition)) { return; }
+            if (!ComputeCollision(_currentMovingDirection, _speed * Time.deltaTime, mapSize, colliders, out CollisionResults collisionResults, out Vector3 newPosition)) { return; }
             if (collisionResults.hasFlatCollision) { return; }
             if (!collisionResults.isColliding)
             {
@@ -213,5 +265,23 @@ public class CollisionTestPlayerController : MonoBehaviour
                 return;
             }
         }
+    }
+    private void DoKnockback()
+    {
+        if (!_isKnockbacking) { return; }
+        if (ForceMove(_knockbackDirection, 60)) { return; }
+        _isKnockbacking = false;
+        if (_knockbackTimer != null)
+        {
+            StopCoroutine( _knockbackTimer);
+            _knockbackTimer = null;
+        }
+    }
+    private IEnumerator KnockbackTimer()
+    {
+        _isKnockbacking = true;
+        yield return new WaitForSeconds(0.1f);
+        _isKnockbacking = false;
+        _knockbackTimer = null;
     }
 }

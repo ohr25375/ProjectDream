@@ -33,7 +33,15 @@ public class EntityController
     private EntityState CurrentEnemyState => _entityStates[CurrentStateIndex];
     private List<EntityAnimationFrame> _animationFrames;
 
-
+    public List<Vector2> GetColliderPositions()
+    {
+        var colliderPositions = new List<Vector2>(new Vector2[_colliderOffsets.Count]);
+        for (var i = 0; i < _colliderOffsets.Count; i++)
+        {
+            colliderPositions[i] = (Vector2)_transform.localPosition + _colliderOffsets[i];
+        }
+        return colliderPositions;
+    }
     public void Initialize(Transform transform, Vector2Int position) => OnInitialize(transform, position);
     public void SetMapSize(Vector2Int mapSize) => MapSize = mapSize;
     public void InjectSpriteControllers(List<SpriteController> spriteControllers)

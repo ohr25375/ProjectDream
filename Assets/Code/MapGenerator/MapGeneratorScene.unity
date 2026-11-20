@@ -119,6 +119,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &338609333 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5778939566909156959, guid: c3f73a7afe7ca9a4e8112fab5ba763cf, type: 3}
+  m_PrefabInstance: {fileID: 435026514}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &435026514
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -171,10 +176,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: TestPlayer
       objectReference: {fileID: 0}
+    - target: {fileID: 6410059225532822704, guid: c3f73a7afe7ca9a4e8112fab5ba763cf, type: 3}
+      propertyPath: _staminaController
+      value: 
+      objectReference: {fileID: 1622154128}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5778939566909156959, guid: c3f73a7afe7ca9a4e8112fab5ba763cf, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1622154128}
   m_SourcePrefab: {fileID: 100100000, guid: c3f73a7afe7ca9a4e8112fab5ba763cf, type: 3}
 --- !u!1 &519420028
 GameObject:
@@ -452,6 +464,7 @@ MonoBehaviour:
   _entityData: {fileID: 11400000, guid: 0d9018be939f599499acc6cef9c3dac8, type: 2}
   _maxEntityCount: 32
   _spriteControllerCount: 256
+  _playerController: {fileID: 1622154127}
   debugSpawnPosition: {x: -1, y: 0}
 --- !u!1 &904917646
 GameObject:
@@ -748,12 +761,32 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6410059225532822704, guid: c3f73a7afe7ca9a4e8112fab5ba763cf, type: 3}
   m_PrefabInstance: {fileID: 435026514}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 338609333}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2028103775eb3db4ea9bdcb6e22d3980, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollisionTestPlayerController
+--- !u!114 &1622154128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 338609333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48e80b66cc909d541a587cfd3bc9624c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StaminaControl
+  maxHP: 6
+  invincibleTime: 1
+  OnHPChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDead:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1793093002
 GameObject:
   m_ObjectHideFlags: 0

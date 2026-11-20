@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -15,6 +14,7 @@ public class StaminaControl : MonoBehaviour
     [SerializeField] protected float invincibleTime = 1f;
 
     protected bool isInvincible;
+    public bool IsHitCooldown => isInvincible;
     public bool IsGodMode {  get; protected set; }
 
     public UnityEvent<int, int> OnHPChanged;
