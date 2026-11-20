@@ -24,7 +24,7 @@ public class EditorMapData : Editor
     private int _lastSelectedMapTile = -1;
     private EditorOverlay _editorOverlayMode;
     private float _overlayOpacity = 0.5f;
-    private bool _overwriteSelectedModeOnly = false;
+    private bool _overwriteSelectedModeOnly = true;
     public enum PreviewMode
     {
         Editor,
