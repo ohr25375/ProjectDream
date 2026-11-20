@@ -95,13 +95,17 @@ public class EditorMetatileMemory : Editor
             EditorGUILayout.BeginHorizontal();
             _selectedMetatileIndex = EditorExtensions.DrawMetatileSelector(metatileMemory, _selectedMetatileIndex, ref _currentMetatileSubIndex);
             var spriteData = metatileSpriteData.data[_currentMetatileSubIndex];
-            var state = GUILayout.Toggle(spriteData.isFlippedX, $"{(TileIdentifier)_currentMetatileSubIndex}: FlipX");
-            if (state != spriteData.isFlippedX)
+            EditorGUILayout.BeginVertical();
+            var stateX = GUILayout.Toggle(spriteData.isFlippedX, $"{(TileIdentifier)_currentMetatileSubIndex}: FlipX");
+            var stateY = GUILayout.Toggle(spriteData.isFlippedY, $"{(TileIdentifier)_currentMetatileSubIndex}: FlipY");
+            if (stateX != spriteData.isFlippedX || stateY != spriteData.isFlippedY)
             {
-                spriteData.isFlippedX = state;
+                spriteData.isFlippedX = stateX;
+                spriteData.isFlippedY = stateY;
                 metatileMemory.EditorModifyTileSpriteData(_selectedMetatileIndex, (TileIdentifier)_currentMetatileSubIndex, spriteData);
                 EditorUtility.SetDirty(target);
             }
+            EditorGUILayout.EndVertical();
             EditorGUILayout.EndHorizontal();
             EditorGUILayout.BeginHorizontal();
             {
