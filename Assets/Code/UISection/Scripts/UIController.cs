@@ -36,4 +36,10 @@ public class UIController : MonoBehaviour
             }
         }
     }
+    public SpriteController GetSprite(int x, int y)
+    {
+        if (x < 0 || x >= _size.x || y < 0 || y >= _size.y) return null;
+        
+        return _spriteControllers[x+y*_size.x];
+    }
 }

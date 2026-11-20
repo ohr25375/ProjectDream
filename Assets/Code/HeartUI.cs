@@ -1,16 +1,19 @@
 using UnityEngine;
+using UnityEngine.InputSystem.XR;
 using UnityEngine.UI;
 
 public class HeartUI : MonoBehaviour
 {
     [SerializeField] private PlayerHP playerHP;
 
-    [SerializeField] private Image[] hearts;
+    [SerializeField] private UIController uiController;
+    [SerializeField] private Tileset tileset;
 
-    [SerializeField] private Sprite fullHeart;
-    [SerializeField] private Sprite halfHeart;
-    [SerializeField] private Sprite emptyHeart;
+    [SerializeField] private int fullHeartIndex;
+    [SerializeField] private int halfHeartIndex;
+    [SerializeField] private int emptyHeartIndex;
 
+    [SerializeField] private Vector2Int heartStartPosition = new Vector2Int(0, 0);
     private void Start()
     {
         playerHP.OnHPChanged.AddListener(UpdateHeart);
@@ -20,19 +23,25 @@ public class HeartUI : MonoBehaviour
 
     void UpdateHeart(int currentHP, int maxHP)
     {
+        int maxHeart = Mathf.CeilToInt(maxHP / 2f);
 
-        for (int i = 0; i < hearts.Length; i++)
+        for (int i = 0; i < maxHeart; i++)
         {
             int hp = currentHP - i * 2;
 
-            if (hp >= 2)
-                hearts[i].sprite = fullHeart;
-            else if (hp == 1)
-                hearts[i].sprite = halfHeart;
-            else
-                hearts[i].sprite = emptyHeart;
+            Sprite sprite;
 
-            hearts[i].enabled = i < Mathf.CeilToInt(maxHP / 2f);
+            if (hp >= 2)
+                sprite = tileset.GetSprite(fullHeartIndex);
+            else if (hp == 1)
+                sprite = tileset.GetSprite(halfHeartIndex);
+            else
+                sprite = tileset.GetSprite(emptyHeartIndex);
+
+            int x=i%10;
+            int y=i/10;
+
+            uiController.GetSprite(heartStartPosition.x + x,heartStartPosition.y-y)?.SetSprite(sprite);
         }
     }
 }
