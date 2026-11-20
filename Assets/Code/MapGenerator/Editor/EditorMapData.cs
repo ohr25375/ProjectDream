@@ -24,6 +24,7 @@ public class EditorMapData : Editor
     private int _lastSelectedMapTile = -1;
     private EditorOverlay _editorOverlayMode;
     private float _overlayOpacity = 0.5f;
+    private bool _overwriteSelectedModeOnly = false;
     public enum PreviewMode
     {
         Editor,
@@ -205,7 +206,18 @@ public class EditorMapData : Editor
                 }
         }
         GUILayout.BeginVertical();
-        _editorOverlayMode = (EditorOverlay)EditorGUILayout.EnumPopup(_editorOverlayMode);
+        _overwriteSelectedModeOnly = EditorGUILayout.Toggle("Overwrite selected only", _overwriteSelectedModeOnly);
+        string[] editorOverlayModeTexts = { "None", "Palette", "Collider" };
+        if (_overwriteSelectedModeOnly)
+        {
+            editorOverlayModeTexts = new string[]
+            {
+                "Sprite",
+                "Palette",
+                "Collider"
+            };
+        }
+        _editorOverlayMode = (EditorOverlay)EditorGUILayout.Popup((int)_editorOverlayMode, editorOverlayModeTexts);
         if (_editorOverlayMode == EditorOverlay.None)
         {
             GUI.enabled = false;
@@ -255,9 +267,21 @@ public class EditorMapData : Editor
         int selectedY = selectedTile / _mapData.Size.x;
         int mapY = _mapData.Size.y - 1 - selectedY;
         int mapIndex = selectedX + mapY * _mapData.Size.x;
-        _mapTileData.ChangeMetatileIndex(mapIndex, _metatileIndex);
-        _mapTileData.SetTileCollisionDatas(mapIndex, _tileCollisionDatas);
-        _mapTileData.ChangeMetatilePalette(mapIndex, _palette);
+        if (_overwriteSelectedModeOnly)
+        {
+            switch (_editorOverlayMode)
+            {
+                case EditorOverlay.None: _mapTileData.ChangeMetatileIndex(mapIndex, _metatileIndex); break;
+                case EditorOverlay.Palette: _mapTileData.ChangeMetatilePalette(mapIndex, _palette); break;
+                case EditorOverlay.Collider: _mapTileData.SetTileCollisionDatas(mapIndex, _tileCollisionDatas);  break;
+            }
+        }
+        else
+        {
+            _mapTileData.ChangeMetatileIndex(mapIndex, _metatileIndex);
+            _mapTileData.SetTileCollisionDatas(mapIndex, _tileCollisionDatas);
+            _mapTileData.ChangeMetatilePalette(mapIndex, _palette);            
+        }
         EditorUtility.SetDirty(target);
     }
     private void SaveAsset()
