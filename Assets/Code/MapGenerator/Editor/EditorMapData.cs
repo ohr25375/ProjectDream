@@ -133,7 +133,7 @@ public class EditorMapData : Editor
             g = 0,
             b = collisionData.HasFlag(TileCollisionFlags.IsAirCollidable) ? 1 : 0,
         };
-        color.a = alpha * Mathf.Max(color.r, color.b);
+        color.a = _previewMode == PreviewMode.Collisions ? alpha : alpha * Mathf.Max(color.r, color.b);
         EditorGUI.DrawRect(rect, color);
     }
     private void DrawCollisionSet(Vector2Int position, Vector2 offset, int mapIndex, float alpha, float magnification)
