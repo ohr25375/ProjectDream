@@ -1018,62 +1018,6 @@ MonoBehaviour:
     - metatileIndex: 2
       palette: 2
       data:
-        AA: -1
-        BA: -1
-        AB: -1
-        BB: -1
-    - metatileIndex: 2
-      palette: 2
-      data:
-        AA: -1
-        BA: -1
-        AB: -1
-        BB: -1
-    - metatileIndex: 0
-      palette: 0
-      data:
-        AA: 0
-        BA: 0
-        AB: 0
-        BB: 0
-    - metatileIndex: 0
-      palette: 0
-      data:
-        AA: 0
-        BA: 0
-        AB: 0
-        BB: 0
-    - metatileIndex: 0
-      palette: 0
-      data:
-        AA: 0
-        BA: 0
-        AB: 0
-        BB: 0
-    - metatileIndex: 0
-      palette: 0
-      data:
-        AA: 0
-        BA: 0
-        AB: 0
-        BB: 0
-    - metatileIndex: 0
-      palette: 0
-      data:
-        AA: 0
-        BA: 0
-        AB: 0
-        BB: 0
-    - metatileIndex: 0
-      palette: 0
-      data:
-        AA: 0
-        BA: 0
-        AB: 0
-        BB: 0
-    - metatileIndex: 0
-      palette: 0
-      data:
         AA: 0
         BA: 0
         AB: 0
@@ -1127,6 +1071,69 @@ MonoBehaviour:
         BA: 0
         AB: 0
         BB: 0
+    - metatileIndex: 0
+      palette: 0
+      data:
+        AA: 0
+        BA: 0
+        AB: 0
+        BB: 0
+    - metatileIndex: 2
+      palette: 2
+      data:
+        AA: -1
+        BA: -1
+        AB: -1
+        BB: -1
+    - metatileIndex: 0
+      palette: 0
+      data:
+        AA: 0
+        BA: 0
+        AB: 0
+        BB: 0
+    - metatileIndex: 0
+      palette: 0
+      data:
+        AA: 0
+        BA: 0
+        AB: 0
+        BB: 0
+    - metatileIndex: 0
+      palette: 0
+      data:
+        AA: 0
+        BA: 0
+        AB: 0
+        BB: 0
+    - metatileIndex: 0
+      palette: 0
+      data:
+        AA: 0
+        BA: 0
+        AB: 0
+        BB: 0
+    - metatileIndex: 0
+      palette: 0
+      data:
+        AA: 0
+        BA: 0
+        AB: 0
+        BB: 0
+    - metatileIndex: 0
+      palette: 0
+      data:
+        AA: 0
+        BA: 0
+        AB: 0
+        BB: 0
+    - metatileIndex: 2
+      palette: 2
+      data:
+        AA: 0
+        BA: 0
+        AB: 0
+        BB: 0
     - metatileIndex: 2
       palette: 2
       data:
@@ -1235,17 +1242,10 @@ MonoBehaviour:
     - metatileIndex: 2
       palette: 2
       data:
-        AA: -1
-        BA: -1
-        AB: -1
-        BB: -1
-    - metatileIndex: 2
-      palette: 2
-      data:
-        AA: -1
-        BA: -1
-        AB: -1
-        BB: -1
+        AA: 0
+        BA: 0
+        AB: 0
+        BB: 0
   size: {x: 16, y: 11}
   e_metatileMemory: {fileID: 11400000, guid: 0e3845f3a990549419fef2be1d621685, type: 2}
   e_tileset: {fileID: 11400000, guid: e827703367f28b74d9d2dbb9b9fcb8b2, type: 2}

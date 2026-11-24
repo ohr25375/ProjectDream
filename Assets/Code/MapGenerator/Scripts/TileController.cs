@@ -13,6 +13,7 @@ public class TileController
     public void SetPalette(Palette palette) => _palette = palette;
     public void SetTileData(TileData tileData) => _tileData = tileData;
     public void SetTileset(Tileset tileset) => _tileset = tileset;
+    public void SetTileSpriteData(TileSpriteData tileSpriteData) => _tileData.spriteData = tileSpriteData;
     public void UpdateRenderer()
     {
         _spriteController.SetSprite(_tileset.GetSprite(_tileData.spriteData.spriteID));
@@ -20,7 +21,7 @@ public class TileController
         _spriteController.SetFlipY(_tileData.spriteData.isFlippedY);
         _spriteController.UpdateSortingOrder(_tileData.collisionData.HasFlag(TileCollisionFlags.IsInFront), false);
         _spriteController.SetPalette(_palette);
-        _spriteController.SetIsBackground(_tileData.collisionData.HasFlag(TileCollisionFlags.IsInFront));
+        _spriteController.SetIsBackground(!_tileData.collisionData.HasFlag(TileCollisionFlags.IsInFront));
         _spriteController.UpdateRenderer();
 
     }

@@ -316,6 +316,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6282240946088490871, guid: 529f127b489a2469295447eabcc596e7, type: 3}
     - target: {fileID: 6410059225532822704, guid: c3f73a7afe7ca9a4e8112fab5ba763cf, type: 3}
+      propertyPath: _inputAction
+      value: 
+      objectReference: {fileID: -4857030871458223466, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+    - target: {fileID: 6410059225532822704, guid: c3f73a7afe7ca9a4e8112fab5ba763cf, type: 3}
+      propertyPath: _inputInteract
+      value: 
+      objectReference: {fileID: -4857030871458223466, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+    - target: {fileID: 6410059225532822704, guid: c3f73a7afe7ca9a4e8112fab5ba763cf, type: 3}
       propertyPath: _staminaController
       value: 
       objectReference: {fileID: 1622154128}
@@ -446,14 +454,14 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.033333335
+    y: 0
     width: 1
-    height: 0.9333334
+    height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 14
+  orthographic size: 15
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -502,7 +510,7 @@ MonoBehaviour:
   m_ComponentVersion: 1
   m_AssetsPPU: 8
   m_RefResolutionX: 256
-  m_RefResolutionY: 224
+  m_RefResolutionY: 240
   m_CropFrame: 3
   m_GridSnapping: 1
   m_FilterMode: 0
@@ -714,8 +722,8 @@ MonoBehaviour:
   _delay: 0.2
   _player: {fileID: 1622154127}
   _playerStartingPosition: {x: 0, y: 0}
-  _currentMapIndex: 0
-  _worldData: {fileID: 11400000, guid: f14b206a4695bf047ba20f73759ad621, type: 2}
+  _worldDatas:
+  - {fileID: 11400000, guid: f8c27f659ad75424fb53eb4bdbf78ba4, type: 2}
   _direction: 2
 --- !u!4 &904917648
 Transform:
@@ -746,7 +754,7 @@ PrefabInstance:
     - target: {fileID: 3660218451458396340, guid: 529f127b489a2469295447eabcc596e7, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -2607079989944635220, guid: 5e9d7dd3afb735d429996fcdc86ef725, type: 3}
+      objectReference: {fileID: -258124657, guid: 5e9d7dd3afb735d429996fcdc86ef725, type: 3}
     - target: {fileID: 3660218451458396340, guid: 529f127b489a2469295447eabcc596e7, type: 3}
       propertyPath: m_Color.b
       value: 1
@@ -771,6 +779,10 @@ PrefabInstance:
       propertyPath: _material
       value: 
       objectReference: {fileID: 11400000, guid: a282a3a760ac84618a67cf309299afaa, type: 2}
+    - target: {fileID: 6216204991842087477, guid: 529f127b489a2469295447eabcc596e7, type: 3}
+      propertyPath: _defaultSprite
+      value: 
+      objectReference: {fileID: -2607079989944635220, guid: 5e9d7dd3afb735d429996fcdc86ef725, type: 3}
     - target: {fileID: 6282240946088490871, guid: 529f127b489a2469295447eabcc596e7, type: 3}
       propertyPath: m_Name
       value: Sprite

@@ -41,4 +41,12 @@ public static class CollisionTestExtensions
             _ => Direction.None,
         };
     }
+    public static Direction Inverse(this Direction direction) => direction switch
+    {
+        Direction.Left => Direction.Right,
+        Direction.Right => Direction.Left,
+        Direction.Up => Direction.Down,
+        Direction.Down => Direction.Up,
+        _ => Direction.None,
+    };
 }

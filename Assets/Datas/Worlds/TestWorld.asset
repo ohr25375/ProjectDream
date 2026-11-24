@@ -1,0 +1,97 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e292b4e8210cbf49a87c8c12768f312, type: 3}
+  m_Name: TestWorld
+  m_EditorClassIdentifier: Assembly-CSharp::WorldData
+  mapDatas:
+  - mapData: {fileID: 11400000, guid: b3b5101eb1d50654fba571980acff9d4, type: 2}
+    exits:
+      North:
+        UnlockTriggerIndex: -1
+        ExitIndex: -1
+        ExitOffset: 0
+      South:
+        UnlockTriggerIndex: -1
+        ExitIndex: -1
+        ExitOffset: 0
+      East:
+        UnlockTriggerIndex: -1
+        ExitIndex: 0
+        ExitOffset: 2
+      West:
+        UnlockTriggerIndex: 1
+        ExitIndex: 0
+        ExitOffset: 0
+    mapEventTriggers:
+    - position: {x: 3, y: 3}
+      mapEventTrigger:
+        rid: 7066036209411686537
+    - position: {x: 0, y: 5}
+      mapEventTrigger:
+        rid: 7066036209411686557
+  - mapData: {fileID: 0}
+    exits:
+      North:
+        UnlockTriggerIndex: 0
+        ExitIndex: 0
+        ExitOffset: 0
+      South:
+        UnlockTriggerIndex: 0
+        ExitIndex: 0
+        ExitOffset: 0
+      East:
+        UnlockTriggerIndex: 0
+        ExitIndex: 0
+        ExitOffset: 0
+      West:
+        UnlockTriggerIndex: 0
+        ExitIndex: 0
+        ExitOffset: 0
+    mapEventTriggers: []
+  - mapData: {fileID: 0}
+    exits:
+      North:
+        UnlockTriggerIndex: 0
+        ExitIndex: 0
+        ExitOffset: 0
+      South:
+        UnlockTriggerIndex: 0
+        ExitIndex: 0
+        ExitOffset: 0
+      East:
+        UnlockTriggerIndex: 0
+        ExitIndex: 0
+        ExitOffset: 0
+      West:
+        UnlockTriggerIndex: 0
+        ExitIndex: 0
+        ExitOffset: 0
+    mapEventTriggers: []
+  references:
+    version: 2
+    RefIds:
+    - rid: 7066036209411686537
+      type: {class: MapEventTrigger_DebugLogger, ns: , asm: Assembly-CSharp}
+      data:
+        interactableCount: -1
+        isSolid: 1
+        tileIndex: 0
+        isVisible: 1
+        message: You found a debug logger!
+    - rid: 7066036209411686557
+      type: {class: MapEventTrigger_UnlockExit, ns: , asm: Assembly-CSharp}
+      data:
+        interactableCount: 1
+        isSolid: 1
+        tileIndex: 2
+        isVisible: 1
+        direction: 1

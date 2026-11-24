@@ -115,7 +115,7 @@ public class EntityController
     }
     public bool IsCollidingTile(TileCollisionFlags collisionFlags)
     {
-        var colliders = ScreenController.MainMapData.GetColliders(TileCollisionFlags);
+        var colliders = ScreenController.GetColliders(TileCollisionFlags);
         var mapSize = ScreenController.MainMapData.Size * 2;
         var newPosition = ExtensionFunctions.GetNewPosition(_currentPosition, 0, Direction.None);
         Vector3 roundedPosition = ExtensionFunctions.RoundPosition(newPosition);
@@ -134,7 +134,7 @@ public class EntityController
     }
     public void MoveWithCollision(Direction direction, float speed = 1)
     {
-        var colliders = ScreenController.MainMapData.GetColliders(TileCollisionFlags);
+        var colliders = ScreenController.GetColliders(TileCollisionFlags);
         var mapSize = ScreenController.MainMapData.Size * 2;
         var newPosition = ExtensionFunctions.GetNewPosition(_currentPosition, speed, direction);
         Vector3 roundedPosition = ExtensionFunctions.RoundPosition(newPosition);

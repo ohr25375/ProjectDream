@@ -27,6 +27,7 @@ public class CollisionTestPlayerController : MonoBehaviour
     [SerializeField] private InputActionReference _inputRight;
     [SerializeField] private InputActionReference _inputUp;
     [SerializeField] private InputActionReference _inputDown;
+    [SerializeField] private InputActionReference _inputInteract;
     [SerializeField] private float _speed;
     [SerializeField] private List<Vector2> _colliderOffsets;
     [SerializeField] private GameObject _sprite;
@@ -34,13 +35,13 @@ public class CollisionTestPlayerController : MonoBehaviour
     private Palette _currentPalette = Palette.A;
     [Header("Experimental")]
     [SerializeField] private StaminaControl _staminaController;
-    public StaminaControl StaminaController => _staminaController;
     private List<GridBasedCollider> _colliders;
-    private Vector3 _currentPosition;
+    private Vector2 _currentPosition;
     private Vector2 _mapPositionOffset;
     private InputStates _currentInputStates;
     private bool _isLastHorizontalInputLeft;
     private Direction _currentMovingDirection;
+    private Direction _currentFacingDirection;
     [SerializeField] private TileCollisionFlags _tileCollisionFlags;
     private bool _canMove = true;
     private bool _isKnockbacking = false;
@@ -60,6 +61,8 @@ public class CollisionTestPlayerController : MonoBehaviour
         _inputRight.action.canceled += OnInputRight;
         _inputUp.action.canceled += OnInputUp;
         _inputDown.action.canceled += OnInputDown;
+
+        _inputInteract.action.performed += OnInputInteract;
     }
     private void OnDisable()
     {
@@ -72,6 +75,8 @@ public class CollisionTestPlayerController : MonoBehaviour
         _inputRight.action.canceled -= OnInputRight;
         _inputUp.action.canceled -= OnInputUp;
         _inputDown.action.canceled -= OnInputDown;
+
+        _inputInteract.action.performed -= OnInputInteract;
     }
     private void Update()
     {
@@ -82,19 +87,33 @@ public class CollisionTestPlayerController : MonoBehaviour
 
     #region ACCESSORS
     public Vector3 CurrentPosition => _currentPosition;
-    public void SetCanMove(bool state) => _canMove = state;
-    public void SetMapPositionOffset(Vector2 offset)
+    public StaminaControl StaminaController => _staminaController;
+    public Direction CurrentMovingDirection
     {
-        _mapPositionOffset = offset;
+        get => _currentMovingDirection;
+        protected set
+        {
+            _currentMovingDirection = value;
+            if (value != Direction.None)
+            {
+                _currentFacingDirection = value;
+            }
+        }
     }
+    public Direction CurrentFacingDirection => _currentFacingDirection;
+    public Vector2 CurrentMapPosition => ExtensionFunctions.RoundPosition(_currentPosition) - _mapPositionOffset;
+    public Vector2Int CurrentMetatilePosition => Vector2Int.FloorToInt(CurrentMapPosition / 2);
+    public void SetCanMove(bool state) => _canMove = state;
+    public void SetMapPositionOffset(Vector2 offset) => _mapPositionOffset = offset;
     public void SetCurrentPosition(Vector2 position)
     {
         _currentPosition = position;
         transform.localPosition = ExtensionFunctions.RoundPosition(position);
     }
+    public Vector2Int FrontMetatile => CurrentMetatilePosition + CurrentFacingDirection.ToVector2Int();
     public void AddCurrentPosition(Vector2 position)
     {
-        _currentPosition += (Vector3)position;
+        _currentPosition += position;
         transform.localPosition = ExtensionFunctions.RoundPosition(_currentPosition);
     }
     public List<Vector2> GetColliderPositions()
@@ -150,6 +169,7 @@ public class CollisionTestPlayerController : MonoBehaviour
     }
     private void OnInputUp(InputAction.CallbackContext context) => OnInputs(context, InputStates.Up);
     private void OnInputDown(InputAction.CallbackContext context) => OnInputs(context, InputStates.Down);
+    private void OnInputInteract(InputAction.CallbackContext context) => ScreenController.TriggerEvent(FrontMetatile);
     private void OnInputs(InputAction.CallbackContext context, InputStates inputID)
     {
         if (context.action.IsPressed())
@@ -176,7 +196,7 @@ public class CollisionTestPlayerController : MonoBehaviour
     #endregion
 
     #region INTERNAL
-    private bool ComputeCollision(Direction movingDirection, float deltaSpeed, Vector2Int mapSize, ReadOnlyCollection<bool> colliders, out CollisionResults collisionResults, out Vector3 newPosition, bool isMoveMap = true)
+    private bool ComputeCollision(Direction movingDirection, float deltaSpeed, Vector2Int mapSize, ReadOnlyCollection<bool> colliders, out CollisionResults collisionResults, out Vector2 newPosition, bool isMoveMap = true)
     {
         collisionResults = new()
         {
@@ -186,10 +206,10 @@ public class CollisionTestPlayerController : MonoBehaviour
         };
         newPosition = ExtensionFunctions.GetNewPosition(_currentPosition, deltaSpeed, movingDirection);
         Vector3 roundedPosition = ExtensionFunctions.RoundPosition(newPosition);
-        var currentMapPosition = roundedPosition - (Vector3)_mapPositionOffset;
+        Vector2 newMapPosition = (Vector2)roundedPosition - _mapPositionOffset;
         foreach (var collider in _colliders)
         {
-            var ic = collider.IsColliding(colliders, mapSize, movingDirection, currentMapPosition, out int colliderBias);
+            var ic = collider.IsColliding(colliders, mapSize, movingDirection, newMapPosition, out int colliderBias);
             if (ic < 0 && isMoveMap)
             {
                 ScreenController.MoveMap(movingDirection);
@@ -211,7 +231,7 @@ public class CollisionTestPlayerController : MonoBehaviour
         }
         if (!collisionResults.hasFlatCollision)
         {
-            _currentMovingDirection = _currentMovingDirection.GetRelativeDirection(collisionResults.totalBias);
+            CurrentMovingDirection = _currentMovingDirection.GetRelativeDirection(collisionResults.totalBias);
         }
 
         return true;
@@ -224,9 +244,9 @@ public class CollisionTestPlayerController : MonoBehaviour
     }
     public bool ForceMove(Direction direction, float speed)
     {
-        var colliders = ScreenController.MainMapData.GetColliders(_tileCollisionFlags);
+        var colliders = ScreenController.GetColliders(_tileCollisionFlags);
         var mapSize = ScreenController.MainMapData.Size * 2;
-        ComputeCollision(direction, speed * Time.deltaTime, mapSize, colliders, out CollisionResults collisionResults, out Vector3 newPosition, false);
+        ComputeCollision(direction, speed * Time.deltaTime, mapSize, colliders, out var collisionResults, out var newPosition, false);
         if (collisionResults.isColliding)
         {
             return false;
@@ -261,24 +281,24 @@ public class CollisionTestPlayerController : MonoBehaviour
     private void DoMove()
     {
         if (!_canMove) { return; }
-        _currentMovingDirection = SolveInput(_currentInputStates);
-        var colliders = ScreenController.MainMapData.GetColliders(_tileCollisionFlags);
+        CurrentMovingDirection = SolveInput(_currentInputStates);
+        var colliders = ScreenController.GetColliders(_tileCollisionFlags);
         var mapSize = ScreenController.MainMapData.Size * 2;
         bool hasVerticalInput = _currentInputStates.HasFlag(InputStates.Up) || _currentInputStates.HasFlag(InputStates.Down);
         if (hasVerticalInput)
         {
-            if (!ComputeCollision(_currentMovingDirection, _speed * Time.deltaTime, mapSize, colliders, out CollisionResults collisionResults, out Vector3 newPosition)) { return; }
+            if (!ComputeCollision(_currentMovingDirection, _speed * Time.deltaTime, mapSize, colliders, out var collisionResults, out var newPosition)) { return; }
             if (!DoCollision(collisionResults, newPosition)) { return; }
         }
         bool hasHorizontalInput = _currentInputStates.HasFlag(InputStates.Left) || _currentInputStates.HasFlag(InputStates.Right);
         if (hasHorizontalInput)
         {
-            _currentMovingDirection = SolveInput(_currentInputStates, true);
-            if (!ComputeCollision(_currentMovingDirection, _speed * Time.deltaTime, mapSize, colliders, out CollisionResults collisionResults, out Vector3 newPosition)) { return; }
+            CurrentMovingDirection = SolveInput(_currentInputStates, true);
+            if (!ComputeCollision(_currentMovingDirection, _speed * Time.deltaTime, mapSize, colliders, out var collisionResults, out var newPosition)) { return; }
             if (!DoCollision(collisionResults, newPosition)) { return; }
         }
         {
-            if (!ComputeCollision(_currentMovingDirection, _speed * Time.deltaTime, mapSize, colliders, out CollisionResults collisionResults, out Vector3 newPosition)) { return; }
+            if (!ComputeCollision(_currentMovingDirection, _speed * Time.deltaTime, mapSize, colliders, out var collisionResults, out var newPosition)) { return; }
             if (collisionResults.hasFlatCollision) { return; }
             if (!collisionResults.isColliding)
             {
