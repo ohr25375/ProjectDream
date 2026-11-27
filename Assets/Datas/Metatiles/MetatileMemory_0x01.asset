@@ -1,0 +1,1042 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b5763426d89f03489147846567da2c5, type: 3}
+  m_Name: MetatileMemory_0x01
+  m_EditorClassIdentifier: Assembly-CSharp::MetatileMemory
+  metatiles:
+  - name: NULL
+    data:
+      AA:
+        spriteID: 0
+        isFlippedX: 1
+        isFlippedY: 0
+      BA:
+        spriteID: 0
+        isFlippedX: 1
+        isFlippedY: 0
+      AB:
+        spriteID: 0
+        isFlippedX: 1
+        isFlippedY: 0
+      BB:
+        spriteID: 0
+        isFlippedX: 1
+        isFlippedY: 0
+  - name: Grass_ground_11
+    data:
+      AA:
+        spriteID: 14
+        isFlippedX: 0
+        isFlippedY: 0
+      BA:
+        spriteID: 15
+        isFlippedX: 0
+        isFlippedY: 0
+      AB:
+        spriteID: 0
+        isFlippedX: 1
+        isFlippedY: 0
+      BB:
+        spriteID: 0
+        isFlippedX: 1
+        isFlippedY: 0
+  - name: Grass_ground_13
+    data:
+      AA:
+        spriteID: 0
+        isFlippedX: 0
+        isFlippedY: 0
+      BA:
+        spriteID: 0
+        isFlippedX: 0
+        isFlippedY: 0
+      AB:
+        spriteID: 14
+        isFlippedX: 1
+        isFlippedY: 1
+      BB:
+        spriteID: 15
+        isFlippedX: 1
+        isFlippedY: 1
+  - name: Left_stairs
+    data:
+      AA:
+        spriteID: 2
+        isFlippedX: 0
+        isFlippedY: 0
+      BA:
+        spriteID: 3
+        isFlippedX: 0
+        isFlippedY: 0
+      AB:
+        spriteID: 18
+        isFlippedX: 0
+        isFlippedY: 0
+      BB:
+        spriteID: 19
+        isFlippedX: 0
+        isFlippedY: 0
+  - name: Left_stairs
+    data:
+      AA:
+        spriteID: 3
+        isFlippedX: 1
+        isFlippedY: 0
+      BA:
+        spriteID: 2
+        isFlippedX: 1
+        isFlippedY: 0
+      AB:
+        spriteID: 19
+        isFlippedX: 1
+        isFlippedY: 0
+      BB:
+        spriteID: 18
+        isFlippedX: 1
+        isFlippedY: 0
+  - name: Upper_and_lower_stairs
+    data:
+      AA:
+        spriteID: 10
+        isFlippedX: 0
+        isFlippedY: 0
+      BA:
+        spriteID: 11
+        isFlippedX: 0
+        isFlippedY: 0
+      AB:
+        spriteID: 10
+        isFlippedX: 0
+        isFlippedY: 0
+      BB:
+        spriteID: 11
+        isFlippedX: 0
+        isFlippedY: 0
+  - name: Grass_ground_01
+    data:
+      AA:
+        spriteID: 4
+        isFlippedX: 0
+        isFlippedY: 0
+      BA:
+        spriteID: 5
+        isFlippedX: 1
+        isFlippedY: 0
+      AB:
+        spriteID: 20
+        isFlippedX: 0
+        isFlippedY: 0
+      BB:
+        spriteID: 21
+        isFlippedX: 1
+        isFlippedY: 0
+  - name: Grass_ground_02
+    data:
+      AA:
+        spriteID: 5
+        isFlippedX: 1
+        isFlippedY: 0
+      BA:
+        spriteID: 4
+        isFlippedX: 1
+        isFlippedY: 0
+      AB:
+        spriteID: 21
+        isFlippedX: 1
+        isFlippedY: 0
+      BB:
+        spriteID: 20
+        isFlippedX: 1
+        isFlippedY: 0
+  - name: Grass_ground_03
+    data:
+      AA:
+        spriteID: 6
+        isFlippedX: 0
+        isFlippedY: 0
+      BA:
+        spriteID: 7
+        isFlippedX: 0
+        isFlippedY: 0
+      AB:
+        spriteID: 22
+        isFlippedX: 0
+        isFlippedY: 0
+      BB:
+        spriteID: 23
+        isFlippedX: 0
+        isFlippedY: 0
+  - name: Grass_ground_04
+    data:
+      AA:
+        spriteID: 8
+        isFlippedX: 0
+        isFlippedY: 0
+      BA:
+        spriteID: 9
+        isFlippedX: 0
+        isFlippedY: 0
+      AB:
+        spriteID: 24
+        isFlippedX: 0
+        isFlippedY: 0
+      BB:
+        spriteID: 25
+        isFlippedX: 0
+        isFlippedY: 0
+  - name: Grass_ground_05
+    data:
+      AA:
+        spriteID: 9
+        isFlippedX: 1
+        isFlippedY: 0
+      BA:
+        spriteID: 8
+        isFlippedX: 1
+        isFlippedY: 0
+      AB:
+        spriteID: 25
+        isFlippedX: 1
+        isFlippedY: 0
+      BB:
+        spriteID: 24
+        isFlippedX: 1
+        isFlippedY: 0
+  - name: Grass_ground_06
+    data:
+      AA:
+        spriteID: 20
+        isFlippedX: 0
+        isFlippedY: 1
+      BA:
+        spriteID: 21
+        isFlippedX: 0
+        isFlippedY: 1
+      AB:
+        spriteID: 4
+        isFlippedX: 0
+        isFlippedY: 1
+      BB:
+        spriteID: 5
+        isFlippedX: 0
+        isFlippedY: 1
+  - name: Grass_ground_06
+    data:
+      AA:
+        spriteID: 21
+        isFlippedX: 1
+        isFlippedY: 1
+      BA:
+        spriteID: 20
+        isFlippedX: 1
+        isFlippedY: 1
+      AB:
+        spriteID: 5
+        isFlippedX: 0
+        isFlippedY: 1
+      BB:
+        spriteID: 4
+        isFlippedX: 1
+        isFlippedY: 1
+  - name: Grass_ground_07
+    data:
+      AA:
+        spriteID: 28
+        isFlippedX: 0
+        isFlippedY: 0
+      BA:
+        spriteID: 29
+        isFlippedX: 1
+        isFlippedY: 0
+      AB:
+        spriteID: 0
+        isFlippedX: 0
+        isFlippedY: 0
+      BB:
+        spriteID: 0
+        isFlippedX: 1
+        isFlippedY: 0
+  - name: Grass_ground_08
+    data:
+      AA:
+        spriteID: 29
+        isFlippedX: 0
+        isFlippedY: 0
+      BA:
+        spriteID: 28
+        isFlippedX: 1
+        isFlippedY: 0
+      AB:
+        spriteID: 0
+        isFlippedX: 1
+        isFlippedY: 0
+      BB:
+        spriteID: 0
+        isFlippedX: 1
+        isFlippedY: 0
+  - name: Grass_ground_09
+    data:
+      AA:
+        spriteID: 0
+        isFlippedX: 0
+        isFlippedY: 1
+      BA:
+        spriteID: 0
+        isFlippedX: 0
+        isFlippedY: 1
+      AB:
+        spriteID: 29
+        isFlippedX: 1
+        isFlippedY: 1
+      BB:
+        spriteID: 28
+        isFlippedX: 1
+        isFlippedY: 1
+  - name: Grass_ground_10
+    data:
+      AA:
+        spriteID: 0
+        isFlippedX: 1
+        isFlippedY: 1
+      BA:
+        spriteID: 0
+        isFlippedX: 1
+        isFlippedY: 1
+      AB:
+        spriteID: 28
+        isFlippedX: 0
+        isFlippedY: 1
+      BB:
+        spriteID: 29
+        isFlippedX: 0
+        isFlippedY: 1
+  - name: Grass_ground_14
+    data:
+      AA:
+        spriteID: 32
+        isFlippedX: 0
+        isFlippedY: 0
+      BA:
+        spriteID: 33
+        isFlippedX: 0
+        isFlippedY: 0
+      AB:
+        spriteID: 48
+        isFlippedX: 0
+        isFlippedY: 0
+      BB:
+        spriteID: 49
+        isFlippedX: 0
+        isFlippedY: 0
+  - name: Grass_ground_15
+    data:
+      AA:
+        spriteID: 33
+        isFlippedX: 1
+        isFlippedY: 0
+      BA:
+        spriteID: 32
+        isFlippedX: 1
+        isFlippedY: 0
+      AB:
+        spriteID: 49
+        isFlippedX: 1
+        isFlippedY: 0
+      BB:
+        spriteID: 48
+        isFlippedX: 1
+        isFlippedY: 0
+  - name: Grass_ground_16
+    data:
+      AA:
+        spriteID: 48
+        isFlippedX: 0
+        isFlippedY: 1
+      BA:
+        spriteID: 49
+        isFlippedX: 0
+        isFlippedY: 1
+      AB:
+        spriteID: 32
+        isFlippedX: 0
+        isFlippedY: 1
+      BB:
+        spriteID: 33
+        isFlippedX: 0
+        isFlippedY: 1
+  - name: Grass_ground_17
+    data:
+      AA:
+        spriteID: 49
+        isFlippedX: 1
+        isFlippedY: 1
+      BA:
+        spriteID: 48
+        isFlippedX: 1
+        isFlippedY: 1
+      AB:
+        spriteID: 33
+        isFlippedX: 1
+        isFlippedY: 1
+      BB:
+        spriteID: 32
+        isFlippedX: 1
+        isFlippedY: 1
+  - name: Grass_ground_18
+    data:
+      AA:
+        spriteID: 44
+        isFlippedX: 0
+        isFlippedY: 0
+      BA:
+        spriteID: 45
+        isFlippedX: 0
+        isFlippedY: 0
+      AB:
+        spriteID: 60
+        isFlippedX: 0
+        isFlippedY: 0
+      BB:
+        spriteID: 61
+        isFlippedX: 0
+        isFlippedY: 0
+  - name: Grass_ground_19
+    data:
+      AA:
+        spriteID: 45
+        isFlippedX: 1
+        isFlippedY: 0
+      BA:
+        spriteID: 44
+        isFlippedX: 1
+        isFlippedY: 0
+      AB:
+        spriteID: 61
+        isFlippedX: 1
+        isFlippedY: 0
+      BB:
+        spriteID: 60
+        isFlippedX: 1
+        isFlippedY: 0
+  - name: Grass_ground_20
+    data:
+      AA:
+        spriteID: 46
+        isFlippedX: 0
+        isFlippedY: 0
+      BA:
+        spriteID: 47
+        isFlippedX: 0
+        isFlippedY: 0
+      AB:
+        spriteID: 60
+        isFlippedX: 0
+        isFlippedY: 0
+      BB:
+        spriteID: 61
+        isFlippedX: 0
+        isFlippedY: 0
+  - name: Grass_ground_21
+    data:
+      AA:
+        spriteID: 47
+        isFlippedX: 1
+        isFlippedY: 0
+      BA:
+        spriteID: 46
+        isFlippedX: 1
+        isFlippedY: 0
+      AB:
+        spriteID: 61
+        isFlippedX: 1
+        isFlippedY: 0
+      BB:
+        spriteID: 60
+        isFlippedX: 1
+        isFlippedY: 0
+  - name: Grass_ground_22
+    data:
+      AA:
+        spriteID: 62
+        isFlippedX: 0
+        isFlippedY: 1
+      BA:
+        spriteID: 63
+        isFlippedX: 0
+        isFlippedY: 1
+      AB:
+        spriteID: 46
+        isFlippedX: 0
+        isFlippedY: 1
+      BB:
+        spriteID: 47
+        isFlippedX: 0
+        isFlippedY: 1
+  - name: Grass_ground_23
+    data:
+      AA:
+        spriteID: 63
+        isFlippedX: 1
+        isFlippedY: 1
+      BA:
+        spriteID: 62
+        isFlippedX: 1
+        isFlippedY: 1
+      AB:
+        spriteID: 47
+        isFlippedX: 1
+        isFlippedY: 1
+      BB:
+        spriteID: 62
+        isFlippedX: 1
+        isFlippedY: 1
+  - name: Bridge_01
+    data:
+      AA:
+        spriteID: 42
+        isFlippedX: 0
+        isFlippedY: 0
+      BA:
+        spriteID: 42
+        isFlippedX: 1
+        isFlippedY: 0
+      AB:
+        spriteID: 58
+        isFlippedX: 0
+        isFlippedY: 0
+      BB:
+        spriteID: 58
+        isFlippedX: 1
+        isFlippedY: 0
+  - name: Wall_01
+    data:
+      AA:
+        spriteID: 56
+        isFlippedX: 0
+        isFlippedY: 0
+      BA:
+        spriteID: 57
+        isFlippedX: 1
+        isFlippedY: 0
+      AB:
+        spriteID: 40
+        isFlippedX: 1
+        isFlippedY: 0
+      BB:
+        spriteID: 41
+        isFlippedX: 0
+        isFlippedY: 0
+  - name: Door_01
+    data:
+      AA:
+        spriteID: 66
+        isFlippedX: 0
+        isFlippedY: 0
+      BA:
+        spriteID: 67
+        isFlippedX: 0
+        isFlippedY: 0
+      AB:
+        spriteID: 82
+        isFlippedX: 0
+        isFlippedY: 0
+      BB:
+        spriteID: 83
+        isFlippedX: 0
+        isFlippedY: 0
+  - name: Strata_01
+    data:
+      AA:
+        spriteID: 70
+        isFlippedX: 0
+        isFlippedY: 0
+      BA:
+        spriteID: 71
+        isFlippedX: 0
+        isFlippedY: 0
+      AB:
+        spriteID: 86
+        isFlippedX: 0
+        isFlippedY: 0
+      BB:
+        spriteID: 87
+        isFlippedX: 0
+        isFlippedY: 0
+  - name: Strata_02
+    data:
+      AA:
+        spriteID: 71
+        isFlippedX: 1
+        isFlippedY: 0
+      BA:
+        spriteID: 70
+        isFlippedX: 1
+        isFlippedY: 0
+      AB:
+        spriteID: 87
+        isFlippedX: 1
+        isFlippedY: 0
+      BB:
+        spriteID: 86
+        isFlippedX: 1
+        isFlippedY: 0
+  - name: Ground_boundary_line_01
+    data:
+      AA:
+        spriteID: 72
+        isFlippedX: 0
+        isFlippedY: 0
+      BA:
+        spriteID: 73
+        isFlippedX: 0
+        isFlippedY: 0
+      AB:
+        spriteID: 88
+        isFlippedX: 0
+        isFlippedY: 0
+      BB:
+        spriteID: 89
+        isFlippedX: 0
+        isFlippedY: 0
+  - name: Ground_boundary_line_02
+    data:
+      AA:
+        spriteID: 73
+        isFlippedX: 1
+        isFlippedY: 0
+      BA:
+        spriteID: 72
+        isFlippedX: 1
+        isFlippedY: 0
+      AB:
+        spriteID: 89
+        isFlippedX: 1
+        isFlippedY: 0
+      BB:
+        spriteID: 88
+        isFlippedX: 1
+        isFlippedY: 0
+  - name: A_step_in_the_ground_01
+    data:
+      AA:
+        spriteID: 74
+        isFlippedX: 0
+        isFlippedY: 0
+      BA:
+        spriteID: 75
+        isFlippedX: 0
+        isFlippedY: 0
+      AB:
+        spriteID: 90
+        isFlippedX: 0
+        isFlippedY: 0
+      BB:
+        spriteID: 91
+        isFlippedX: 0
+        isFlippedY: 0
+  - name: A_step_in_the_ground_02
+    data:
+      AA:
+        spriteID: 75
+        isFlippedX: 1
+        isFlippedY: 0
+      BA:
+        spriteID: 74
+        isFlippedX: 1
+        isFlippedY: 0
+      AB:
+        spriteID: 91
+        isFlippedX: 1
+        isFlippedY: 0
+      BB:
+        spriteID: 90
+        isFlippedX: 1
+        isFlippedY: 0
+  - name: Torii_01
+    data:
+      AA:
+        spriteID: 34
+        isFlippedX: 0
+        isFlippedY: 0
+      BA:
+        spriteID: 35
+        isFlippedX: 0
+        isFlippedY: 0
+      AB:
+        spriteID: 50
+        isFlippedX: 0
+        isFlippedY: 0
+      BB:
+        spriteID: 51
+        isFlippedX: 0
+        isFlippedY: 0
+  - name: Torii_02
+    data:
+      AA:
+        spriteID: 36
+        isFlippedX: 0
+        isFlippedY: 0
+      BA:
+        spriteID: 37
+        isFlippedX: 0
+        isFlippedY: 0
+      AB:
+        spriteID: 52
+        isFlippedX: 0
+        isFlippedY: 0
+      BB:
+        spriteID: 53
+        isFlippedX: 0
+        isFlippedY: 0
+  - name: Torii_03
+    data:
+      AA:
+        spriteID: 38
+        isFlippedX: 0
+        isFlippedY: 0
+      BA:
+        spriteID: 39
+        isFlippedX: 0
+        isFlippedY: 0
+      AB:
+        spriteID: 54
+        isFlippedX: 0
+        isFlippedY: 0
+      BB:
+        spriteID: 55
+        isFlippedX: 0
+        isFlippedY: 0
+  - name: Torii_04
+    data:
+      AA:
+        spriteID: 39
+        isFlippedX: 1
+        isFlippedY: 0
+      BA:
+        spriteID: 38
+        isFlippedX: 1
+        isFlippedY: 0
+      AB:
+        spriteID: 55
+        isFlippedX: 1
+        isFlippedY: 0
+      BB:
+        spriteID: 54
+        isFlippedX: 1
+        isFlippedY: 0
+  - name: Rock_01
+    data:
+      AA:
+        spriteID: 76
+        isFlippedX: 0
+        isFlippedY: 0
+      BA:
+        spriteID: 77
+        isFlippedX: 0
+        isFlippedY: 0
+      AB:
+        spriteID: 92
+        isFlippedX: 0
+        isFlippedY: 0
+      BB:
+        spriteID: 93
+        isFlippedX: 0
+        isFlippedY: 0
+  - name: Enemy_01
+    data:
+      AA:
+        spriteID: 78
+        isFlippedX: 0
+        isFlippedY: 0
+      BA:
+        spriteID: 79
+        isFlippedX: 0
+        isFlippedY: 0
+      AB:
+        spriteID: 94
+        isFlippedX: 0
+        isFlippedY: 0
+      BB:
+        spriteID: 95
+        isFlippedX: 0
+        isFlippedY: 0
+  - name: Enemy_02
+    data:
+      AA:
+        spriteID: 79
+        isFlippedX: 1
+        isFlippedY: 0
+      BA:
+        spriteID: 78
+        isFlippedX: 1
+        isFlippedY: 0
+      AB:
+        spriteID: 95
+        isFlippedX: 1
+        isFlippedY: 0
+      BB:
+        spriteID: 94
+        isFlippedX: 1
+        isFlippedY: 0
+  - name: Grass_ground_24
+    data:
+      AA:
+        spriteID: 96
+        isFlippedX: 0
+        isFlippedY: 0
+      BA:
+        spriteID: 97
+        isFlippedX: 0
+        isFlippedY: 0
+      AB:
+        spriteID: 112
+        isFlippedX: 0
+        isFlippedY: 0
+      BB:
+        spriteID: 113
+        isFlippedX: 0
+        isFlippedY: 0
+  - name: Grass_ground_25
+    data:
+      AA:
+        spriteID: 112
+        isFlippedX: 1
+        isFlippedY: 0
+      BA:
+        spriteID: 113
+        isFlippedX: 1
+        isFlippedY: 0
+      AB:
+        spriteID: 96
+        isFlippedX: 0
+        isFlippedY: 1
+      BB:
+        spriteID: 97
+        isFlippedX: 0
+        isFlippedY: 1
+  - name: Ground_boundary_line_03
+    data:
+      AA:
+        spriteID: 88
+        isFlippedX: 0
+        isFlippedY: 1
+      BA:
+        spriteID: 89
+        isFlippedX: 0
+        isFlippedY: 1
+      AB:
+        spriteID: 72
+        isFlippedX: 0
+        isFlippedY: 1
+      BB:
+        spriteID: 73
+        isFlippedX: 0
+        isFlippedY: 1
+  - name: Ground_boundary_line_4
+    data:
+      AA:
+        spriteID: 89
+        isFlippedX: 1
+        isFlippedY: 1
+      BA:
+        spriteID: 88
+        isFlippedX: 1
+        isFlippedY: 1
+      AB:
+        spriteID: 73
+        isFlippedX: 1
+        isFlippedY: 1
+      BB:
+        spriteID: 72
+        isFlippedX: 1
+        isFlippedY: 1
+  - name: A_step_in_the_ground_03
+    data:
+      AA:
+        spriteID: 74
+        isFlippedX: 0
+        isFlippedY: 0
+      BA:
+        spriteID: 75
+        isFlippedX: 0
+        isFlippedY: 0
+      AB:
+        spriteID: 90
+        isFlippedX: 0
+        isFlippedY: 0
+      BB:
+        spriteID: 91
+        isFlippedX: 0
+        isFlippedY: 0
+  - name: A_step_in_the_ground_04
+    data:
+      AA:
+        spriteID: 75
+        isFlippedX: 1
+        isFlippedY: 0
+      BA:
+        spriteID: 74
+        isFlippedX: 1
+        isFlippedY: 0
+      AB:
+        spriteID: 91
+        isFlippedX: 1
+        isFlippedY: 0
+      BB:
+        spriteID: 90
+        isFlippedX: 1
+        isFlippedY: 0
+  - name: Grass_ground_26
+    data:
+      AA:
+        spriteID: 0
+        isFlippedX: 0
+        isFlippedY: 1
+      BA:
+        spriteID: 0
+        isFlippedX: 0
+        isFlippedY: 1
+      AB:
+        spriteID: 0
+        isFlippedX: 0
+        isFlippedY: 1
+      BB:
+        spriteID: 0
+        isFlippedX: 1
+        isFlippedY: 1
+  - name: Grass_ground_27
+    data:
+      AA:
+        spriteID: 0
+        isFlippedX: 1
+        isFlippedY: 1
+      BA:
+        spriteID: 0
+        isFlippedX: 1
+        isFlippedY: 1
+      AB:
+        spriteID: 0
+        isFlippedX: 1
+        isFlippedY: 1
+      BB:
+        spriteID: 0
+        isFlippedX: 1
+        isFlippedY: 1
+  - name: Grass_ground_28
+    data:
+      AA:
+        spriteID: 63
+        isFlippedX: 1
+        isFlippedY: 1
+      BA:
+        spriteID: 62
+        isFlippedX: 1
+        isFlippedY: 1
+      AB:
+        spriteID: 47
+        isFlippedX: 1
+        isFlippedY: 1
+      BB:
+        spriteID: 46
+        isFlippedX: 1
+        isFlippedY: 1
+  - name: Grass_ground_29
+    data:
+      AA:
+        spriteID: 62
+        isFlippedX: 0
+        isFlippedY: 1
+      BA:
+        spriteID: 63
+        isFlippedX: 0
+        isFlippedY: 1
+      AB:
+        spriteID: 46
+        isFlippedX: 0
+        isFlippedY: 1
+      BB:
+        spriteID: 47
+        isFlippedX: 0
+        isFlippedY: 1
+  - name: Stepped_floor_2
+    data:
+      AA:
+        spriteID: 64
+        isFlippedX: 0
+        isFlippedY: 0
+      BA:
+        spriteID: 65
+        isFlippedX: 0
+        isFlippedY: 0
+      AB:
+        spriteID: 80
+        isFlippedX: 0
+        isFlippedY: 0
+      BB:
+        spriteID: 81
+        isFlippedX: 0
+        isFlippedY: 0
+  - name: Stepped_floor_1
+    data:
+      AA:
+        spriteID: 80
+        isFlippedX: 0
+        isFlippedY: 1
+      BA:
+        spriteID: 81
+        isFlippedX: 0
+        isFlippedY: 1
+      AB:
+        spriteID: 64
+        isFlippedX: 0
+        isFlippedY: 1
+      BB:
+        spriteID: 65
+        isFlippedX: 0
+        isFlippedY: 1
+  - name: Stepped_floor_3
+    data:
+      AA:
+        spriteID: 65
+        isFlippedX: 1
+        isFlippedY: 0
+      BA:
+        spriteID: 64
+        isFlippedX: 1
+        isFlippedY: 0
+      AB:
+        spriteID: 81
+        isFlippedX: 1
+        isFlippedY: 0
+      BB:
+        spriteID: 80
+        isFlippedX: 1
+        isFlippedY: 0
+  - name: Stepped_floor_4
+    data:
+      AA:
+        spriteID: 81
+        isFlippedX: 1
+        isFlippedY: 1
+      BA:
+        spriteID: 80
+        isFlippedX: 1
+        isFlippedY: 1
+      AB:
+        spriteID: 65
+        isFlippedX: 1
+        isFlippedY: 1
+      BB:
+        spriteID: 64
+        isFlippedX: 1
+        isFlippedY: 1
+  e_tileset: {fileID: 11400000, guid: 8b758e05e3e5a3a4cb6c86f723fc6a53, type: 2}

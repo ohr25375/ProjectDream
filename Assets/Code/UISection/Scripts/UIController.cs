@@ -27,7 +27,7 @@ public class UIController : MonoBehaviour
                 var spriteRenderer = obj.GetComponent<SpriteRenderer>();
                 spriteController.Initialize(spriteRenderer);
                 spriteController.SetUI(true);
-                spriteController.SetSprite(_tileset.GetSprite(1));
+                spriteController.SetSprite(_tileset.GetSprite(16));
                 spriteController.SetPalette(Palette.B);
                 spriteController.SetIsBackground(true);
                 spriteController.UpdateRenderer();

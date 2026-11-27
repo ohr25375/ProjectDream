@@ -1,0 +1,132 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e292b4e8210cbf49a87c8c12768f312, type: 3}
+  m_Name: AlphaSurface
+  m_EditorClassIdentifier: Assembly-CSharp::WorldData
+  mapDatas:
+  - mapData: {fileID: 11400000, guid: b6e5e4be9f972114096390f660498fe0, type: 2}
+    exits:
+      North:
+        UnlockTriggerIndex: -1
+        ExitIndex: 1
+        ExitOffset: 0
+      South:
+        UnlockTriggerIndex: -1
+        ExitIndex: -1
+        ExitOffset: 0
+      East:
+        UnlockTriggerIndex: -1
+        ExitIndex: -1
+        ExitOffset: 0
+      West:
+        UnlockTriggerIndex: -1
+        ExitIndex: -1
+        ExitOffset: 0
+    mapEventTriggers: []
+  - mapData: {fileID: 11400000, guid: fd3961ad6ee58d64ab976292401fd211, type: 2}
+    exits:
+      North:
+        UnlockTriggerIndex: -1
+        ExitIndex: -1
+        ExitOffset: 0
+      South:
+        UnlockTriggerIndex: -1
+        ExitIndex: 0
+        ExitOffset: 0
+      East:
+        UnlockTriggerIndex: -1
+        ExitIndex: 2
+        ExitOffset: 0
+      West:
+        UnlockTriggerIndex: -1
+        ExitIndex: -1
+        ExitOffset: 0
+    mapEventTriggers: []
+  - mapData: {fileID: 11400000, guid: 04fac1b458510934d91221c2ef22bc89, type: 2}
+    exits:
+      North:
+        UnlockTriggerIndex: -1
+        ExitIndex: -1
+        ExitOffset: 0
+      South:
+        UnlockTriggerIndex: -1
+        ExitIndex: 3
+        ExitOffset: 0
+      East:
+        UnlockTriggerIndex: -1
+        ExitIndex: -1
+        ExitOffset: 0
+      West:
+        UnlockTriggerIndex: -1
+        ExitIndex: 1
+        ExitOffset: 0
+    mapEventTriggers: []
+  - mapData: {fileID: 11400000, guid: 08c07f311349939429e6afca90d2cfa6, type: 2}
+    exits:
+      North:
+        UnlockTriggerIndex: -1
+        ExitIndex: 2
+        ExitOffset: 0
+      South:
+        UnlockTriggerIndex: -1
+        ExitIndex: -1
+        ExitOffset: 0
+      East:
+        UnlockTriggerIndex: -1
+        ExitIndex: 4
+        ExitOffset: 0
+      West:
+        UnlockTriggerIndex: -1
+        ExitIndex: -1
+        ExitOffset: 0
+    mapEventTriggers: []
+  - mapData: {fileID: 11400000, guid: 910540da5b448af44b9856f0a76b4777, type: 2}
+    exits:
+      North:
+        UnlockTriggerIndex: -1
+        ExitIndex: -1
+        ExitOffset: 0
+      South:
+        UnlockTriggerIndex: -1
+        ExitIndex: -1
+        ExitOffset: 0
+      East:
+        UnlockTriggerIndex: -1
+        ExitIndex: -1
+        ExitOffset: 0
+      West:
+        UnlockTriggerIndex: -1
+        ExitIndex: 3
+        ExitOffset: 0
+    mapEventTriggers: []
+  - mapData: {fileID: 11400000, guid: 6e10907c05d8cbd4fa716d310ef7dd3f, type: 2}
+    exits:
+      North:
+        UnlockTriggerIndex: -1
+        ExitIndex: -1
+        ExitOffset: 0
+      South:
+        UnlockTriggerIndex: -1
+        ExitIndex: -1
+        ExitOffset: 0
+      East:
+        UnlockTriggerIndex: -1
+        ExitIndex: -1
+        ExitOffset: 0
+      West:
+        UnlockTriggerIndex: -1
+        ExitIndex: -1
+        ExitOffset: 0
+    mapEventTriggers: []
+  references:
+    version: 2
+    RefIds: []

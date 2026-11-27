@@ -30,7 +30,8 @@ public class CollisionTestPlayerController : MonoBehaviour
     [SerializeField] private InputActionReference _inputInteract;
     [SerializeField] private float _speed;
     [SerializeField] private List<Vector2> _colliderOffsets;
-    [SerializeField] private GameObject _sprite;
+    //[SerializeField] private GameObject _sprite;
+    [SerializeField] private List<SpriteRenderer> _spriteRenderer;
     private List<SpriteController> _spriteControllers;
     private Palette _currentPalette = Palette.A;
     [Header("Experimental")]
@@ -272,9 +273,10 @@ public class CollisionTestPlayerController : MonoBehaviour
         _spriteControllers = new(new SpriteController[_colliderOffsets.Count]);
         for (var i = 0; i < _colliderOffsets.Count; i++)
         {
-            var obj = Instantiate(_sprite, transform);
+            //var obj = Instantiate(_sprite, transform);
             _spriteControllers[i] = new();
-            _spriteControllers[i].Initialize(obj.GetComponent<SpriteRenderer>());
+            //_spriteControllers[i].Initialize(obj.GetComponent<SpriteRenderer>());
+            _spriteControllers[i].Initialize(_spriteRenderer[i]);
             _spriteControllers[i].SetGlobalPosition(transform.position + (Vector3)_colliderOffsets[i] + new Vector3(0.5f, 0.5f));
         }
     }

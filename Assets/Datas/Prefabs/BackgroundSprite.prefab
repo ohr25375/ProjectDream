@@ -106,3 +106,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MaterialSetter
   _material: {fileID: 11400000, guid: a282a3a760ac84618a67cf309299afaa, type: 2}
   _renderer: {fileID: 3660218451458396340}
+  _defaultSprite: {fileID: -37371320, guid: ef4990cf4bbc0a642b5d541e478763fc, type: 3}

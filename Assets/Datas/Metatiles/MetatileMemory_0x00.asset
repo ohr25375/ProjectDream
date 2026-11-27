@@ -196,7 +196,7 @@ MonoBehaviour:
   - name: WallUpDown
     data:
       AA:
-        spriteID: 33
+        spriteID: 197
         isFlippedX: 0
         isFlippedY: 0
       BA:
