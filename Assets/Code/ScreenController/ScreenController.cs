@@ -24,6 +24,8 @@ public class ScreenController : MonoBehaviour
     [SerializeField] private CollisionTestPlayerController _player;
     [SerializeField] private Vector2Int _playerStartingPosition;
 
+    [SerializeField] private EntitySpawner _entitySpawner;
+
     private Coroutine _coroutine;
 
     public static ScreenController Instance = null;
@@ -231,6 +233,7 @@ public class ScreenController : MonoBehaviour
             }
         }
 
+        _entitySpawner.DeactivateAll();
         _coroutine = StartCoroutine(MoveCamera(direction, nextIndex));
     }
     public static bool UnlockExit(CompassDirections exitDirection)

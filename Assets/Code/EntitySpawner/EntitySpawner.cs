@@ -178,6 +178,14 @@ public class EntitySpawner : MonoBehaviour
         }
         _entityControllers[index].ReturnToPool();
     }
+    public void DeactivateAll()
+    {
+        for (var i = 0; i < _entityControllers.Count; i++)
+        {
+            if (!_entityControllers[i].gameObject.activeSelf) continue;
+            Deactivate(i);
+        }
+    }
 
     #region EDITOR
 #if UNITY_EDITOR
